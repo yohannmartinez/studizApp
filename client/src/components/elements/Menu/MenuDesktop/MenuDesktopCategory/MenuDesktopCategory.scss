@@ -1,0 +1,112 @@
+.menuDesktopCategory {
+  &__categoryContainer {
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 2px;
+    transition: 0.5s;
+    position: relative;
+
+    &:hover::after {
+      opacity: 0.1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      border-radius: 4px;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background-color: black;
+      opacity: 0;
+    }
+  }
+
+  &__categoryName {
+    font-family: "MarkPro", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #222;
+  }
+
+  &__dropdownIcon {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0 0 0 0.8em;
+    font-size: 13px;
+    transition: 0.3s;
+  }
+
+  &__categoryContainer:hover &__dropdownIcon {
+    padding: 0 0.8em 0 0;
+    transform: rotate(180deg);
+  }
+
+  &__subMenusContainer {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+    padding-top: 1em;
+    min-width: 250px;
+    display: none;
+    z-index: 100;
+  }
+
+  &__categoryContainer:hover &__subMenusContainer {
+    display: block;
+  }
+
+  &__subMenuswhiteContainer {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.15);
+    -webkit-box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.15);
+    -moz-box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.15);
+    overflow: hidden;
+  }
+
+  &__subMenu {
+    border-radius: 8px;
+    padding: 0.5em;
+    display: flex;
+
+    &IconContainer {
+      max-width: 2em;
+      padding-right: 1em;
+    }
+    &Icon {
+      width: 1.5em;
+    }
+
+    &Name {
+      font-family: "MarkPro", sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 0.3em;
+    }
+    &Description {
+      font-family: "eina", sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      color: rgb(104, 104, 104);
+    }
+    &:hover {
+      background-color: rgb(240, 240, 240);
+    }
+  }
+}

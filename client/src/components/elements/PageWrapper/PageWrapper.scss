@@ -1,0 +1,14 @@
+.pageWrapper {
+  &__globalContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 50px;
+  }
+}

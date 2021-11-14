@@ -1,0 +1,82 @@
+.menuDesktop {
+  &__background {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1200px;
+    height: 80px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin: 0 10px;
+    z-index: 100;
+  }
+
+  &__leftPart {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    &__logo {
+      height: 25px;
+      margin-right: 10px;
+    }
+    &__logoText {
+      font-family: "MarkPro";
+      font-weight: 800;
+      font-size: 24px;
+      margin-right: 20px;
+    }
+    &__categoriesContainer {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__rightPart {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__logInButton,
+    &__registerButton {
+      font-family: "MarkPro";
+      font-weight: 700;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    &__logInButton {
+      color: #222;
+      background: transparent;
+      padding: 10px 10px;
+    }
+
+    &__registerButton {
+      color: #222;
+      margin-left: 15px;
+      padding: 10px 20px;
+      border-radius: 500px;
+      background-color: #9653b6;
+      color: white;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

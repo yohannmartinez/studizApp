@@ -1,0 +1,11 @@
+@media (max-width: 1050px) {
+  .menu__desktop__globalContainer {
+    display: none;
+  }
+}
+
+@media (min-width: 1050px) {
+  .menu__mobile__globalContainer {
+    display: none;
+  }
+}

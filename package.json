@@ -1,0 +1,45 @@
+{
+  "name": "studiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run client\" \"npm run server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yohannmartinez/studiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yohannmartinez/studiz/issues"
+  },
+  "homepage": "https://github.com/yohannmartinez/studiz#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "file-type": "^16.5.3",
+    "fs": "^0.0.1-security",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "metafetch": "^2.0.2",
+    "mongoose": "^5.13.7",
+    "multiparty": "^4.2.2",
+    "node-mailer": "^0.1.1",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "path": "^0.12.7",
+    "qs": "^6.10.1",
+    "validator": "^13.6.0"
+  }
+}

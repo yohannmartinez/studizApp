@@ -1,0 +1,60 @@
+.languageSelect {
+  &__container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+    font-family: "MarkPro";
+    font-weight: 700;
+    font-size: 12px;
+    padding: 5px;
+    width: 60px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 0.5px solid rgb(218, 218, 218);
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &__flag {
+    width: 30px;
+  }
+
+  &__optionsContainer {
+    border-radius: 4px;
+    border: 0.5px solid rgb(218, 218, 218);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-120%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__option {
+    padding: 5px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    &:last-child {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    &:hover {
+      background-color: rgb(236, 235, 235);
+    }
+  }
+}
