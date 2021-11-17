@@ -10,7 +10,7 @@ const getLessonsCreators = async (lessons) => {
       const { user_id } = lesson;
       const lessonCreator = await User.findById(
         user_id,
-        "_id firstname lastname last_activity"
+        "_id firstname lastname last_activity profile_image"
       ).lean();
       return { ...lesson, creator: lessonCreator };
     })

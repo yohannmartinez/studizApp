@@ -1,0 +1,47 @@
+.searchResults {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto 40px auto;
+  }
+
+  &__subTitle {
+    font-size: 14px;
+    font-family: "eina";
+    font-weight: 400;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    font-family: "MarkPro";
+    font-weight: 800;
+    margin: 0;
+    font-size: 34px;
+  }
+
+  &__globalContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__container {
+    width: calc(33.3% - 20px);
+    margin: 0 0 30px 0;
+    background-color: white;
+    height: 400px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    &:nth-child(3n + 2) {
+      margin: 0 30px 20px 30px;
+    }
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.15);
+    }
+  }
+}

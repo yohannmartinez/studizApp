@@ -48,13 +48,7 @@ const SearchLessons = (props) => {
               Trouvez le cours qu'il vous faut parmis ceux rédigés par la
               communauté
             </h1>
-            <div className="searchLessons__header__imageContainer">
-              <img
-                src={SearchLesson}
-                alt="search lesson studiz"
-                className="searchLessons__header__image"
-              />
-            </div>
+            <div className="searchLessons__header__imageContainer"></div>
             <form
               className="searchLessons__searchBar"
               onSubmit={(e) => {
@@ -66,6 +60,7 @@ const SearchLessons = (props) => {
                 className="searchLessons__input"
                 value={search.name}
                 onChange={handleChangeInput}
+                placeholder={"Ex: théorème pythagore"}
               />
               <button type="submit" className="searchLessons__searchButton">
                 Chercher
