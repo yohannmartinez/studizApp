@@ -1,0 +1,106 @@
+.lessonResult {
+  &__container {
+    width: calc(33.3% - 20px);
+    margin: 0 0 30px 0;
+    background-color: white;
+    height: 400px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-sizing: border-box;
+    padding: 30px;
+    &:nth-child(3n + 2) {
+      margin: 0 30px 20px 30px;
+    }
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.15);
+    }
+  }
+
+  &__header {
+    display: flex;
+    height: 60px;
+
+    // &__textContainer {
+    //   display: flex;
+    //   flex-direction: column;
+    // }
+
+    // &__creatorName {
+    //   font-family: "eina";
+    //   font-size: 13px;
+    //   font-weight: 500;
+    // }
+  }
+
+  &__profileImage {
+    width: 60px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+  }
+
+  &__lessonViews {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: "eina";
+    font-size: 14px;
+    font-weight: 600;
+    color: #c2c2c4;
+  }
+
+  &__lessonTitle {
+    font-family: "MarkPro";
+    font-size: 19px;
+    font-weight: 700;
+    margin: 10px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__tag {
+    font-family: "eina";
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 10px 5px 10px;
+    border-radius: 100px;
+    margin: 0 10px 10px 0;
+  }
+
+  &__purpleTag {
+    background-color: #e8d0f3;
+    color: #843ca5;
+  }
+
+  &__yellowTag {
+    background-color: #f5e8d2;
+    color: #a57b3c;
+  }
+
+  &__greenTag {
+    background-color: #cdf1e2;
+    color: #4d9e7a;
+  }
+
+  &__description {
+    font-family: "eina";
+    font-size: 13px;
+    font-weight: 500;
+    color: #222222;
+    margin: 20px 0;
+    height: 90px;
+  }
+}

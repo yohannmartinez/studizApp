@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
 import { getLessons } from "../../../../services/lessons";
+import LessonResult from "./LessonResult/LessonResult";
 import "./SearchResults.scss";
 
 const SearchResults = ({ filters, auth }) => {
@@ -56,14 +57,7 @@ const SearchResults = ({ filters, auth }) => {
       </div>
       <div className="searchResults__globalContainer">
         {lessons.map((lesson) => (
-          <div
-            className="searchResults__container"
-            onClick={() => {
-              console.log(lesson);
-            }}
-          >
-            {lesson.name}
-          </div>
+          <LessonResult lesson={lesson} />
         ))}
 
         {/* case they are more results to load */}
