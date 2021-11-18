@@ -7,7 +7,6 @@ import Search from "./SearchFilters/SearchFilters";
 import { getSearchFilters, launchSearch } from "../../../utils/searchLessons";
 import SearchResults from "./SearchResults/SearchResults";
 
-import SearchLesson from "../../../assets/pictures/test/searchLesson.png";
 import "./SearchLessons.scss";
 
 const SearchLessons = (props) => {
