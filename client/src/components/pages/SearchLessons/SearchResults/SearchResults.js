@@ -74,7 +74,7 @@ const SearchResults = ({ filters, auth }) => {
               loadMoreResults();
             }}
           >
-            load more
+            load moree
           </div>
         )}
 
