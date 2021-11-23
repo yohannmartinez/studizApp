@@ -23,3 +23,10 @@ export const degrees = [
   "FIFTH_GRADE",
   "SIXTH_GRADE",
 ];
+
+export const degreesToSelectFormat = (t) => {
+  return Array.from(degrees, (degree) => ({
+    value: degree,
+    label: t(degree),
+  }));
+};

@@ -66,7 +66,7 @@ const StepTwo = ({ setSnack, resetSnack, nextStep, userId }) => {
       <Input
         value={password}
         inputColor="#9652B6"
-        placeholder="PASSWORD"
+        label="PASSWORD"
         onChange={(e) => {
           setPassword(e.target.value);
         }}
@@ -75,7 +75,7 @@ const StepTwo = ({ setSnack, resetSnack, nextStep, userId }) => {
       <Input
         value={confirmPassword}
         inputColor="#9652B6"
-        placeholder="CONFIRM_PASSWORD"
+        label="CONFIRM_PASSWORD"
         onChange={(e) => {
           setConfirmPassword(e.target.value);
         }}

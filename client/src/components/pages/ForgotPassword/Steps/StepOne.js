@@ -54,7 +54,7 @@ const StepOne = ({ setSnack, resetSnack, nextStep, setUserId }) => {
       <Input
         value={email}
         inputColor="#9652B6"
-        placeholder="EMAIL"
+        label="EMAIL"
         onChange={(e) => {
           setEmail(e.target.value);
         }}

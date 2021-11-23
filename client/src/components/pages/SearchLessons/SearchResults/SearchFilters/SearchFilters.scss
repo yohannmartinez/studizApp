@@ -1,0 +1,38 @@
+.searchFilters {
+  &__globalContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0 20px 0;
+  }
+
+  &__showFilters {
+    background-color: #e8d0f2;
+    color: #8d49ac;
+    font-family: "MarkPro";
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &__filtersLength {
+      margin-left: 20px;
+      background-color: #8d49ac;
+      color: white;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

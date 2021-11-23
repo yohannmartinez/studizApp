@@ -38,9 +38,19 @@ const MenuDesktop = ({ backgroundColor, auth }) => {
           <img
             src={Logo}
             alt="studiz logo"
+            onClick={() => {
+              window.location.href = "/";
+            }}
             className="menuDesktop__leftPart__logo"
           />
-          <div className="menuDesktop__leftPart__logoText">Studiz</div>
+          <div
+            className="menuDesktop__leftPart__logoText"
+            onClick={() => {
+              window.location.href = "/";
+            }}
+          >
+            Studiz
+          </div>
           <div className="menuDesktop__leftPart__categoriesContainer">
             {categoriesList.map(
               ({

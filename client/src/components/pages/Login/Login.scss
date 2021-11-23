@@ -2,6 +2,7 @@
   &__globalContainer {
     background-color: white;
     display: flex;
+    justify-content: center;
   }
 
   &__formContainer {
@@ -11,21 +12,11 @@
     align-items: center;
     max-width: 500px;
     width: 100%;
+    background-color: white;
   }
 
   &__logoWrapper {
     margin-top: 40px;
-  }
-
-  &__informations {
-    &__container {
-      flex-grow: 1;
-    }
-    &__purpleBlock {
-      height: 100%;
-      width: 100%;
-      background-color: #e2d7f7;
-    }
   }
 
   &__whiteContainer {

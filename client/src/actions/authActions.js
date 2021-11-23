@@ -40,7 +40,7 @@ export const registerUser = (userData, history, t) => (dispatch) => {
 };
 
 // Login - get user token
-export const loginUser = (userData, t) => (dispatch) => {
+export const loginUser = (userData, history, redirectLink, t) => (dispatch) => {
   axios
     .post("/api/users/login", userData)
     .then((res) => {
@@ -66,6 +66,7 @@ export const loginUser = (userData, t) => (dispatch) => {
           },
         },
       });
+      redirectLink ? history.push(redirectLink) : history.goBack();
     })
     .catch((err) =>
       dispatch({

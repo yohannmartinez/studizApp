@@ -1,0 +1,15 @@
+.createLesson {
+  &__firstStep {
+    &__container {
+      max-width: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__inputSeparator {
+      height: 5px;
+    }
+  }
+}

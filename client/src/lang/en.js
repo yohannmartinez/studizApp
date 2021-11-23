@@ -18,6 +18,7 @@ export const en = {
   NEW_PASSWORD: "New password",
   CONFIRM_PASSWORD: "Confirm password",
   LESSON_NAME: "Lesson name",
+  LESSON_DESCRIPTION: "Lesson description",
 
   //menu sub categories
   CREATE_LESSON: "Create a lesson",
@@ -103,6 +104,7 @@ export const en = {
   M1: "M1",
   M2: "M2",
   MS: "MS",
+  MBA: "MBA",
   DOCTORATE: "Doctorate",
   DCG: "DCG",
   DEUST: "DEUST",

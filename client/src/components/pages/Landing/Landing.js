@@ -11,10 +11,8 @@ const Landing = () => {
     <div className="landing__globalContainer">
       <Menu backgroundColor={"#F3F0FC"} />
       <LanguageSelect />
-      <PageWrapper>
-        <LandingIntro />
-        <LandingExplications />
-      </PageWrapper>
+      <LandingIntro />
+      <LandingExplications />
     </div>
   );
 };

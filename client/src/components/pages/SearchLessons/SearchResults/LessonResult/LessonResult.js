@@ -1,16 +1,30 @@
+import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { useTranslate } from "../../../../../utils/useTranslate";
 
 import "./LessonResult.scss";
 
-const LessonResult = ({ lesson }) => {
-  const { name, creator, views, faculty, degree, year, description } = lesson;
+const LessonResult = ({ lesson, language }) => {
+  const {
+    _id,
+    name,
+    creator,
+    views,
+    faculty,
+    degree,
+    year,
+    description,
+    likes,
+  } = lesson;
   const { t } = useTranslate();
+  const history = useHistory();
+
   return (
     <div
       className="lessonResult__container"
+      key={_id}
       onClick={() => {
-        console.log(lesson);
-        console.log();
+        history.push(`/lesson/${lesson._id}`);
       }}
     >
       <div className="lessonResult__header">
@@ -25,13 +39,16 @@ const LessonResult = ({ lesson }) => {
       </h1>
 
       <div className="lessonResult__tagsContainer">
-        <div className="lessonResult__tag lessonResult__purpleTag">
+        <h1 className="lessonResult__tag lessonResult__purpleTag">
           {t(faculty)}
-        </div>
+        </h1>
         <div className="lessonResult__tag lessonResult__yellowTag">
           {t(degree)}
         </div>
         <div className="lessonResult__tag lessonResult__greenTag">{year}</div>
+        <div className="lessonResult__tag lessonResult__blueTag">
+          {likes} j'aime
+        </div>
       </div>
 
       <div className="lessonResult__description">
@@ -42,4 +59,8 @@ const LessonResult = ({ lesson }) => {
   );
 };
 
-export default LessonResult;
+const mapStateToProps = (state) => ({
+  language: state.language,
+});
+
+export default connect(mapStateToProps, null)(LessonResult);

@@ -1,0 +1,89 @@
+.createLesson {
+  &__globalContainer {
+    position: relative;
+    min-height: 100vh;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #f3f0fc;
+      top: 0;
+      left: 0;
+      height: 300px;
+      width: 100vw;
+      z-index: -1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #e8d0f2;
+      bottom: 0;
+      left: 0;
+      height: calc(100% - 300px);
+      width: 100vw;
+      z-index: -1;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__whiteContainer {
+    background-color: white;
+    padding: 50px 30px;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 15px;
+    margin: 50px 0;
+    box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.075);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__subTitle {
+    font-size: 14px;
+    font-family: "eina";
+    font-weight: 400;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    font-family: "MarkPro";
+    font-weight: 800;
+    margin: 0;
+    font-size: 34px;
+  }
+
+  &__validateButton {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 500px;
+    background-color: #9653b6;
+    color: white;
+    transition: 0.5s;
+    font-family: "MarkPro";
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 40px;
+    width: fit-content;
+    &:hover {
+      transform: scale(1.04);
+    }
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}

@@ -5,7 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslate } from "../../../utils/useTranslate";
 import "./Input.scss";
 
-const Input = ({ placeholder, value, onChange, type, inputColor }) => {
+const Input = ({
+  label,
+  value,
+  onChange,
+  type,
+  placeholder = "",
+  inputColor,
+}) => {
   const { t } = useTranslate();
   const [focused, setFocused] = useState(false);
   const onFocus = () => setFocused(true);
@@ -28,11 +35,12 @@ const Input = ({ placeholder, value, onChange, type, inputColor }) => {
         border: focused ? `1px solid ${inputColor}` : `1px solid #dadee3`,
       }}
     >
-      <div className="Input__placeholder">{t(placeholder)}</div>
+      <div className="Input__label">{t(label)}</div>
       <input
         style={{ zIndex: "0" }}
         className="Input__input"
         autoComplete="new-password"
+        placeholder={placeholder}
         value={value}
         onChange={(e) => {
           e.preventDefault();

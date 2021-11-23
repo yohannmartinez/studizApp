@@ -14,6 +14,7 @@ import ScrollToTop from "./utils/scrollToTop";
 import { store } from "./store";
 
 //pages
+import CreateLesson from "./components/pages/CreateLesson/CreateLesson";
 import Landing from "./components/pages/Landing/Landing";
 import Login from "./components/pages/Login/Login";
 import ForgotPassword from "./components/pages/ForgotPassword/ForgotPassword";
@@ -61,6 +62,8 @@ const App = () => {
             path="/forgotPassword"
             component={ForgotPassword}
           />
+
+          <PrivateRoute exact path="/createLesson" component={CreateLesson} />
 
           <Route exact path="/searchLessons" component={SearchLessons} />
         </Switch>

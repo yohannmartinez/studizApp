@@ -9,6 +9,7 @@ const Snack = (props) => {
     timer: null,
     animation: null,
   });
+
   const launchTimer = () => {
     document.getElementById("snack").style.opacity = 1;
     const timerID = setTimeout(() => {
@@ -20,11 +21,13 @@ const Snack = (props) => {
     }, props.snack.duration - 500);
     setCurrentSnackIds({ timer: timerID, animation: animationID });
   };
+
   const clearTimer = () => {
     document.getElementById("snack").style.opacity = 0;
     clearTimeout(currentSnackIds.timer);
     clearTimeout(currentSnackIds.animation);
   };
+
   const relaunchTimer = () => {
     clearTimer();
     launchTimer();

@@ -96,19 +96,36 @@ router.get("/getById", (req, res) => {
 router.get("/search", (req, res) => {
   const { filters, numberOfLessons, userId } = req.query;
   const isFilters = JSON.parse(filters.toString()).length > 0;
+  const { searchFilters, isTextFilters } = getSearchFilters(filters);
 
   const returnFormatLessons = async (lessons) => {
     lessonWithCreators = await getLessonsCreators(lessons);
     lessonWithLikes = await getLessonsLikes(lessonWithCreators);
-    nonPrivateLessons = removePrivateLessons(lessonWithLikes, userId);
+    nonPrivateLessons = removePrivateLessons(lessonWithLikes, userId).sort(
+      (firstItem, secondItem) => {
+        if (isTextFilters) {
+          return (
+            secondItem.score - firstItem.score ||
+            secondItem.views - firstItem.views ||
+            secondItem.likes - firstItem.likes ||
+            secondItem.name.localeCompare(secondItem.name)
+          );
+        } else {
+          return (
+            secondItem.views - firstItem.views ||
+            secondItem.likes - firstItem.likes ||
+            secondItem.name.localeCompare(secondItem.name)
+          );
+        }
+      }
+    );
+
     res.status(200).json({
       success: true,
       lessons: nonPrivateLessons.splice(numberOfLessons, 5),
       message: "",
     });
   };
-
-  const { searchFilters, isTextFilters } = getSearchFilters(filters);
 
   Lesson.find(
     isFilters
@@ -119,11 +136,6 @@ router.get("/search", (req, res) => {
     isTextFilters && { score: { $meta: "textScore" } }
   )
     .lean()
-    .sort(
-      isFilters
-        ? { score: isTextFilters ? { $meta: "textScore" } : 1, name: 1 }
-        : { views: -1, name: 1 }
-    )
     .then((lessons, err) => {
       returnFormatLessons(lessons);
     });

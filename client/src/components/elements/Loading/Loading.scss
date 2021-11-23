@@ -1,0 +1,27 @@
+.loading {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  &__loaderContainer {
+    width: 45px;
+    height: 45px;
+    border: 10px solid #dabbe9;
+    border-top-color: #9652b6;
+    border-radius: 50%;
+    position: relative;
+    animation: loader-rotate 1s linear infinite;
+  }
+
+  @keyframes loader-rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

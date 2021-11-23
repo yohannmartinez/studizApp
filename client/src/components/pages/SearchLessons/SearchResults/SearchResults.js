@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
-import { getLessons } from "../../../../services/lessons";
+import Loading from "../../../elements/Loading/Loading";
 import LessonResult from "./LessonResult/LessonResult";
+import { getLessons } from "../../../../services/lessons";
+import SearchFilters from "./SearchFilters/SearchFilters";
 import "./SearchResults.scss";
 
 const SearchResults = ({ filters, auth }) => {
@@ -55,6 +57,10 @@ const SearchResults = ({ filters, auth }) => {
         <div className="searchResults__subTitle">Vous voyez actuellement</div>
         <h1 className="searchResults__title">{getTitleValue()}</h1>
       </div>
+      {isLoading && <Loading />}
+
+      {!isLoading && lessons.length > 0 && <SearchFilters filters={filters} />}
+
       <div className="searchResults__globalContainer">
         {lessons.map((lesson) => (
           <LessonResult lesson={lesson} />
@@ -63,18 +69,27 @@ const SearchResults = ({ filters, auth }) => {
         {/* case they are more results to load */}
         {!isLoading && isMoreLessons && (
           <div
-            className="searchResults__container"
+            className="searchResults__loadMoreResults"
             onClick={() => {
               loadMoreResults();
             }}
           >
-            load moree
+            <button className="searchResults__loadMoreResults__button">
+              Charger d'avantage
+            </button>
           </div>
         )}
 
         {/* case they are no more results to load */}
         {!isLoading && !isMoreLessons && lessons.length > 0 && (
-          <div className="searchResults__container">no more results</div>
+          <div className="searchResults__noMoreResults">
+            <p className="searchResults__noMoreResults__text">
+              Tu n'as pas trouvé le cours qu'il te fallait ?
+            </p>
+            <button className="searchResults__noMoreResults__button">
+              Crées le !
+            </button>
+          </div>
         )}
       </div>
     </>

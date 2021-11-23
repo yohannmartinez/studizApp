@@ -53,3 +53,10 @@ export const faculties = [
   "ECONOMY",
   "LAW",
 ];
+
+export const facultiesToSelectFormat = (t) => {
+  return Array.from(faculties, (faculty) => ({
+    value: faculty,
+    label: t(faculty),
+  }));
+};

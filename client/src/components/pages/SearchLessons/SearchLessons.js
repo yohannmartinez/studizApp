@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import Menu from "../../elements/Menu/Menu";
 import PageWrapper from "../../elements/PageWrapper/PageWrapper";
-import Search from "./SearchFilters/SearchFilters";
 import { getSearchFilters, launchSearch } from "../../../utils/searchLessons";
 import SearchResults from "./SearchResults/SearchResults";
 
@@ -67,7 +66,7 @@ const SearchLessons = (props) => {
             </form>
           </div>
           <div className="searchLessons__resultsContainer">
-            <SearchResults filters={filters} />
+            <SearchResults filters={filters || []} />
           </div>
         </div>
       </PageWrapper>

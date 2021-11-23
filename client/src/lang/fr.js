@@ -18,6 +18,7 @@ export const fr = {
   NEW_PASSWORD: "Nouveau mot de passe",
   CONFIRM_PASSWORD: "Confirmer mot de passe",
   LESSON_NAME: "Nom du cours",
+  LESSON_DESCRIPTION: "Description du cours",
 
   //menu sub categories
   CREATE_LESSON: "Créer un cours",
@@ -109,6 +110,7 @@ export const fr = {
   M1: "M1",
   M2: "M2",
   MS: "MS",
+  MBA: "MBA",
   DOCTORATE: "Doctorat",
   DCG: "DCG",
   DEUST: "DEUST",
@@ -153,7 +155,7 @@ export const fr = {
   MATHEMATICS: "Mathématiques",
   LANGUAGE_SCIENCES: "Sciences du langage",
   MECHANICAL: "Mécanique",
-  PHILOSOPHY: "Phylosophie",
+  PHILOSOPHY: "Philosophie",
   PHYSICAL: "Physique",
   LIFE_EARTH_SCIENCES: "Sciences de la vie et de la terre",
   POLITICAL_SCIENCE: "Science politique",
