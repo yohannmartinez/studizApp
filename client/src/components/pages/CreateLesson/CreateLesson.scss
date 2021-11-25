@@ -66,24 +66,34 @@
     font-size: 34px;
   }
 
-  &__validateButton {
+  &__validateButton,
+  &__previousButton {
+    width: 200px;
     border: none;
     padding: 10px 30px;
     border-radius: 500px;
-    background-color: #9653b6;
-    color: white;
     transition: 0.5s;
     font-family: "MarkPro";
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
-    margin-top: 40px;
-    width: fit-content;
     &:hover {
       transform: scale(1.04);
     }
     &:disabled {
       opacity: 0.5;
     }
+  }
+
+  &__validateButton {
+    background-color: #9653b6;
+    color: white;
+    margin-top: 40px;
+  }
+
+  &__previousButton {
+    background-color: #e7e5e5;
+    color: #555555;
+    margin-top: 10px;
   }
 }

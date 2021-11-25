@@ -33,21 +33,21 @@ const categoriesList = [
       },
     ],
   },
-  {
-    name: "PRIVATE_INSTRUCTOR",
-    subMenus: [
-      {
-        name: "BECOME_INSTRUCTOR",
-        description: "BECOME_INSTRUCTOR_DESCRIPTION",
-        icon: TeacherIcon,
-      },
-      {
-        name: "FIND_INSTRUCTOR",
-        description: "FIND_INSTRUCTOR_DESCRIPTION",
-        icon: FindTeacherIcon,
-      },
-    ],
-  },
+  // {
+  //   name: "PRIVATE_INSTRUCTOR",
+  //   subMenus: [
+  //     {
+  //       name: "BECOME_INSTRUCTOR",
+  //       description: "BECOME_INSTRUCTOR_DESCRIPTION",
+  //       icon: TeacherIcon,
+  //     },
+  //     {
+  //       name: "FIND_INSTRUCTOR",
+  //       description: "FIND_INSTRUCTOR_DESCRIPTION",
+  //       icon: FindTeacherIcon,
+  //     },
+  //   ],
+  // },
 ];
 
 export default categoriesList;

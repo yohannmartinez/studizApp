@@ -19,6 +19,11 @@ export const en = {
   CONFIRM_PASSWORD: "Confirm password",
   LESSON_NAME: "Lesson name",
   LESSON_DESCRIPTION: "Lesson description",
+  LESSON_DEGREE: "Course level",
+  LESSON_STUDY_FIELD: "Field of study",
+  LESSON_YEAR: "Course year",
+  LESSON_INSTITUTION: "Educational institution",
+  LESSON_CITY: "Institution city",
 
   //menu sub categories
   CREATE_LESSON: "Create a lesson",
@@ -109,7 +114,7 @@ export const en = {
   DCG: "DCG",
   DEUST: "DEUST",
 
-  //faculties
+  //studyFields
   PERFORMING_ARTS: "Performing arts",
   CULTURAL_STUDIES: "Cultural studies",
   PLASTIC_ARTS: "Plastic arts",

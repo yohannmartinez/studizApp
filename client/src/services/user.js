@@ -1,16 +1,16 @@
 import axios from "axios";
 
-export const getUserById = async (user_id) => {
+export const getUserById = async (userId) => {
   const resp = await axios.get("/api/users/getById", {
-    params: { _id: user_id },
+    params: { _id: userId },
   });
   return resp;
 };
 
-export const updateUser = async (user, user_id) => {
+export const updateUser = async (user, userId) => {
   const resp = await axios.post("/api/users/updateUser", {
     user: user,
-    user_id: user_id,
+    userId: userId,
   });
   return resp;
 };
@@ -23,12 +23,12 @@ export const updatePassword = async (userId, password) => {
   return resp;
 };
 
-export const changeEmail = async (email, confirmEmail, oldEmail, user_id) => {
+export const changeEmail = async (email, confirmEmail, oldEmail, userId) => {
   const resp = await axios.post("/api/users/changeEmail", {
     email: email,
     confirmEmail: confirmEmail,
     oldEmail: oldEmail,
-    user_id: user_id,
+    userId: userId,
   });
   return resp;
 };
@@ -37,14 +37,14 @@ export const changePassword = async (
   oldPassword,
   newPassword,
   confirmPassword,
-  user_id,
+  userId,
   email
 ) => {
   const resp = await axios.post("/api/users/changePassword", {
     oldPassword: oldPassword,
     newPassword: newPassword,
     confirmPassword: confirmPassword,
-    user_id: user_id,
+    userId: userId,
     email: email,
   });
   return resp;
@@ -57,11 +57,11 @@ export const getUserByEmail = async (email) => {
   return resp;
 };
 
-export const setNewPassword = async (user_id, new_password, user_email) => {
+export const setNewPassword = async (userId, new_password, userEmail) => {
   const resp = await axios.post("/api/users/setNewPassword", {
-    user_id: user_id,
+    userId: userId,
     new_password: new_password,
-    email: user_email,
+    email: userEmail,
   });
   return resp;
 };

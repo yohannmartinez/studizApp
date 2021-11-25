@@ -16,7 +16,7 @@ const SearchLessons = (props) => {
     name: "",
     degree: [],
     year: [],
-    faculty: [],
+    studyField: [],
     institution: "",
     city: [],
   });

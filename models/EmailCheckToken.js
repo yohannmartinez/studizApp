@@ -3,23 +3,26 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const EmailCheckTokenSchema = new Schema({
-  user_id: {
+  userId: {
     type: String,
     required: true,
   },
-  user_email: {
+  userEmail: {
     type: String,
     required: true,
   },
   token: {
     type: String,
-    required:true,
+    required: true,
   },
-  checked:{
-    type:Boolean,
-    required:true,
-    default:false,
-  }
+  checked: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
 });
 
-module.exports = EmailCheckToken = mongoose.model("emailCheckTokens", EmailCheckTokenSchema);
+module.exports = EmailCheckToken = mongoose.model(
+  "emailCheckTokens",
+  EmailCheckTokenSchema
+);

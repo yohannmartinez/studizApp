@@ -1,16 +1,16 @@
 import axios from "axios";
 
-export const createLesson = async (user_id, lesson) => {
+export const createLesson = async (userId, lesson) => {
   const resp = await axios
     .post("/api/lessons/create", {
-      user_id: user_id,
+      userId: userId,
       name: lesson.name,
       description: lesson.description,
       year: lesson.year,
       institution: lesson.institution,
       city: lesson.city,
       degree: lesson.degree,
-      faculty: lesson.faculty,
+      studyField: lesson.studyField,
       private: lesson.private,
     })
     .catch((err) => {
@@ -30,9 +30,9 @@ export const getLessons = async (filters, numberOfLessons, userId) => {
   return resp;
 };
 
-export const getLessonById = async (lesson_id) => {
+export const getLessonById = async (lessonId) => {
   const resp = await axios.get("/api/lessons/getById", {
-    params: { lesson_id: lesson_id },
+    params: { lessonId: lessonId },
   });
   return resp;
 };

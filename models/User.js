@@ -19,19 +19,19 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  phone_number: {
+  phoneNumber: {
     type: String,
     required: true,
   },
-  sponsor_code: {
+  sponsorCode: {
     type: String,
   },
   status: {
     type: Object,
     //TODO: mettre à jour les status
-    default: { first_connection: true },
+    default: { first_connection: true, emailChecked: false },
   },
-  profile_image: {
+  profileImage: {
     type: String,
     default: null,
     required: false,
@@ -41,26 +41,26 @@ const UserSchema = new Schema({
     //TODO: mettre à jour les achievements
     default: { create_document: false, share_document: false },
   },
-  email_checked: {
-    type: Boolean,
-    default: false,
-    required: true,
-  },
   banned: {
-    type: Boolean,
+    type: Object,
     required: true,
-    default: false,
+    default: { isBanned: false, bannedUntil: null },
   },
-  last_activity: {
+  premium: {
+    type: Object,
+    required: true,
+    default: { isPremium: false, premiumUntil: null },
+  },
+  lastActivity: {
     type: Date,
     default: new Date(),
     required: true,
   },
-  gender:{
+  gender: {
     type: String,
     default: null,
-    required:false,
-  }
+    required: false,
+  },
 });
 
 module.exports = User = mongoose.model("users", UserSchema);

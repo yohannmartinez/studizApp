@@ -1,5 +1,5 @@
 const TEXT_FILTERS = ["name", "description", "institution"];
-const NON_TEXT_FILTERS = ["degree", "faculty", "city", "year", "country"];
+const NON_TEXT_FILTERS = ["degree", "studyField", "city", "year", "country"];
 
 const getSearchFilters = (filters) => {
   let formattedFilters = [];

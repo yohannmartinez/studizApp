@@ -1,21 +1,26 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Menu from "../../elements/Menu/Menu";
 import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import PageWrapper from "../../elements/PageWrapper/PageWrapper";
+import { createLesson } from "../../../services/lessons";
 
-import "./CreateLesson.scss";
 import FirstStep from "./FirstStep/FirstStep";
 import SecondStep from "./SecondStep/SecondStep";
 import StepsBar from "./StepsBar/StepsBar";
+import ThirdStep from "./ThirdStep/ThirdStep";
+import "./CreateLesson.scss";
+import { connect } from "react-redux";
 
-const CreateLesson = () => {
+const CreateLesson = ({ auth }) => {
+  const history = useHistory();
   const [currentStep, setCurrentStep] = useState(0);
   const [lesson, setLesson] = useState({
     name: "",
     description: "",
     year: "",
     institution: "",
-    faculty: "",
+    studyField: "",
     degree: "",
     city: "",
     private: false,
@@ -33,6 +38,11 @@ const CreateLesson = () => {
   const previousStep = () => {
     setCurrentStep(currentStep - 1);
     window.scrollTo(0, 0);
+  };
+
+  const launchLessonCreation = async () => {
+    const { data } = await createLesson(auth.user._id, lesson);
+    if (data.success) history.push(`/lesson/${data.lesson._id}`);
   };
 
   return (
@@ -71,6 +81,15 @@ const CreateLesson = () => {
                 previousStep={previousStep}
               />
             )}
+
+            {currentStep === 2 && (
+              <ThirdStep
+                lesson={lesson}
+                updateLesson={updateLesson}
+                launchLessonCreation={launchLessonCreation}
+                previousStep={previousStep}
+              />
+            )}
           </div>
         </div>
       </PageWrapper>
@@ -78,4 +97,8 @@ const CreateLesson = () => {
   );
 };
 
-export default CreateLesson;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, null)(CreateLesson);

@@ -42,7 +42,7 @@ export const getSearchFilters = (filters) => {
     name: "",
     degree: [],
     year: [],
-    faculty: [],
+    studyField: [],
     institution: "",
     city: [],
   };
@@ -64,12 +64,12 @@ export const filtersToSelectFormat = (filters, t) => {
   const allFilters = {
     degree: [],
     year: [],
-    faculty: [],
+    studyField: [],
     institution: "",
     city: [],
   };
   const textFilters = ["name", "institution"];
-  const translatableFilters = ["degree", "faculty"];
+  const translatableFilters = ["degree", "studyField"];
 
   filters.map((filter) => {
     //check if filter is in the filters list, if not just pass

@@ -3,15 +3,15 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const LessonLikeSchema = new Schema({
-  lesson_id: {
+  lessonId: {
     type: mongoose.Types.ObjectId,
     required: true,
   },
-  user_id: {
+  userId: {
     type: mongoose.Types.ObjectId,
     required: true,
   },
-  liked_at: {
+  likedAt: {
     type: Date,
     default: new Date(),
   },

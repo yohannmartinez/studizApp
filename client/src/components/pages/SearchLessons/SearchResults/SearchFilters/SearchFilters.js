@@ -13,7 +13,7 @@ const SearchFilters = ({ filters }) => {
   const [filtersList, setFiltersList] = useState({
     degree: [],
     year: [],
-    faculty: [],
+    studyField: [],
     institution: "",
     city: [],
   });

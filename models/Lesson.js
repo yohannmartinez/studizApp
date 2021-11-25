@@ -9,7 +9,7 @@ const contentSchema = new mongoose.Schema({
 
 // Create Schema
 const LessonSchema = new Schema({
-  user_id: {
+  userId: {
     type: mongoose.Types.ObjectId,
     required: true,
   },
@@ -17,11 +17,11 @@ const LessonSchema = new Schema({
     type: contentSchema,
     required: true,
   },
-  last_modification: {
+  lastModification: {
     type: Date,
     required: false,
   },
-  creation_date: {
+  creationDate: {
     type: Date,
     required: false,
   },
@@ -66,7 +66,7 @@ const LessonSchema = new Schema({
     autoIndex: false,
   },
   //filière
-  faculty: {
+  studyField: {
     type: String,
     required: true,
     autoIndex: false,

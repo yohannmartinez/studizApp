@@ -34,7 +34,7 @@ const FirstStep = ({ lesson, updateLesson, nextStep }) => {
           nextStep();
         }}
       >
-        Etape suivante
+        Étape suivante
       </button>
     </div>
   );

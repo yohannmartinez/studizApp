@@ -10,7 +10,7 @@ const LessonResult = ({ lesson, language }) => {
     name,
     creator,
     views,
-    faculty,
+    studyField,
     degree,
     year,
     description,
@@ -30,7 +30,7 @@ const LessonResult = ({ lesson, language }) => {
       <div className="lessonResult__header">
         <div
           className="lessonResult__profileImage"
-          style={{ backgroundImage: `url('${creator.profile_image}')` }}
+          style={{ backgroundImage: `url('${creator.profileImage}')` }}
         ></div>
         <div className="lessonResult__lessonViews">{views} vues</div>
       </div>
@@ -40,7 +40,7 @@ const LessonResult = ({ lesson, language }) => {
 
       <div className="lessonResult__tagsContainer">
         <h1 className="lessonResult__tag lessonResult__purpleTag">
-          {t(faculty)}
+          {t(studyField)}
         </h1>
         <div className="lessonResult__tag lessonResult__yellowTag">
           {t(degree)}

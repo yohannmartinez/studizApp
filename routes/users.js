@@ -17,7 +17,7 @@ router.post("/register", (req, res) => {
     if (user) {
       return res.status(400).json({ message: "EMAIL_ALREADY_EXIST" });
     } else {
-      const generated_sponsor_code = new Array(7)
+      const generated_sponsorCode = new Array(7)
         .join()
         .replace(/(.|$)/g, function () {
           return ((Math.random() * 36) | 0)
@@ -29,8 +29,8 @@ router.post("/register", (req, res) => {
         lastname: req.body.lastname,
         email: req.body.email,
         password: req.body.password,
-        sponsor_code: generated_sponsor_code,
-        phone_number: req.body.phone_number,
+        sponsorCode: generated_sponsorCode,
+        phoneNumber: req.body.phoneNumber,
       });
 
       // Hash password before saving in database
@@ -42,8 +42,8 @@ router.post("/register", (req, res) => {
             .save()
             .then((user) => {
               const emailCheckToken = new EmailCheckToken({
-                user_id: user._id,
-                user_email: user.email,
+                userId: user._id,
+                userEmail: user.email,
                 token:
                   Math.random().toString(36).substring(2, 15) +
                   Math.random().toString(36).substring(2, 15) +

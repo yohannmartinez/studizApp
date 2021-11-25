@@ -1,4 +1,6 @@
 import Select from "react-select";
+import AsyncSelect from "react-select/async";
+
 import { useTranslate } from "../../../utils/useTranslate";
 
 import "./SelectInput.scss";
@@ -12,6 +14,9 @@ import "./SelectInput.scss";
  * @param {*} inputColor color for borders of the input
  * @param {*} isSearchable define if user can search in the input
  * @param {*} isMulti define if multi value is enabled
+ *
+ * @param {*} isAsync define if options of the select are retrieved asynchronously
+ * @param {*} loadOptions function to retrieve options
  */
 const SelectInput = ({
   options,
@@ -21,6 +26,10 @@ const SelectInput = ({
   isSearchable,
   isMulti,
   placeholder = "",
+
+  //async input parameters
+  isAsync,
+  loadOptions,
 }) => {
   const { t } = useTranslate();
   const styles = {
@@ -49,15 +58,27 @@ const SelectInput = ({
   return (
     <div className="select__container">
       <div className="select__label">{t(label)}</div>
-      <Select
-        options={options}
-        defaultValue={defaultValue}
-        onChange={onChange}
-        isSearchable={isSearchable}
-        isMulti={isMulti}
-        styles={styles}
-        placeholder={placeholder}
-      />
+      {isAsync ? (
+        <AsyncSelect
+          cacheOptions
+          loadOptions={loadOptions}
+          defaultValue={defaultValue}
+          placeholder={placeholder}
+          styles={styles}
+          onChange={onChange}
+          isSearchable={isSearchable}
+        />
+      ) : (
+        <Select
+          options={options}
+          defaultValue={defaultValue}
+          onChange={onChange}
+          isSearchable={isSearchable}
+          isMulti={isMulti}
+          styles={styles}
+          placeholder={placeholder}
+        />
+      )}
     </div>
   );
 };

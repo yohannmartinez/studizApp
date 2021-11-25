@@ -45,7 +45,7 @@ export const inputValueCheck = (type, value) => {
   //
   //CONDITIONS POUR LES NUMEROS DE TEL
   //
-  else if (type === "phone_number") {
+  else if (type === "phoneNumber") {
     if (value.length === 0) {
       return {
         success: false,

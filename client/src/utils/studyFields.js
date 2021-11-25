@@ -1,5 +1,5 @@
 //list of all factulties
-export const faculties = [
+export const studyFields = [
   "PERFORMING_ARTS",
   "PLASTIC_ARTS",
   "CULTURAL_STUDIES",
@@ -54,9 +54,9 @@ export const faculties = [
   "LAW",
 ];
 
-export const facultiesToSelectFormat = (t) => {
-  return Array.from(faculties, (faculty) => ({
-    value: faculty,
-    label: t(faculty),
+export const studyFieldsToSelectFormat = (t) => {
+  return Array.from(studyFields, (studyField) => ({
+    value: studyField,
+    label: t(studyField),
   }));
 };

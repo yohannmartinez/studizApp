@@ -8,13 +8,16 @@ const City = require("../models/City");
 // @desc get cities array with a given search value
 // @access Public
 router.get("/getCities", (req, res) => {
-  City.find({ Libelle_acheminement: { "$regex": req.query.search_value, "$options": "i" } }, function (err, cities) {
-    if (cities) {
-      res.status(200).send({ cities: cities });
-    } else if (!user) {
-      res.status(200).send({ cities: [] });
+  City.find(
+    { nameComplement: { $regex: req.query.search_value, $options: "i" } },
+    function (err, cities) {
+      if (cities) {
+        res.status(200).send({ cities: cities });
+      } else if (!user) {
+        res.status(200).send({ cities: [] });
+      }
     }
-  });
+  );
 });
 
 module.exports = router;

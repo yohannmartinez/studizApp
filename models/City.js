@@ -3,27 +3,27 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const CitySchema = new Schema({
-  Code_commune_INSEE: {
+  townCodeInsee: {
     type: Number,
     required: true,
   },
-  Nom_commune: {
+  name: {
     type: String,
     required: true,
   },
-  Code_postal: {
+  postalCode: {
     type: Number,
     required: true,
   },
-  Libelle_acheminement: {
+  nameComplement: {
     type: String,
     required: true,
   },
-  Ligne_5: {
+  subName: {
     type: String,
     required: true,
   },
-  coordonnees_gps: {
+  gpsCoordinates: {
     type: String,
     required: true,
   },

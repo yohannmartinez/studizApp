@@ -15,23 +15,35 @@ const {
   removePrivateLessons,
 } = require("../utils/lessons");
 
-// @route POST api/lessons/create
-// @desc create new lesson
-// @access Public
+/**
+ * @route POST api/lessons/create
+ * @description create lesson with given parameters
+ */
 router.post("/create", (req, res) => {
+  const {
+    userId,
+    name,
+    description,
+    institution,
+    city,
+    degree,
+    studyField,
+    private,
+    year,
+  } = req.body;
   const newLesson = new Lesson({
-    user_id: req.body.user_id,
+    userId: userId,
     content: { time: Date.now(), blocks: [], version: "1" },
-    last_modification: new Date(),
-    creation_date: new Date(),
-    name: req.body.name,
-    description: req.body.description,
-    year: req.body.year,
-    institution: req.body.institution,
-    city: req.body.city,
-    degree: req.body.degree,
-    faculty: req.body.faculty,
-    private: req.body.private,
+    lastModification: new Date(),
+    creationDate: new Date(),
+    name: name,
+    description: description,
+    year: year,
+    institution: institution,
+    city: city,
+    degree: degree,
+    studyField: studyField,
+    private: private,
   });
 
   newLesson
@@ -48,33 +60,33 @@ router.post("/create", (req, res) => {
     });
 });
 
-// @route GET api/lessons/getById
-// @desc search specific lessons by id
-// @access Public
-// @params lesson_id
+/**
+ * @route GET api/lessons/getByid
+ * @description retrieve lesson with given lesson Id
+ * @param {Array} filters [{attribute: "name", value: "Théorème de pythagore"}, {attribute: "year", value: ["2019", "2020"]}]
+ * @param {Number} numberOfLessons total number of lessons shown in page
+ * @param {String} userId user making the request
+ */
 router.get("/getById", (req, res) => {
-  Lesson.findOne({ _id: req.query.lesson_id })
+  Lesson.findOne({ _id: req.query.lessonId })
     .then((lesson) => {
-      const all_data_lesson = async (lesson) => {
-        let user = await User.findOne({ _id: lesson.user_id }, (err, user) => {
-          return user;
+      if (!lesson) {
+        res.status(200).json({
+          success: false,
+          lesson: null,
+          message: "No lesson with given id",
         });
-        let likes = await LessonLike.find(
-          { lesson_id: lesson._id },
-          (err, likes) => {
-            if (err) {
-              return [];
-            }
-            return likes;
-          }
-        );
+      }
+      const formattedLesson = async (lesson) => {
+        lessonWithCreators = await getLessonsCreators([lesson]);
+        lessonWithLikes = await getLessonsLikes(lessonWithCreators);
         res.status(200).json({
           success: true,
-          lesson: { ...lesson._doc, user, likes },
+          lesson: { ...lessonWithLikes[0] },
           message: "",
         });
       };
-      all_data_lesson(lesson);
+      formattedLesson(lesson);
     })
     .catch((err) => {
       console.log(err);
