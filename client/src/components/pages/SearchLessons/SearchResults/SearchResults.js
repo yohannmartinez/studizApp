@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Loading from "../../../elements/Loading/Loading";
@@ -6,8 +7,11 @@ import LessonResult from "./LessonResult/LessonResult";
 import { getLessons } from "../../../../services/lessons";
 import SearchFilters from "./SearchFilters/SearchFilters";
 import "./SearchResults.scss";
+import { useTranslate } from "../../../../utils/useTranslate";
 
 const SearchResults = ({ filters, auth }) => {
+  const { t } = useTranslate();
+  const history = useHistory();
   const [lessons, setLessons] = useState([]);
   const [searchValue, setSearchValue] = useState(null);
   const [isMoreLessons, setIsMoreLessons] = useState(false);
@@ -44,22 +48,24 @@ const SearchResults = ({ filters, auth }) => {
   };
 
   const getTitleValue = () => {
-    if (searchValue && lessons.length > 0)
-      return `Résultats pour la recherche "${searchValue}"`;
-    if (searchValue && lessons.length === 0)
-      return `Aucun résultat pour la recherche "${searchValue}"`;
-    if (!searchValue) return `Les cours les plus "populaires"`;
+    if (isLoading) return "LOADING";
+    if (lessons.length === 0) return `SEARCH_RESULTS_NO_RESULTS`;
+    if (filters.length > 0 && lessons.length > 0) return `SEARCH_RESULTS_TITLE`;
+    if (filters.length === 0 && lessons.length > 0)
+      return `SEARCH_RESULTS_MOST_POPULAR`;
   };
 
   return (
     <>
       <div className="searchResults__header">
-        <div className="searchResults__subTitle">Vous voyez actuellement</div>
-        <h1 className="searchResults__title">{getTitleValue()}</h1>
+        <div className="searchResults__subTitle">
+          {t("SEARCH_RESULTS_SUBTITLE")}
+        </div>
+        <h1 className="searchResults__title">{t(getTitleValue())}</h1>
       </div>
       {isLoading && <Loading />}
 
-      {!isLoading && lessons.length > 0 && <SearchFilters filters={filters} />}
+      {!isLoading && <SearchFilters filters={filters} />}
 
       <div className="searchResults__globalContainer">
         {lessons.map((lesson) => (
@@ -75,7 +81,7 @@ const SearchResults = ({ filters, auth }) => {
             }}
           >
             <button className="searchResults__loadMoreResults__button">
-              Charger d'avantage
+              {t("LOAD_MORE")}
             </button>
           </div>
         )}
@@ -84,10 +90,15 @@ const SearchResults = ({ filters, auth }) => {
         {!isLoading && !isMoreLessons && lessons.length > 0 && (
           <div className="searchResults__noMoreResults">
             <p className="searchResults__noMoreResults__text">
-              Tu n'as pas trouvé le cours qu'il te fallait ?
+              {t("SEARCH_RESULTS_NO_MORE_TITLE")}
             </p>
-            <button className="searchResults__noMoreResults__button">
-              Crées le !
+            <button
+              className="searchResults__noMoreResults__button"
+              onClick={() => {
+                history.push("/createLesson");
+              }}
+            >
+              {t("SEARCH_RESULTS_NO_MORE_BUTTON")}
             </button>
           </div>
         )}

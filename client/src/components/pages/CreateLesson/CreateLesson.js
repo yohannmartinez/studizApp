@@ -11,9 +11,11 @@ import StepsBar from "./StepsBar/StepsBar";
 import ThirdStep from "./ThirdStep/ThirdStep";
 import "./CreateLesson.scss";
 import { connect } from "react-redux";
+import { useTranslate } from "../../../utils/useTranslate";
 
 const CreateLesson = ({ auth }) => {
   const history = useHistory();
+  const { t } = useTranslate();
   const [currentStep, setCurrentStep] = useState(0);
   const [lesson, setLesson] = useState({
     name: "",
@@ -51,16 +53,15 @@ const CreateLesson = ({ auth }) => {
       <LanguageSelect />
 
       <PageWrapper>
-        <div
-          className="createLesson__container"
-          onClick={() => {
-            console.log(lesson);
-          }}
-        >
+        <div className="createLesson__container">
           <div className="createLesson__whiteContainer">
             <div className="createLesson__header">
-              <div className="createLesson__subTitle">Commençons la</div>
-              <h1 className="createLesson__title">Création de ton cours</h1>
+              <div className="createLesson__subTitle">
+                {t("CREATE_LESSON_SUBTITLE")}
+              </div>
+              <h1 className="createLesson__title">
+                {t("CREATE_LESSON_TITLE")}
+              </h1>
             </div>
 
             <StepsBar currentStep={currentStep} />

@@ -10,7 +10,6 @@ router.post("/like", (req, res) => {
         res.status(400).json({ message: "[like] une erreur est survenue" });
       }
       if (like.length === 0) {
-        console.log("creating like");
         const like = new LessonLike({
           userId: req.body.userId,
           lessonId: req.body.lessonId,
@@ -28,8 +27,6 @@ router.post("/like", (req, res) => {
             res.status(400).json({ message: "[like] une erreur est survenue" });
           });
       } else {
-        console.log("deleting like");
-
         LessonLike.deleteOne({
           userId: req.body.userId,
           lessonId: req.body.lessonId,

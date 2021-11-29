@@ -26,6 +26,7 @@ const SelectInput = ({
   isSearchable,
   isMulti,
   placeholder = "",
+  isClearable,
 
   //async input parameters
   isAsync,
@@ -67,6 +68,7 @@ const SelectInput = ({
           styles={styles}
           onChange={onChange}
           isSearchable={isSearchable}
+          isClearable={isClearable}
         />
       ) : (
         <Select
@@ -77,6 +79,7 @@ const SelectInput = ({
           isMulti={isMulti}
           styles={styles}
           placeholder={placeholder}
+          isClearable={isClearable}
         />
       )}
     </div>

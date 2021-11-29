@@ -29,7 +29,7 @@ const ThirdStep = ({
         value={lesson.institution}
         inputColor="#9652B6"
         label="LESSON_INSTITUTION"
-        placeholder="Exemple: Lycée Rémi Belleau"
+        placeholder={t("LESSON_INSTITUTION_PLACEHOLDER")}
         onChange={(e) => {
           updateLesson("institution", e.target.value);
         }}
@@ -41,7 +41,9 @@ const ThirdStep = ({
         loadOptions={(inputValue, callback) => {
           onCitySearch(inputValue, callback);
         }}
-        defaultOptions={[]}
+        defaultValue={
+          lesson.city === "" ? "" : { label: lesson.city, value: lesson.city }
+        }
         onChange={(option) => {
           updateLesson("city", option.value.toString());
         }}
@@ -53,14 +55,12 @@ const ThirdStep = ({
 
       <button
         className="createLesson__validateButton"
-        disabled={
-          lesson.degree === "" || lesson.studyField === "" || lesson.year === ""
-        }
+        disabled={lesson.institution === "" || lesson.city === ""}
         onClick={() => {
           launchLessonCreation();
         }}
       >
-        Créer le cours
+        {t("CREATE_LESSON_VALIDATION")}
       </button>
       <button
         className="createLesson__previousButton"
@@ -68,7 +68,7 @@ const ThirdStep = ({
           previousStep();
         }}
       >
-        Étape précédante
+        {t("PREVIOUS_STEP")}
       </button>
     </div>
   );

@@ -1,6 +1,13 @@
 export const fr = {
   //general
   LETS_GO: "On y va !",
+  STEP: "Étape",
+  NEXT_STEP: "Étape suivante",
+  PREVIOUS_STEP: "Étape précédante",
+  SEARCH: "Chercher",
+  LOAD_MORE: "Charger d'avantage",
+  VIEWS: "vues",
+  LOADING: "Chargement...",
 
   //menu categories
   HOME: "Accueil",
@@ -91,9 +98,29 @@ export const fr = {
   FORGOT_PASSWORD_TITLE2: "On y est presque !",
   FORGOT_PASSWORD_ENTER_PASSWORD: "Entres maintenant ton nouveau mot de passe",
 
-  //Search lesson
-  SEARCH_LESSON_TITLE: "Chercher un cours",
+  //Search lesson page
+  SEARCH_LESSON_TITLE:
+    "Trouvez le cours qu'il vous faut parmis ceux rédigés par la communauté",
+  SEARCH_LESSON_SEARCH_PLACEHOLDER: "Exemple: théorème de Pythagore",
+  SEARCH_RESULTS_SUBTITLE: "Vous voyez actuellement",
+  SEARCH_RESULTS_TITLE: "Résultats pour la recherche",
+  SEARCH_RESULTS_NO_RESULTS: "Aucun résultat pour la recherche",
+  SEARCH_RESULTS_MOST_POPULAR: "Les cours les plus populaires",
+  SEARCH_RESULTS_NO_MORE_TITLE:
+    "Tu n'as pas trouvé le cours qu'il te fallait ?",
+  SEARCH_RESULTS_NO_MORE_BUTTON: "Crées le !",
   FILTERS: "Filtres",
+  RESULTS_FILTERS: "Filtrer les résultats",
+  RESULTS_FILTERS_TEXT:
+    "Ajoutes des filtres pour que ta recherche soit la plus pertinente possible",
+
+  //create lesson page
+  CREATE_LESSON_SUBTITLE: "Commençons la",
+  CREATE_LESSON_TITLE: "Création de ton cours",
+  CREATE_LESSON_VALIDATION: "Créer le cours",
+  LESSON_INSTITUTION_PLACEHOLDER: "Exemple: Lycée Rémi Belleau",
+  LESSON_DESCRIPTION_PLACEHOLDER:
+    "Courte de description pour explique le sujet que tu vas aborder",
 
   //grades
   SIXTH_GRADE: "Sixième",
@@ -124,12 +151,12 @@ export const fr = {
   PERFORMING_ARTS: "Arts du spectacle",
   CULTURAL_STUDIES: "Études culturelles",
   PLASTIC_ARTS: "Arts plastiques",
-  HEALTH_AND_SOCIAL_SIENCES: "Sciences sanitaires et sociales",
+  HEALTH_AND_SOCIAL_SCIENCES: "Sciences sanitaires et sociales",
   THEOLOGY: "Théologie",
   SOCIOLOGY: "Sociologie",
   HUMAN_SCIENCES: "Sciences de l’Homme, anthropologie et ethnologie",
   HEALTH_SCIENCES: "Sciences pour la santé",
-  ENGENEERING_SIENCES: "Sciences pour l’ingénieur",
+  ENGENEERING_SCIENCES: "Sciences pour l’ingénieur",
   SPORT_SCIENCES: "Sciences et technique des activités physiques et sportives",
   BIOLOGY: "Biologie",
   MATH_HUMAN_SCIENCES:

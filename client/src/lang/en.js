@@ -1,6 +1,13 @@
 export const en = {
   //general
   LETS_GO: "Let's go !",
+  STEP: "Step",
+  NEXT_STEP: "Next step",
+  PREVIOUS_STEP: "Previous step",
+  SEARCH: "Search",
+  LOAD_MORE: "Load more",
+  VIEWS: "views",
+  LOADING: "Loading...",
 
   //menu
   HOME: "Home",
@@ -85,9 +92,28 @@ export const en = {
   FORGOT_PASSWORD_TITLE2: "We are almost there !",
   FORGOT_PASSWORD_ENTER_PASSWORD: "Please enter your new password",
 
-  //Search lesson
-  SEARCH_LESSON_TITLE: "Find a lesson",
+  //Search lesson page
+  SEARCH_LESSON_TITLE:
+    "Find the course you need among those written by the community",
+  SEARCH_LESSON_SEARCH_PLACEHOLDER: "Exemple: Pythagorean theorem",
+  SEARCH_RESULTS_SUBTITLE: "You are currently seeing",
+  SEARCH_RESULTS_TITLE: `Results for the search`,
+  SEARCH_RESULTS_NO_RESULTS: `No results for the search`,
+  SEARCH_RESULTS_MOST_POPULAR: "The most popular lessons",
+  SEARCH_RESULTS_NO_MORE_TITLE: "You did not find the course you needed ?",
+  SEARCH_RESULTS_NO_MORE_BUTTON: "Create it !",
   FILTERS: "Filters",
+  RESULTS_FILTERS: "Filter results",
+  RESULTS_FILTERS_TEXT:
+    "Add filters to make your search as precise as possible",
+
+  //create lesson page
+  CREATE_LESSON_SUBTITLE: "Let's start",
+  CREATE_LESSON_TITLE: "Your lesson creation",
+  CREATE_LESSON_VALIDATION: "Create lesson",
+  LESSON_INSTITUTION_PLACEHOLDER: "Exemple: Rémi Belleau High School",
+  LESSON_DESCRIPTION_PLACEHOLDER:
+    "Short description to explain the subject you are going to discuss",
 
   //degrees
   SIXTH_GRADE: "First class",
@@ -118,11 +144,12 @@ export const en = {
   PERFORMING_ARTS: "Performing arts",
   CULTURAL_STUDIES: "Cultural studies",
   PLASTIC_ARTS: "Plastic arts",
+  HEALTH_AND_SOCIAL_SCIENCES: "Health and social sciences",
   THEOLOGY: "Theology",
   SOCIOLOGY: "Sociology",
   HUMAN_SCIENCES: "Human sciences, anthropology and ethnology",
   HEALTH_SCIENCES: "Health sciences",
-  ENGENEERING_SIENCES: "Engineering sciences",
+  ENGENEERING_SCIENCES: "Engineering sciences",
   SPORT_SCIENCES: "Science and technology of physical and sports activities",
   BIOLOGY: "Biology",
   MATH_HUMAN_SCIENCES:

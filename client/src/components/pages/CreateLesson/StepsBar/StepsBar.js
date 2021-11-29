@@ -1,7 +1,9 @@
+import { useTranslate } from "../../../../utils/useTranslate";
 import "./StepsBar.scss";
 
 const StepsBar = ({ currentStep }) => {
-  const steps = ["La base", "Les filtres", "Cours créé"];
+  const { t } = useTranslate();
+  const steps = ["1", "2", "3"];
 
   const stepColor = (stepIndex) => {
     const doneStepColor = "#36b336";
@@ -29,7 +31,7 @@ const StepsBar = ({ currentStep }) => {
               className="stepsBar__stepName"
               style={{ color: stepColor(index) }}
             >
-              {step}
+              {`${t("STEP")} ${step}`}
             </div>
           </div>
           {index < steps.length - 1 && (

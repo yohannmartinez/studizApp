@@ -51,6 +51,11 @@ const UserSchema = new Schema({
     required: true,
     default: { isPremium: false, premiumUntil: null },
   },
+  preferences: {
+    type: Object,
+    required: true,
+    default: { language: "fr" },
+  },
   lastActivity: {
     type: Date,
     default: new Date(),

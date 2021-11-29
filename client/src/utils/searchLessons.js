@@ -18,6 +18,7 @@ const removeEmptyInputs = (searchInputs) => {
       value.length === 0 && delete inputs[attribute];
     }
   });
+
   return inputs;
 };
 
@@ -25,33 +26,22 @@ const removeEmptyInputs = (searchInputs) => {
 const buildFilters = (searchInputs) => {
   let filters = [];
   Object.entries(searchInputs).map(([attribute, value]) => {
-    return filters.push({
-      attribute,
-      value,
-    });
+    if (typeof value === "string") {
+      filters.push({
+        attribute,
+        value,
+      });
+    } else if (typeof value === "object" && Array.isArray(value)) {
+      let values = [];
+      value.map((option) => {
+        return values.push(option.value);
+      });
+      filters.push({ attribute, value: values });
+    } else if (typeof value === "object" && !Array.isArray(value)) {
+      filters.push({ attribute, value: value.value });
+    }
   });
   return filters;
-};
-
-/**
- * getSearchFilters - transform filters from url to filters for search
- * @param {Array} searchFilters
- */
-export const getSearchFilters = (filters) => {
-  const filtersSample = {
-    name: "",
-    degree: [],
-    year: [],
-    studyField: [],
-    institution: "",
-    city: [],
-  };
-
-  filters.map(({ attribute, value }) => {
-    return (filtersSample[attribute] = value);
-  });
-
-  return filtersSample;
 };
 
 /**
@@ -62,6 +52,7 @@ export const getSearchFilters = (filters) => {
  */
 export const filtersToSelectFormat = (filters, t) => {
   const allFilters = {
+    name: "",
     degree: [],
     year: [],
     studyField: [],
@@ -86,7 +77,7 @@ export const filtersToSelectFormat = (filters, t) => {
           filter.value.map((item) => {
             value.push(
               isTranslatable
-                ? { label: t(item), value: t(item) }
+                ? { label: t(item), value: item }
                 : { label: item, value: item }
             );
           });

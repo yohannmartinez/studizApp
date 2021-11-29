@@ -32,7 +32,9 @@ const LessonResult = ({ lesson, language }) => {
           className="lessonResult__profileImage"
           style={{ backgroundImage: `url('${creator.profileImage}')` }}
         ></div>
-        <div className="lessonResult__lessonViews">{views} vues</div>
+        <div className="lessonResult__lessonViews">
+          {views} {t("VIEWS")}
+        </div>
       </div>
       <h1 className="lessonResult__lessonTitle">
         {name.charAt(0).toUpperCase() + name.slice(1)}

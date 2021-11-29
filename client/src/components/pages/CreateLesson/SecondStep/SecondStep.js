@@ -53,7 +53,7 @@ const SecondStep = ({ lesson, updateLesson, nextStep, previousStep }) => {
           nextStep();
         }}
       >
-        Étape suivante
+        {t("NEXT_STEP")}
       </button>
       <button
         className="createLesson__previousButton"
@@ -61,7 +61,7 @@ const SecondStep = ({ lesson, updateLesson, nextStep, previousStep }) => {
           previousStep();
         }}
       >
-        Étape précédante
+        {t("PREVIOUS_STEP")}
       </button>
     </div>
   );

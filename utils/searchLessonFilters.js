@@ -49,13 +49,18 @@ const formatNonTextFilters = (filters) => {
   // ex: we can filter year width one value "2019" or have multiple values like ["2019", "2020"]
   const formattedFilters = [];
   filters.map(({ attribute: filterAttribute, value: filterValue }) => {
-    if (Array.isArray(filterValue)) {
-      //if filterValue is an array, create $or array with all values
+    if (Array.isArray(filterValue) && filterValue.length > 1) {
+      //if filterValue is an array, and his value length is more than 1 create $or array with all values
       const values = [];
       filterValue.map((item) => {
         values.push({ [filterAttribute]: item });
       });
       formattedFilters.push({ $or: values });
+    } else if (Array.isArray(filterValue) && filterValue.length === 1) {
+      //we don't add or statement if value length === 1 because or statement need two values
+      formattedFilters.push({
+        [filterAttribute]: filterValue[0],
+      });
     } else {
       //if values is not an array, just send the value
       formattedFilters.push({

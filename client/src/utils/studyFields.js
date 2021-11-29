@@ -3,12 +3,12 @@ export const studyFields = [
   "PERFORMING_ARTS",
   "PLASTIC_ARTS",
   "CULTURAL_STUDIES",
-  "HEALTH_AND_SOCIAL_SIENCES",
+  "HEALTH_AND_SOCIAL_SCIENCES",
   "THEOLOGY",
   "SOCIOLOGY",
   "HUMAN_SCIENCES",
   "HEALTH_SCIENCES",
-  "ENGENEERING_SIENCES",
+  "ENGENEERING_SCIENCES",
   "SPORT_SCIENCES",
   "BIOLOGY",
   "MATH_HUMAN_SCIENCES",
@@ -58,5 +58,7 @@ export const studyFieldsToSelectFormat = (t) => {
   return Array.from(studyFields, (studyField) => ({
     value: studyField,
     label: t(studyField),
-  }));
+  })).sort((a, b) => {
+    return a.label.localeCompare(b.label);
+  });
 };

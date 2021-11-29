@@ -3,12 +3,18 @@ import { useEffect, useState } from "react";
 import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import Menu from "../../elements/Menu/Menu";
 import PageWrapper from "../../elements/PageWrapper/PageWrapper";
-import { getSearchFilters, launchSearch } from "../../../utils/searchLessons";
+import {
+  filtersToSelectFormat,
+  getSearchFilters,
+  launchSearch,
+} from "../../../utils/searchLessons";
 import SearchResults from "./SearchResults/SearchResults";
 
 import "./SearchLessons.scss";
+import { useTranslate } from "../../../utils/useTranslate";
 
 const SearchLessons = (props) => {
+  const { t } = useTranslate();
   const params = window.location.search;
   const filters = JSON.parse(new URLSearchParams(params).get("filters"));
 
@@ -22,8 +28,7 @@ const SearchLessons = (props) => {
   });
 
   useEffect(() => {
-    const searchFilters = getSearchFilters(filters || []);
-    setSearch(searchFilters);
+    setSearch(filtersToSelectFormat(filters || [], t));
   }, []);
 
   const handleChangeInput = (e) => {
@@ -43,8 +48,7 @@ const SearchLessons = (props) => {
         <div className="searchLessons__container">
           <div className="searchLessons__header">
             <h1 className="searchLessons__header__title">
-              Trouvez le cours qu'il vous faut parmis ceux rédigés par la
-              communauté
+              {t("SEARCH_LESSON_TITLE")}
             </h1>
             <div className="searchLessons__header__imageContainer"></div>
             <form
@@ -58,10 +62,10 @@ const SearchLessons = (props) => {
                 className="searchLessons__input"
                 value={search.name}
                 onChange={handleChangeInput}
-                placeholder={"Ex: théorème pythagore"}
+                placeholder={t("SEARCH_LESSON_SEARCH_PLACEHOLDER")}
               />
               <button type="submit" className="searchLessons__searchButton">
-                Chercher
+                {t("SEARCH")}
               </button>
             </form>
           </div>
