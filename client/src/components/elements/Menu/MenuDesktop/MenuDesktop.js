@@ -59,6 +59,7 @@ const MenuDesktop = ({ backgroundColor, auth }) => {
                 link: CategoryLink,
               }) => (
                 <MenuDesktopCategory
+                  key={categoryName}
                   name={categoryName}
                   subMenus={categorySubMenus}
                   link={CategoryLink}

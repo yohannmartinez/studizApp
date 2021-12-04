@@ -1,8 +1,10 @@
+import { useState } from "react";
 import SelectInput from "../../../elements/SelectInput/SelectInput";
 import Input from "../../../elements/Input/Input";
 import { getCities } from "../../../../services/cities";
 import { useTranslate } from "../../../../utils/useTranslate";
 import "./ThirdStep.scss";
+import CheckBox from "../../../elements/CheckBox/CheckBox";
 
 const ThirdStep = ({
   lesson,
@@ -11,6 +13,7 @@ const ThirdStep = ({
   previousStep,
 }) => {
   const { t } = useTranslate();
+  const [legalConsent, setLegalConsent] = useState(false);
 
   const onCitySearch = async (inputValue, callback) => {
     if (inputValue === "") callback([]);
@@ -51,11 +54,45 @@ const ThirdStep = ({
         isSearchable
         isMulti={false}
       />
-      <div className="createLesson__thirdStep__inputSeparator"></div>
-
+      <div className="createLesson__thirdStep__checkboxSeparator"></div>
+      <CheckBox
+        isChecked={lesson.private}
+        action={() => {
+          updateLesson("private", !lesson.private);
+        }}
+      >
+        <div className="createLesson__thirdStep__checkboxContent">
+          <h1 className="createLesson__thirdStep__checkboxTitle">
+            {t("CREATE_LESSON_ISPRIVATE_TITLE")}
+          </h1>
+          <p className="createLesson__thirdStep__checkboxText">
+            {t("CREATE_LESSON_ISPRIVATE_DESCRIPTION")}
+          </p>
+        </div>
+      </CheckBox>
+      <div className="createLesson__thirdStep__checkboxSeparator"></div>
+      <CheckBox
+        isChecked={legalConsent}
+        action={() => {
+          setLegalConsent(!legalConsent);
+        }}
+      >
+        <div className="createLesson__thirdStep__checkboxContent">
+          <h1 className="createLesson__thirdStep__checkboxTitle">
+            {t("CREATE_LESSON_CGV_TITLE")}
+          </h1>
+          <p className="createLesson__thirdStep__checkboxText">
+            {t("CREATE_LESSON_CGV_DESCRIPTION")}
+          </p>
+        </div>
+      </CheckBox>
       <button
         className="createLesson__validateButton"
-        disabled={lesson.institution === "" || lesson.city === ""}
+        disabled={
+          lesson.institution === "" ||
+          lesson.city === "" ||
+          legalConsent === false
+        }
         onClick={() => {
           launchLessonCreation();
         }}

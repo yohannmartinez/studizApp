@@ -15,9 +15,10 @@ import { store } from "./store";
 
 //pages
 import CreateLesson from "./components/pages/CreateLesson/CreateLesson";
-import Landing from "./components/pages/Landing/Landing";
-import Login from "./components/pages/Login/Login";
 import ForgotPassword from "./components/pages/ForgotPassword/ForgotPassword";
+import Landing from "./components/pages/Landing/Landing";
+import Lesson from "./components/pages/Lesson/Lesson";
+import Login from "./components/pages/Login/Login";
 import SearchLessons from "./components/pages/SearchLessons/SearchLessons";
 
 //elements
@@ -66,6 +67,7 @@ const App = () => {
           <PrivateRoute exact path="/createLesson" component={CreateLesson} />
 
           <Route exact path="/searchLessons" component={SearchLessons} />
+          <Route exact path="/lesson/:lessonId" component={Lesson} />
         </Switch>
       </div>
     </Router>

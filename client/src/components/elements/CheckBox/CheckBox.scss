@@ -1,0 +1,28 @@
+.checkbox {
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__button {
+    cursor: pointer;
+    min-width: 20px;
+    width: 20px;
+    min-height: 20px;
+    height: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    &__indicator {
+      height: 12px;
+      width: 12px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

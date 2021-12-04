@@ -56,7 +56,7 @@ const Login = (props) => {
               history.push("/");
             }}
             fontSize="24px"
-            logoHeight="25px"
+            logoHeight="35px"
           />
         </div>
         <div className="login__whiteContainer">

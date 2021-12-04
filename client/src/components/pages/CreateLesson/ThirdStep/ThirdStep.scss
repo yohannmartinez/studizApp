@@ -11,5 +11,24 @@
     &__inputSeparator {
       height: 5px;
     }
+
+    &__checkboxSeparator {
+      height: 25px;
+    }
+
+    &__checkboxTitle {
+      font-family: "MarkPro";
+      font-weight: 700;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    &__checkboxText {
+      color: rgb(90, 90, 90);
+      font-family: "eina";
+      font-weight: 500;
+      font-size: 12px;
+      margin: 10px 0 0 0;
+    }
   }
 }

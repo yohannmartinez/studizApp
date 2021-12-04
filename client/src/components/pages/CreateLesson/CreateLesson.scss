@@ -5,7 +5,7 @@
     &::after {
       content: "";
       position: absolute;
-      background-color: #f3f0fc;
+      background-color: #f4f0fc;
       top: 0;
       left: 0;
       height: 300px;
@@ -16,7 +16,7 @@
     &::before {
       content: "";
       position: absolute;
-      background-color: #e8d0f2;
+      background-color: #482779;
       bottom: 0;
       left: 0;
       height: calc(100% - 300px);
@@ -86,7 +86,7 @@
   }
 
   &__validateButton {
-    background-color: #9653b6;
+    background-color: #70529d;
     color: white;
     margin-top: 40px;
   }

@@ -114,6 +114,12 @@ export const en = {
   LESSON_INSTITUTION_PLACEHOLDER: "Exemple: Rémi Belleau High School",
   LESSON_DESCRIPTION_PLACEHOLDER:
     "Short description to explain the subject you are going to discuss",
+  CREATE_LESSON_ISPRIVATE_TITLE: "Is your lesson private ?",
+  CREATE_LESSON_ISPRIVATE_DESCRIPTION:
+    "Only you and the people you have authorized will be able to access the course",
+  CREATE_LESSON_CGV_TITLE: "General Terms & Conditions of Sale",
+  CREATE_LESSON_CGV_DESCRIPTION:
+    "I certify that I have read and accept the general conditions of sale",
 
   //degrees
   SIXTH_GRADE: "First class",

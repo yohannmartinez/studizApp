@@ -69,7 +69,7 @@ const SearchResults = ({ filters, auth }) => {
 
       <div className="searchResults__globalContainer">
         {lessons.map((lesson) => (
-          <LessonResult lesson={lesson} />
+          <LessonResult key={"lesson" + lesson._id} lesson={lesson} />
         ))}
 
         {/* case they are more results to load */}

@@ -8,7 +8,7 @@ import "./Loading.scss";
  */
 const Loading = (backgroundColor, borderColor) => {
   return (
-    <div className="loading__container" style={{}}>
+    <div className="loading__container">
       <div className="loading__loaderContainer"></div>
     </div>
   );

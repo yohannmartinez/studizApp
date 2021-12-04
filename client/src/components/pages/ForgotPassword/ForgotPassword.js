@@ -19,7 +19,7 @@ const ForgotPassword = () => {
 
   return (
     <div className="forgotPassword__globalContainer">
-      <Menu backgroundColor={"#e2d7f7"} />
+      <Menu backgroundColor={"#f4f0fc"} />
       <LanguageSelect />
       <PageWrapper>
         <div className="forgotPassword__container">

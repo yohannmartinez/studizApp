@@ -1,3 +1,4 @@
+import React from "react";
 import { useTranslate } from "../../../../utils/useTranslate";
 import "./StepsBar.scss";
 
@@ -18,7 +19,7 @@ const StepsBar = ({ currentStep }) => {
   return (
     <div className="stepsBar__stepsContainer">
       {steps.map((step, index) => (
-        <>
+        <React.Fragment key={"step" + index}>
           <div
             className="stepsBar__step"
             style={{
@@ -37,7 +38,7 @@ const StepsBar = ({ currentStep }) => {
           {index < steps.length - 1 && (
             <div className="stepsBar__stepSeparator"></div>
           )}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );

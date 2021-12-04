@@ -121,6 +121,12 @@ export const fr = {
   LESSON_INSTITUTION_PLACEHOLDER: "Exemple: Lycée Rémi Belleau",
   LESSON_DESCRIPTION_PLACEHOLDER:
     "Courte de description pour explique le sujet que tu vas aborder",
+  CREATE_LESSON_ISPRIVATE_TITLE: "Le cours est-il privé ?",
+  CREATE_LESSON_ISPRIVATE_DESCRIPTION:
+    "Seulement vous et les personnes que vous aurez autorisées pourront accèder au cours",
+  CREATE_LESSON_CGV_TITLE: "Conditions générales de vente",
+  CREATE_LESSON_CGV_DESCRIPTION:
+    "J'atteste avoir lu et j'accepte les conditions générales de vente",
 
   //grades
   SIXTH_GRADE: "Sixième",

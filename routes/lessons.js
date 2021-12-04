@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const metafetch = require("metafetch");
+const { isValidObjectId } = require("mongoose");
 
 // Load models
 const Lesson = require("../models/Lesson");
@@ -61,22 +62,28 @@ router.post("/create", (req, res) => {
 });
 
 /**
- * @route GET api/lessons/getByid
+ * @route GET api/lessons/getById
  * @description retrieve lesson with given lesson Id
- * @param {Array} filters [{attribute: "name", value: "Théorème de pythagore"}, {attribute: "year", value: ["2019", "2020"]}]
- * @param {Number} numberOfLessons total number of lessons shown in page
- * @param {String} userId user making the request
+ * @param {ObjectId} lessonId id of the lesson you want to retrieve
  */
-router.get("/getById", (req, res) => {
-  Lesson.findOne({ _id: req.query.lessonId })
-    .then((lesson) => {
-      if (!lesson) {
-        res.status(200).json({
-          success: false,
-          lesson: null,
-          message: "No lesson with given id",
-        });
-      }
+router.get("/getById", async (req, res) => {
+  const { lessonId } = req.query;
+
+  if (!isValidObjectId(lessonId)) {
+    res.status(200).json({
+      success: false,
+      lesson: null,
+      message: "L'id de la leçon est invalide",
+    });
+  } else {
+    const lesson = await Lesson.findOne({ _id: req.query.lessonId }).lean();
+    if (!lesson) {
+      res.status(200).json({
+        success: false,
+        lesson: null,
+        message: "Aucune leçon avec cet id",
+      });
+    } else {
       const formattedLesson = async (lesson) => {
         lessonWithCreators = await getLessonsCreators([lesson]);
         lessonWithLikes = await getLessonsLikes(lessonWithCreators);
@@ -87,15 +94,8 @@ router.get("/getById", (req, res) => {
         });
       };
       formattedLesson(lesson);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(200).json({
-        success: false,
-        lesson: null,
-        message: "Un problème est survenu lors de la récupération du cours",
-      });
-    });
+    }
+  }
 });
 
 /**

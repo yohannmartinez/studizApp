@@ -1,0 +1,45 @@
+.lessonInformations {
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 70px 0 20px 0;
+    font-family: "MarkPro";
+  }
+
+  &__subTitle {
+    font-size: 13px;
+    font-weight: 800;
+    color: #70529d;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #d3c0ee;
+    margin: 0;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 39px;
+    margin: 10px 0 0 0;
+    text-align: center;
+  }
+
+  &__creatorText {
+    padding-top: 10px;
+    font-family: "eina";
+    font-size: 14px;
+    font-weight: 600;
+    color: #838383;
+    margin: 0;
+  }
+
+  &__creatorName {
+    display: inline;
+    color: black;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

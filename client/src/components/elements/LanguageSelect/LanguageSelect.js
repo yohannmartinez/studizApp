@@ -35,6 +35,7 @@ const LanguageSelect = ({ language, setLanguage, auth }) => {
             <div className="languageSelect__optionsContainer">
               {languages.map(({ label, value, flag }) => (
                 <div
+                  key={"langugage-" + label}
                   className="languageSelect__option"
                   onClick={() => {
                     setLanguage(value);
