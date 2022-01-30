@@ -1,0 +1,12 @@
+.lessonContent {
+  &__container {
+    background-color: #472779;
+    padding: 50px 0;
+    flex-grow: 1;
+  }
+
+  &__whiteContainer {
+    background-color: white;
+    border-radius: 20px;
+  }
+}

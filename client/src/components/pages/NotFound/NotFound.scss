@@ -1,0 +1,36 @@
+.notFound {
+  &__container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 23px;
+    font-weight: 800;
+    font-family: "MarkPro";
+    max-width: 500px;
+    text-align: center;
+  }
+
+  &__button {
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 500px;
+    background-color: #70529d;
+    color: white;
+    transition: 0.5s;
+    font-family: "MarkPro";
+    font-weight: 700;
+    font-size: 15px;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

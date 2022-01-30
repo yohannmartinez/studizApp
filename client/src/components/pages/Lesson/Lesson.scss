@@ -1,6 +1,8 @@
 .lesson {
   &__globalContainer {
-    min-height: 3000px;
     background-color: #f3f0fc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 }

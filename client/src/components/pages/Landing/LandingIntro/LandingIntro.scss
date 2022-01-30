@@ -1,119 +1,76 @@
 .landingIntro {
-  &__container {
+  &__globalContainer {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 100px 0 100px 0;
-    overflow: hidden;
+    padding: 70px 0;
   }
 
-  &__wrapper {
-    flex-direction: column;
-    align-items: center;
+  &__container {
     display: flex;
-    max-width: 600px;
     position: relative;
+    display: flex;
+  }
+
+  &__flexElementLeft,
+  &__flexElementRight {
+    padding: 10px;
+  }
+
+  &__flexElementLeft {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__flexElementRight {
+    flex: 1.3;
+    // border: 1px solid red;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__subTitle {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-size: 15px;
+    font-family: "MarkPro";
   }
 
   &__title {
-    text-align: center;
-    font-family: "MarkPro";
     font-weight: 800;
-    margin: 0;
-    font-size: 40px;
+    color: black;
+    font-family: "MarkPro";
+    margin: 15px 0;
+    font-size: 45px;
   }
 
   &__text {
-    text-align: center;
-    margin: 0;
-    font-family: "eina";
-    margin: 20px 0 0 0;
-    line-height: 28px;
-    color: rgb(0, 0, 0);
-    font-size: 15px;
-    font-weight: 500;
-    color: #929292;
+    color: rgb(153, 153, 153);
+    font-weight: 700;
+    font-family: "MarkPro";
+    line-height: 25px;
+    margin: 10px 0 10px 0;
   }
 
   &__button {
-    text-align: center;
-    font-family: "MarkPro";
-    font-weight: 700;
-    font-size: 16px;
-    color: white;
-    background-color: #9652b6;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 100px;
     margin-top: 20px;
     cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 500px;
+    background-color: #70529d;
+    color: white;
     transition: 0.5s;
+    font-family: "MarkPro";
+    font-weight: 700;
+    font-size: 17px;
+    width: fit-content;
     &:hover {
       transform: scale(1.05);
     }
   }
 
-  &__lesson {
-    position: absolute;
-    width: 100px;
-    left: 0;
-    top: 30%;
-    transform: translate(-200%, -50%) rotate(13deg);
-    animation-delay: 0s;
-    animation-duration: 2s;
-    animation-name: upToDown;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
-
-  &__pen {
-    position: absolute;
-    width: 130px;
-    right: 0;
-    top: 80%;
-    transform: translate(150%, -50%) rotate(0deg);
-    animation-delay: 0s;
-    animation-duration: 2s;
-    animation-name: upToDown;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
-}
-
-@keyframes upToDown {
-  0% {
-    margin-top: 0px;
-  }
-
-  50% {
-    margin-top: 20px;
-  }
-
-  100% {
-    margin-top: 0px;
-  }
-}
-
-@media (max-width: 1110px) {
-  .landingIntro {
-    &__pen {
-      width: 110px;
-      transform: translate(100%, -50%) rotate(0deg);
-    }
-    &__lesson {
-      width: 90px;
-      transform: translate(-150%, -50%) rotate(13deg);
-    }
-  }
-}
-
-@media (max-width: 985px) {
-  .landingIntro {
-    &__pen {
-      display: none;
-    }
-    &__lesson {
-      display: none;
-    }
+  &__image {
+    height: 100%;
   }
 }

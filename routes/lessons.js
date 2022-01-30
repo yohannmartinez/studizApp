@@ -34,7 +34,10 @@ router.post("/create", (req, res) => {
   } = req.body;
   const newLesson = new Lesson({
     userId: userId,
-    content: { time: Date.now(), blocks: [], version: "1" },
+    data: {
+      type: "doc",
+      content: "",
+    },
     lastModification: new Date(),
     creationDate: new Date(),
     name: name,
@@ -153,26 +156,65 @@ router.get("/search", (req, res) => {
     });
 });
 
-router.get("/getUrlEditor", (req, res) => {
-  metafetch.fetch(req.query.url, (err, meta) => {
-    if (err) {
-      res.status(400);
+/**
+ * @route GET api/lessons/getUserLessons
+ * @description retrieve lessons for a specific user
+ * @param {ObjectId} userId id of the user
+ */
+router.get("/getUserLessons", async (req, res) => {
+  const { userId } = req.query;
+  if (!isValidObjectId(userId)) {
+    res.status(200).json({
+      success: false,
+      lessons: null,
+      message: "L'id de la leçon est invalide",
+    });
+  } else {
+    const lessons = await Lesson.find({ userId: req.query.userId }).lean();
+    if (!lessons) {
+      res.status(200).json({
+        success: false,
+        lessons: null,
+        message: "Aucune leçon avec cet id",
+      });
     } else {
       res.status(200).json({
-        success: 1,
-        meta: {
-          title: meta.title,
-          site_name: meta.siteName,
-          description: meta.description,
-          image: {
-            url: meta.image,
-          },
-        },
+        success: true,
+        lessons: lessons,
+        message: "",
       });
     }
-  });
+  }
 });
 
-router.post("/addImageEditor", (req, res) => {});
+router.post("/addView", async (req, res) => {
+  const { lessonId } = req.body;
+
+  Lesson.findOneAndUpdate(
+    { _id: lessonId },
+    { $inc: { views: 1 } },
+    (test, lesson) => {
+      res.status(200).json({
+        success: true,
+        message: null,
+      });
+    }
+  );
+});
+
+router.post("/saveLessonChanges", async (req, res) => {
+  const { lessonId, lessonContent } = req.body;
+
+  Lesson.findOneAndUpdate(
+    { _id: lessonId },
+    { "data.content": lessonContent },
+    (error, lesson) => {
+      res.status(200).json({
+        success: true,
+        message: null,
+      });
+    }
+  );
+});
 
 module.exports = router;

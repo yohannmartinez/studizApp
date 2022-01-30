@@ -1,0 +1,80 @@
+.lessonDetails {
+  &__globalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+  }
+
+  &__background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+  }
+
+  &__container {
+    position: absolute;
+    background-color: white;
+    height: 95vh;
+    width: 100%;
+    bottom: 0;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    transition: 0.5s;
+    transform: translateY(100%);
+    padding: 50px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    // border: 1px solid red;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__lesson {
+    &__subTitle {
+      font-size: 13px;
+      font-weight: 500;
+      font-family: "eina";
+      text-align: center;
+      margin: 0;
+    }
+
+    &__name {
+      font-size: 35px;
+      font-weight: 800;
+      font-family: "MarkPro";
+      text-align: center;
+      margin: 10px 0 0 0;
+    }
+
+    &__contentTable {
+      border: 2px solid black;
+      padding: 10px 20px;
+      color: black;
+      font-size: 15px;
+      font-weight: 800;
+      font-family: "MarkPro";
+      margin-top: 10px;
+      background-color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

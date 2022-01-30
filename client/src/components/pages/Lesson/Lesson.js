@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { getLessonById } from "../../../services/lessons";
+import { addLessonView, getLessonById } from "../../../services/lessons";
 
 import LessonInformations from "./LessonInformations/LessonInformations";
 import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import Menu from "../../elements/Menu/Menu";
 import "./Lesson.scss";
+import LessonContent from "./LessonContent/LessonContent";
 
 const Lesson = () => {
   const { lessonId } = useParams();
@@ -17,7 +18,7 @@ const Lesson = () => {
   useEffect(() => {
     const retrieveLesson = async () => {
       const { data } = await getLessonById(lessonId);
-      console.log(data.lesson);
+      await addLessonView(lessonId);
       setLesson(data.lesson);
       setIsLoading(false);
     };
@@ -31,7 +32,12 @@ const Lesson = () => {
       <LanguageSelect />
       {isLoading && "loading"}
       {!isLoading && !lesson && "no lesson"}
-      {!isLoading && lesson && <LessonInformations lesson={lesson} />}
+      {!isLoading && lesson && (
+        <>
+          <LessonInformations lesson={lesson} setLesson={setLesson} />
+          <LessonContent lesson={lesson} />
+        </>
+      )}
     </div>
   );
 };

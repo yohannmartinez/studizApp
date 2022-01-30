@@ -24,7 +24,7 @@ const FiltersModal = ({ filtersList, setShowFilters, changeFiltersValue }) => {
       .map((city) => {
         return { label: city.name, value: city.name };
       })
-      .sort((a, b) => a.label.localeCompare(b.label));
+      .filter((city) => city.label.toLowerCase().startsWith(inputValue));
     callback(formatted_cities);
   };
 
@@ -39,9 +39,6 @@ const FiltersModal = ({ filtersList, setShowFilters, changeFiltersValue }) => {
     >
       <form
         className="modalFilters__container"
-        onClick={() => {
-          console.log(city);
-        }}
         onSubmit={(e) => {
           e.preventDefault();
           launchSearch(filtersList);
@@ -106,7 +103,6 @@ const FiltersModal = ({ filtersList, setShowFilters, changeFiltersValue }) => {
           }}
           defaultValue={city}
           onChange={(option) => {
-            console.log("tssst", option);
             changeFiltersValue(option ? option.value.toString() : [], "city");
           }}
           label="LESSON_CITY"

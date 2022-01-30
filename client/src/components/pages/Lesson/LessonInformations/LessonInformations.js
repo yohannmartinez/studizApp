@@ -1,19 +1,21 @@
 import { useHistory } from "react-router-dom";
-import {
-  faBook,
-  faEllipsisV,
-  faEye,
-  faGraduationCap,
-  faMapMarkedAlt,
-  faThumbsUp,
-} from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faBook,
+//   faEllipsisV,
+//   faEye,
+//   faGraduationCap,
+//   faMapMarkedAlt,
+//   faThumbsUp,
+// } from "@fortawesome/free-solid-svg-icons";
 import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
 import { useTranslate } from "../../../../utils/useTranslate";
 
-import "./LessonInformations.scss";
 import LessonTopInformations from "./LessonTopInformations/LessonTopInformations";
+import LessonContent from "../LessonContent/LessonContent";
 
-const LessonInformations = ({ lesson }) => {
+import "./LessonInformations.scss";
+
+const LessonInformations = ({ lesson, setLesson }) => {
   const { t } = useTranslate();
   const history = useHistory();
   const { creator, name } = lesson;
@@ -38,7 +40,7 @@ const LessonInformations = ({ lesson }) => {
         </div>
       </PageWrapper>
 
-      <LessonTopInformations lesson={lesson} />
+      <LessonTopInformations lesson={lesson} setLesson={setLesson} />
     </div>
   );
 };

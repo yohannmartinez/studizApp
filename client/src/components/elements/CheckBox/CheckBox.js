@@ -4,9 +4,6 @@ import { useEffect } from "react";
 import CheckIcon from "../../../assets/icons/check.svg";
 
 const CheckBox = ({ isChecked, children, action }) => {
-  useEffect(() => {
-    console.log(isChecked);
-  }, [isChecked]);
   return (
     <div className="checkbox__container">
       <div

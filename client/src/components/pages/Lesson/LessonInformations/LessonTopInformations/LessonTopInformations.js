@@ -1,8 +1,58 @@
+import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as NotLikedIcon } from "@fortawesome/fontawesome-free-regular";
-import "./LessonTopInformations.scss";
+import { faHeart as LikedIcon } from "@fortawesome/fontawesome-free-solid";
 
-const LessonTopInformations = ({ lesson }) => {
+import { setSnack, resetSnack } from "../../../../../actions/snackActions";
+import { useTranslate } from "../../../../../utils/useTranslate";
+import "./LessonTopInformations.scss";
+import { likeLesson } from "../../../../../services/lessonLikes";
+
+const LessonTopInformations = ({
+  lesson,
+  setLesson,
+  auth,
+  setSnack,
+  resetSnack,
+}) => {
+  const { t } = useTranslate();
+
+  const userLikeLesson = lesson.likes.find(
+    (like) => like.userId === auth.user._id
+  );
+
+  const handleSnack = (type, message) => {
+    setSnack({
+      show: true,
+      duration: 4000,
+      text: t(message),
+      type: type,
+      action: () => {
+        resetSnack();
+      },
+    });
+  };
+
+  const handleLikeLesson = async () => {
+    if (!auth.isAuthenticated) {
+      handleSnack("error", "NEED_AUTH_ERROR");
+    } else {
+      const likedOrDisliked = await likeLesson(lesson._id, auth.user._id);
+      if (!likedOrDisliked.data.success) {
+        return handleSnack("error", "LIKE_LESSON_PROCESS_ERROR");
+      }
+      userLikeLesson
+        ? setLesson({
+            ...lesson,
+            likes: lesson.likes.filter((like) => like.userId !== auth.user._id),
+          })
+        : setLesson({
+            ...lesson,
+            likes: [...lesson.likes, likedOrDisliked.data.like],
+          });
+    }
+  };
+
   return (
     <div className="lessonTopData__infosContainer">
       <div className="lessonTopData__headingInfos">
@@ -10,10 +60,24 @@ const LessonTopInformations = ({ lesson }) => {
           <div className="lessonTopData__headingInfos__whiteContainer">
             <div className="lessonTopData__headingInfos__likesContainer">
               <div className="lessonTopData__headingInfos__info">
-                <div className="lessonTopData__headingInfos__infoHeading lessonTopData__headingInfos__heart">
-                  <FontAwesomeIcon icon={NotLikedIcon} />
+                <div
+                  className="lessonTopData__headingInfos__infoHeading lessonTopData__headingInfos__heart"
+                  onClick={() => {
+                    handleLikeLesson();
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={userLikeLesson ? LikedIcon : NotLikedIcon}
+                    style={{ color: userLikeLesson ? "#E94C89" : "black" }}
+                  />
                 </div>
-                <div className="lessonTopData__headingInfos__infoDescription">
+                <div
+                  className="lessonTopData__headingInfos__infoDescription"
+                  style={{
+                    color: userLikeLesson ? "#E94C89" : "black",
+                    fontWeight: userLikeLesson ? "bold" : "500",
+                  }}
+                >
                   J'aime
                 </div>
               </div>
@@ -21,7 +85,7 @@ const LessonTopInformations = ({ lesson }) => {
             <div className="lessonTopData__headingInfos__otherContainer">
               <div className="lessonTopData__headingInfos__info">
                 <div className="lessonTopData__headingInfos__infoHeading">
-                  {lesson.likes}
+                  {lesson.likes.length}
                 </div>
                 <div className="lessonTopData__headingInfos__infoDescription">
                   Ont aimé
@@ -43,4 +107,10 @@ const LessonTopInformations = ({ lesson }) => {
   );
 };
 
-export default LessonTopInformations;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { setSnack, resetSnack })(
+  LessonTopInformations
+);

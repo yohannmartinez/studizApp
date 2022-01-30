@@ -97,6 +97,14 @@ const Login = (props) => {
             <button className="login__submitButton" type="submit">
               {t("LOGIN_SUBMIT")}
             </button>
+            <button
+              className="login__createAccountButton"
+              onClick={() => {
+                history.push("/register");
+              }}
+            >
+              {t("DONT_HAVE_ACCOUNT")}
+            </button>
           </form>
         </div>
       </div>

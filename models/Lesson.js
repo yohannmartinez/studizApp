@@ -1,11 +1,16 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const contentSchema = new mongoose.Schema({
-  blocks: Array,
-  time: Number,
-  version: String,
-});
+const lessonDataSchema = {
+  type: {
+    type: String,
+    default: "doc",
+  },
+  content: {
+    type: String,
+    default: "",
+  },
+};
 
 // Create Schema
 const LessonSchema = new Schema({
@@ -13,10 +18,7 @@ const LessonSchema = new Schema({
     type: mongoose.Types.ObjectId,
     required: true,
   },
-  content: {
-    type: contentSchema,
-    required: true,
-  },
+  data: lessonDataSchema,
   lastModification: {
     type: Date,
     required: false,

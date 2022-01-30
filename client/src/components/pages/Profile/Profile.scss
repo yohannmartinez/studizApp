@@ -1,0 +1,16 @@
+.profile {
+  &__globalContainer {
+    background-color: #f4f0fc;
+    min-height: 100vh;
+  }
+
+  &__loadingContainer {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  &__loadingTitle {
+    font-family: "MarkPro";
+    font-weight: 800;
+  }
+}

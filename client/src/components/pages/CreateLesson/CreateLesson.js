@@ -53,12 +53,7 @@ const CreateLesson = ({ auth }) => {
       <LanguageSelect />
 
       <PageWrapper>
-        <div
-          className="createLesson__container"
-          onClick={() => {
-            console.log(lesson);
-          }}
-        >
+        <div className="createLesson__container">
           <div className="createLesson__whiteContainer">
             <div className="createLesson__header">
               <div className="createLesson__subTitle">

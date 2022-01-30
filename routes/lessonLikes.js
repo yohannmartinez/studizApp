@@ -7,7 +7,9 @@ router.post("/like", (req, res) => {
     { userId: req.body.userId, lessonId: req.body.lessonId },
     (err, like) => {
       if (err) {
-        res.status(400).json({ message: "[like] une erreur est survenue" });
+        res
+          .status(200)
+          .json({ success: true, message: "LIKE_LESSON_PROCESS_ERROR" });
       }
       if (like.length === 0) {
         const like = new LessonLike({
@@ -20,11 +22,13 @@ router.post("/like", (req, res) => {
             res.status(200).json({
               success: true,
               like: like,
-              message: "Successfuly liked the lesson",
+              message: "LIKED_LESSON",
             });
           })
           .catch((err) => {
-            res.status(400).json({ message: "[like] une erreur est survenue" });
+            res
+              .status(200)
+              .json({ success: false, message: "LIKE_LESSON_PROCESS_ERROR" });
           });
       } else {
         LessonLike.deleteOne({
@@ -36,7 +40,7 @@ router.post("/like", (req, res) => {
         res.status(200).json({
           success: true,
           like: null,
-          message: "Successfuly liked the lesson",
+          message: "REMOVED_LIKE_LESSON",
         });
       }
     }

@@ -36,3 +36,23 @@ export const getLessonById = async (lessonId) => {
   });
   return resp;
 };
+
+export const getUserLessons = async (userId) => {
+  const resp = await axios.get("/api/lessons/getUserLessons", {
+    params: { userId },
+  });
+  return resp;
+};
+
+export const addLessonView = async (lessonId) => {
+  const resp = await axios.post("/api/lessons/addView", { lessonId });
+  return resp;
+};
+
+export const saveLessonChanges = async (lessonId, lessonContent) => {
+  const resp = await axios.post("/api/lessons/saveLessonChanges", {
+    lessonId,
+    lessonContent,
+  });
+  return resp;
+};

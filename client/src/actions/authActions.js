@@ -9,6 +9,7 @@ import {
   SET_LOADER,
   RESET_SNACK,
 } from "./types";
+import { setLanguage } from "./languageActions";
 
 // Register User
 export const registerUser = (userData, history, t) => (dispatch) => {
@@ -49,6 +50,7 @@ export const loginUser = (userData, history, redirectLink, t) => (dispatch) => {
       setAuthToken(token);
       const decoded = jwt_decode(token);
 
+      dispatch(setLanguage(decoded.userLanguage));
       dispatch(setCurrentUser(decoded));
       dispatch({
         type: SET_SNACK,

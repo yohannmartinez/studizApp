@@ -13,9 +13,12 @@ const EmailCheckToken = require("../models/EmailCheckToken");
 // @desc Register user
 // @access Public
 router.post("/register", (req, res) => {
-  User.findOne({ email: req.body.email }).then((user) => {
+  const { email, firstname, lastname, password, phoneNumber } = req.body.user;
+  User.findOne({ email: email }).then((user) => {
     if (user) {
-      return res.status(400).json({ message: "EMAIL_ALREADY_EXIST" });
+      return res
+        .status(200)
+        .json({ success: false, message: "EMAIL_ALREADY_EXIST" });
     } else {
       const generated_sponsorCode = new Array(7)
         .join()
@@ -25,12 +28,12 @@ router.post("/register", (req, res) => {
             [Math.random() < 0.5 ? "toString" : "toUpperCase"]();
         });
       const newUser = new User({
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        email: req.body.email,
-        password: req.body.password,
+        firstname,
+        lastname,
+        email,
+        password,
+        phoneNumber,
         sponsorCode: generated_sponsorCode,
-        phoneNumber: req.body.phoneNumber,
       });
 
       // Hash password before saving in database
@@ -52,11 +55,12 @@ router.post("/register", (req, res) => {
               emailCheckToken.save().then((token) => {
                 Mails.registerEmail(user.email, token.token);
               });
-              res.status(200).json(user);
+              res.status(200).json({ success: true, message: "", user });
             })
             .catch((err) => {
               console.log(err);
-              res.status(400).json({
+              res.status(200).json({
+                success: false,
                 message: "REGISTER_PROCESS_ERROR",
               });
             });
@@ -90,6 +94,7 @@ router.post("/login", (req, res) => {
           // Create JWT Payload
           const payload = {
             _id: user._id,
+            userLanguage: user.preferences.language,
           };
 
           // Sign token
@@ -123,13 +128,32 @@ router.post("/login", (req, res) => {
 // @desc get user profile with id
 // @access Public
 router.get("/getById", (req, res) => {
-  User.find({ _id: req.query._id }, function (err, user) {
+  User.findOne({ _id: req.query._id }, function (err, user) {
     if (user) {
-      res.status(200).send({ user: user[0] });
+      res.status(200).send({ user });
     } else if (!user) {
       res.status(200).send({ user: null });
     }
   });
+});
+
+// @route GET api/users/getUserLanguage
+// @desc get user language with user Id
+// @access Public
+router.get("/getUserLanguage", (req, res) => {
+  User.findOne(
+    { _id: req.query.userId },
+    "preferences.language",
+    function (err, user) {
+      if (user) {
+        res
+          .status(200)
+          .send({ success: true, language: user.preferences.language });
+      } else if (!user) {
+        res.status(200).send({ success: false, language: "fr" });
+      }
+    }
+  );
 });
 
 /**
@@ -149,27 +173,55 @@ router.get("/getUserByEmail", (req, res) => {
 
 /**
  * @route POST /api/users/updatePassword
+ * @param {String} userId id of the user to update
+ * @param {String} oldPassword (optional) old password of the user to check if valid
  * @param {String} newPassword new password of user
- * @return {String}
  */
 router.post("/updatePassword", (req, res) => {
-  const { userId, password } = req.body;
-  bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(password, salt, (err, hash) => {
-      User.findOneAndUpdate(
-        { _id: userId },
-        { password: hash },
-        { new: true },
-        function (err, user) {
-          if (user) {
-            res.status(200).send({ success: true });
-          } else if (!user) {
-            res.status(200).send({ success: false });
+  const { userId, oldPassword, newPassword } = req.body;
+
+  const updatePassword = () => {
+    bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.hash(newPassword, salt, (err, hash) => {
+        User.findOneAndUpdate(
+          { _id: userId },
+          { password: hash },
+          { new: true },
+          function (err, user) {
+            if (user) {
+              res.status(200).send({ success: true, message: null });
+            } else if (!user) {
+              res.status(200).send({
+                success: false,
+                message: "CHANGE_PASSWORD_PROCESS_ERROR",
+              });
+            }
           }
-        }
-      );
+        );
+      });
     });
-  });
+  };
+
+  if (oldPassword) {
+    User.findOne({ _id: userId }).then((user) => {
+      if (!user) {
+        res
+          .status(200)
+          .send({ success: false, message: "USER_DONT_EXIST_ERROR" });
+      }
+      bcrypt.compare(oldPassword, user.password).then((isMatch) => {
+        if (!isMatch) {
+          res
+            .status(200)
+            .send({ success: false, message: "PASSWORD_INCORRECT_ERROR" });
+        } else {
+          updatePassword();
+        }
+      });
+    });
+  } else {
+    updatePassword();
+  }
 });
 
 module.exports = router;

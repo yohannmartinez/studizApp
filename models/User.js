@@ -33,8 +33,10 @@ const UserSchema = new Schema({
   },
   profileImage: {
     type: String,
-    default: null,
     required: false,
+    default: `https://studiz.s3.eu-west-3.amazonaws.com/profileImages/default/${
+      Math.floor(Math.random() * 9) + 1
+    }.svg`,
   },
   achievements: {
     type: Object,

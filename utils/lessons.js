@@ -27,7 +27,7 @@ const getLessonsLikes = async (lessons) => {
     lessons.map(async (lesson) => {
       const { _id } = lesson;
       const lessonLikes = await LessonLike.find({ lessonId: _id }).lean();
-      return { ...lesson, likes: lessonLikes.length };
+      return { ...lesson, likes: lessonLikes };
     })
   );
 

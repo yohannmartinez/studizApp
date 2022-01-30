@@ -1,0 +1,91 @@
+.ProseMirror {
+  > * + * {
+    margin-top: 0.75em;
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+
+    &.ProseMirror-selectednode {
+      outline: 3px solid #8564b9;
+    }
+  }
+}
+
+.ProseMirror-focused {
+  outline-width: 0;
+}
+
+.editor {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+  }
+
+  &__contentContainer {
+    // border: 1px solid red;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 50px 0 50px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  &__editor {
+    &:focus {
+      outline-width: 0;
+    }
+  }
+
+  &__bottomButtons {
+    &__container {
+      position: fixed;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__saveButton,
+  &__infoButton {
+    font-size: 17px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: 0.5s;
+    font-family: "MarkPro";
+    background-color: #70529d;
+    color: white;
+    font-weight: 700;
+    &:hover {
+      color: #d5cde0;
+    }
+  }
+
+  &__saveButton {
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+    padding: 15px 20px 15px 25px;
+  }
+
+  &__infoButton {
+    margin-left: -1px;
+    padding: 15px 25px 15px 20px;
+    border-top-right-radius: 500px;
+    border-bottom-right-radius: 500px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 60%;
+      width: 1px;
+      background-color: white;
+      transform: translateY(-50%);
+    }
+  }
+}

@@ -22,7 +22,7 @@ const ThirdStep = ({
       .map((city) => {
         return { label: city.name, value: city.name };
       })
-      .sort((a, b) => a.label.localeCompare(b.label));
+      .filter((city) => city.label.toLowerCase().startsWith(inputValue));
     callback(formatted_cities);
   };
 
@@ -79,10 +79,13 @@ const ThirdStep = ({
       >
         <div className="createLesson__thirdStep__checkboxContent">
           <h1 className="createLesson__thirdStep__checkboxTitle">
-            {t("CREATE_LESSON_CGV_TITLE")}
+            {t("CREATE_LESSON_CGU_TITLE")}
           </h1>
           <p className="createLesson__thirdStep__checkboxText">
-            {t("CREATE_LESSON_CGV_DESCRIPTION")}
+            {t("CREATE_LESSON_CGU_PART_ONE")}
+            <a target="blank" href={"/CGU"}>
+              {t("CREATE_LESSON_CGU_PART_TWO")}
+            </a>
           </p>
         </div>
       </CheckBox>

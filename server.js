@@ -7,11 +7,12 @@ const passport = require("passport");
 const cors = require("cors");
 const path = require("path");
 
-const users = require("./routes/users");
-const emailCheckTokens = require("./routes/emailCheckTokens");
-const lessons = require("./routes/lessons");
 const cities = require("./routes/cities");
+const emailCheckTokens = require("./routes/emailCheckTokens");
 const lessonLikes = require("./routes/lessonLikes");
+const lessons = require("./routes/lessons");
+const s3 = require("./routes/s3");
+const users = require("./routes/users");
 
 // Bodyparser middleware
 app.use(
@@ -38,11 +39,12 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Routes
-app.use("/api/users", users);
-app.use("/api/emailCheckTokens", emailCheckTokens);
 app.use("/api/cities", cities);
-app.use("/api/lessons", lessons);
+app.use("/api/emailCheckTokens", emailCheckTokens);
 app.use("/api/lessonLikes", lessonLikes);
+app.use("/api/lessons", lessons);
+app.use("/api/s3", s3);
+app.use("/api/users", users);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

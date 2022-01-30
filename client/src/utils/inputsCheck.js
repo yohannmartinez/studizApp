@@ -19,6 +19,20 @@ export const inputValueCheck = (type, value) => {
     } else {
       return { success: true, message: "" };
     }
+  } else if (type === "confirmPassword") {
+    if (value.length < 8) {
+      return { success: false, message: "CONFIRM_PASSWORD_ERROR" };
+    } else if (
+      value.match(/[A-Z]/g) === null ||
+      value.match(/[A-Z]/g).length === 0
+    ) {
+      return {
+        success: false,
+        message: "CONFIRM_PASSWORD_ERROR",
+      };
+    } else {
+      return { success: true, message: "" };
+    }
   }
   //
   //CONDITIONS POUR LES EMAILS

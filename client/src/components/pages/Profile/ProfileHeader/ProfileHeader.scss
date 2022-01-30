@@ -1,0 +1,45 @@
+.profileHeader {
+  &__container {
+    width: 100%;
+    margin: 50px 0;
+    padding: 10px;
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__profileImage {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__userName {
+    margin: 20px 0 10px 0;
+  }
+
+  &__logout {
+    border: none;
+    font-family: "MarkPro";
+    font-weight: 800;
+    margin-left: 15px;
+    padding: 10px 20px;
+    border-radius: 500px;
+    background-color: #f55951;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 15px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

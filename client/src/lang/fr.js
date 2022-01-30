@@ -8,6 +8,18 @@ export const fr = {
   LOAD_MORE: "Charger d'avantage",
   VIEWS: "vues",
   LOADING: "Chargement...",
+  WRITTEN_BY: "Rédigé par",
+  LIKES: "J'aime",
+  CONFIRM: "Confirmer",
+  GO_BACK_HOME: "Retourner à l'accueil",
+  NO_LESSON: "Aucun cours",
+  YOU: "toi",
+
+  //lesson
+  SAVE: "Sauvegarder",
+  READONLY: "Lecture seule",
+  LESSON_DETAILS: "Détails du cours",
+  CONTENT_TABLE: "Table des matières",
 
   //menu categories
   HOME: "Accueil",
@@ -24,6 +36,11 @@ export const fr = {
   OLD_PASSWORD: "Ancient mot de passe",
   NEW_PASSWORD: "Nouveau mot de passe",
   CONFIRM_PASSWORD: "Confirmer mot de passe",
+  FIRSTNAME: "Prénom",
+  LASTNAME: "Nom",
+  PHONE_NUMBER: "Numéro de téléphone",
+
+  //inputs lesson
   LESSON_NAME: "Nom du cours",
   LESSON_DESCRIPTION: "Description du cours",
   LESSON_DEGREE: "Niveau du cours",
@@ -54,6 +71,15 @@ export const fr = {
   LOGIN_SUBMIT: "Connexion",
   FORGOT_PASSWORD: "J'ai oublié mon mot de passe",
 
+  //register
+  REGISTER_TITLE: "Se créer un compte",
+  REGISTER_DESCRIPTION:
+    "Crée-toi un compte et accèdes à l'essemble des fonctionnalités Studiz !",
+  REGISTER_SUBMIT: "Créer le compte",
+  ALREADY_HAVE_ACCOUNT: "J'ai déjà un compte",
+  DONT_HAVE_ACCOUNT: "Je n'ai pas de compte",
+  USER_CREATED: "Votre compte à bien été créé",
+
   //landing
   LANDING_INTRO_TITLE:
     "Tout ce dont vous avez besoin pour réussir votre année scolaire",
@@ -61,7 +87,12 @@ export const fr = {
     "Des tonnes de cours, sur des sujets divers et variés, pour tous les niveaux, des quizzs, et bien plus encore vous attendent sur Studiz",
   LANDING_INTRO_BUTTON: "Je veux en savoir plus !",
 
+  //not found
+  PAGE_NOT_FOUND:
+    "Oups, la page que vous essayez de voir n'existe pas ou est en cours de construction",
+
   //error messages
+  USER_DONT_EXIST_ERROR: "L'utilisateur n'existe pas",
   EMAIL_LENGTH_ERROR: "L'adresse email est trop courte",
   NOT_VALID_EMAIL_ERROR: "L'adresse email est invalide",
   EMAIL_ADDRESS_DONT_EXIST_ERROR: "L'adresse email n'existe pas",
@@ -74,6 +105,7 @@ export const fr = {
   PASSWORD_NOT_EQUAL_ERROR: "Les mots de passe ne sont pas identiques",
   PASSWORD_UPDATE_ERROR:
     "Une erreur est survenue durant la mise à jour de votre mot de passe :(",
+  CONFIRM_PASSWORD_ERROR: "Les mots de passe ne correspondent pas",
   NO_PHONENUMBER_ERROR: "Veuillez renseigner un numéro de téléphone",
   PHONENUMBER_CHARACTER_ERROR:
     "Le numéro de téléphone ne peut contenir que des chiffres",
@@ -85,11 +117,21 @@ export const fr = {
   LOGIN_PROCESS_ERROR: "Une erreur est survenue durant la connexion...",
   REGISTER_PROCESS_ERROR:
     "Une erreur est survenue durant la création de votre compte...",
+  CHANGE_PASSWORD_PROCESS_ERROR:
+    "Une erreur est survenue durant la modification de votre mot de passe...",
+  NEED_AUTH_ERROR: "Vous devez être connecté pour effectuer cette action",
+  LIKE_LESSON_PROCESS_ERROR:
+    "Une erreur est survenue lors de l'ajout de votre like...",
+  IMAGE_UPLOAD_FAIL: "La mise en ligne de l'image a échouée",
+  IMAGE_TOO_BIG: "La taille maximale du fichier doit être 1Mo",
+  LESSON_NOT_SAVED:
+    "Vous n'avez pas sauvegardé vos changements, voulez-vous quitter la page quand même ?",
 
   //success messages
   LOGIN_SUCCESSFUL: "Heureux de te revoir {firstname} !",
   FIND_EMAIL_SUCCESSFUL: "Nous avons trouvé ton compte !",
   PASSWORD_UPDATE_SUCCESSFUL: "Ton mot de passe à été mis à jour !",
+  SAVED_CHANGES_SUCCESS: "Changements sauvegardés avec succès",
 
   //forgot password
   FORGOT_PASSWORD_TITLE1: "Tu as oublié ton mot de passe ?",
@@ -124,9 +166,9 @@ export const fr = {
   CREATE_LESSON_ISPRIVATE_TITLE: "Le cours est-il privé ?",
   CREATE_LESSON_ISPRIVATE_DESCRIPTION:
     "Seulement vous et les personnes que vous aurez autorisées pourront accèder au cours",
-  CREATE_LESSON_CGV_TITLE: "Conditions générales de vente",
-  CREATE_LESSON_CGV_DESCRIPTION:
-    "J'atteste avoir lu et j'accepte les conditions générales de vente",
+  CREATE_LESSON_CGU_TITLE: "Conditions générales d'utilisation",
+  CREATE_LESSON_CGU_PART_ONE: "J'atteste avoir lu et j'accepte les ",
+  CREATE_LESSON_CGU_PART_TWO: "conditions générales d'utilisation",
 
   //grades
   SIXTH_GRADE: "Sixième",

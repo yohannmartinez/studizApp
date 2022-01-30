@@ -1,10 +1,12 @@
+import { faEye } from "@fortawesome/fontawesome-free-regular";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useTranslate } from "../../../../../utils/useTranslate";
 
 import "./LessonResult.scss";
 
-const LessonResult = ({ lesson, language }) => {
+const LessonResult = ({ lesson, language, auth }) => {
   const {
     _id,
     name,
@@ -28,17 +30,39 @@ const LessonResult = ({ lesson, language }) => {
       }}
     >
       <div className="lessonResult__header">
-        <div
-          className="lessonResult__profileImage"
-          style={{ backgroundImage: `url('${creator.profileImage}')` }}
-        ></div>
+        <h1 className="lessonResult__lessonTitle">
+          {name.charAt(0).toUpperCase() + name.slice(1)}
+        </h1>
         <div className="lessonResult__lessonViews">
-          {views} {t("VIEWS")}
+          <FontAwesomeIcon
+            icon={faEye}
+            className="lessonResult__lessonViews__icon"
+          />
+          {views}
         </div>
       </div>
-      <h1 className="lessonResult__lessonTitle">
-        {name.charAt(0).toUpperCase() + name.slice(1)}
-      </h1>
+      <div className="lessonResult__creatorContainer">
+        <div
+          className="lessonResult__creatorImage"
+          style={{ backgroundImage: `url('${creator.profileImage}')` }}
+        ></div>
+        <p className="lessonResult__creatorName">
+          {t("WRITTEN_BY") + " "}
+          <b>
+            {lesson.userId === auth.user._id
+              ? t("YOU")
+              : `${creator.firstname} ${creator.lastname}`}
+          </b>
+        </p>
+      </div>
+      <div className="lessonResult__description">
+        <b>Description: </b>
+        {`${
+          description.charAt(0).toUpperCase() +
+          description.slice(1, description.length)
+        }`}
+        {/* {description.slice(1, 100).length === 99 && "..."} */}
+      </div>
 
       <div className="lessonResult__tagsContainer">
         <h1 className="lessonResult__tag lessonResult__purpleTag">
@@ -49,19 +73,15 @@ const LessonResult = ({ lesson, language }) => {
         </div>
         <div className="lessonResult__tag lessonResult__greenTag">{year}</div>
         <div className="lessonResult__tag lessonResult__blueTag">
-          {likes} j'aime
+          {likes.length} {t("LIKES")}
         </div>
-      </div>
-
-      <div className="lessonResult__description">
-        {`${description.charAt(0).toUpperCase() + description.slice(1, 200)}`}
-        {description.slice(1, 200).length === 199 && "..."}
       </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
+  auth: state.auth,
   language: state.language,
 });
 

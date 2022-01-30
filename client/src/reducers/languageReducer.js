@@ -1,4 +1,6 @@
 import { SET_LANGUAGE } from "../actions/types";
+import { getUserLanguage } from "../services/user";
+import { store } from "../store";
 
 const initialState = {
   current_language: localStorage.getItem("language") || "fr",

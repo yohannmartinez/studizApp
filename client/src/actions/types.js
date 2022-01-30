@@ -14,3 +14,6 @@ export const RESET_SNACK = "RESET_SNACK";
 
 //language
 export const SET_LANGUAGE = "SET_LANGUAGE";
+
+//lesson blocks
+export const SET_BLOCKS = "SET_BLOCKS";

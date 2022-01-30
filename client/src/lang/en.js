@@ -8,6 +8,18 @@ export const en = {
   LOAD_MORE: "Load more",
   VIEWS: "views",
   LOADING: "Loading...",
+  WRITTEN_BY: "Written by",
+  LIKES: "Likes",
+  CONFIRM: "Confirm",
+  GO_BACK_HOME: "Go back home",
+  NO_LESSON: "No lesson",
+  YOU: "you",
+
+  //lesson
+  SAVE: "Save changes",
+  READONLY: "Read only",
+  LESSON_DETAILS: "Lesson details",
+  CONTENT_TABLE: "Table of content",
 
   //menu
   HOME: "Home",
@@ -24,6 +36,11 @@ export const en = {
   OLD_PASSWORD: "Old password",
   NEW_PASSWORD: "New password",
   CONFIRM_PASSWORD: "Confirm password",
+  FIRSTNAME: "First name",
+  LASTNAME: "Last name",
+  PHONE_NUMBER: "Phone number",
+
+  //inputs lessons
   LESSON_NAME: "Lesson name",
   LESSON_DESCRIPTION: "Lesson description",
   LESSON_DEGREE: "Course level",
@@ -51,13 +68,27 @@ export const en = {
   LOGIN_SUBMIT: "Log In",
   FORGOT_PASSWORD: "I forgot my password",
 
+  //register
+  REGISTER_TITLE: "Create an account",
+  REGISTER_DESCRIPTION:
+    "Create your account and access all Studiz functionalities !",
+  REGISTER_SUBMIT: "Sign up",
+  ALREADY_HAVE_ACCOUNT: "I already have an account",
+  DONT_HAVE_ACCOUNT: "I don't have account",
+  USER_CREATED: "Account created successfully",
+
   //landing
   LANDING_INTRO_TITLE: "Everything you need for a successful school year",
   LANDING_INTRO_TEXT:
     "Tons of courses, on various subjects, for all levels, quizzes, and much more await you on Studiz",
   LANDING_INTRO_BUTTON: "Tell me more !",
 
+  //not found
+  PAGE_NOT_FOUND:
+    "Oups, the page you are searching for does not exist or is in progress",
+
   // error messages
+  USER_DONT_EXIST_ERROR: "User does not exist",
   EMAIL_LENGTH_ERROR: "Email address is too short",
   NOT_VALID_EMAIL_ERROR: "Please provide a valid email address",
   EMAIL_ADDRESS_DONT_EXIST_ERROR: "Email address does not exist",
@@ -70,6 +101,7 @@ export const en = {
   PASSWORD_NOT_EQUAL_ERROR: "Password are not the same",
   PASSWORD_UPDATE_ERROR:
     "Something wrong happened during the update of your password :(",
+  CONFIRM_PASSWORD_ERROR: "Passwords are not equals",
   NO_PHONENUMBER_ERROR: "Please provide a phone number",
   PHONENUMBER_CHARACTER_ERROR: "Phone number can only contain numbers",
   PHONENUMBER_LENGTH_ERROR: "Phone number must contain 10 numbers",
@@ -79,11 +111,21 @@ export const en = {
   LOGIN_PROCESS_ERROR: "Something wrong happened during authentication...",
   REGISTER_PROCESS_ERROR:
     "Something wrong happened while creating your account...",
+  CHANGE_PASSWORD_PROCESS_ERROR:
+    "Something wrong happened while updating your password...",
+  NEED_AUTH_ERROR: "You have to be logged in to trigger this action",
+  LIKE_LESSON_PROCESS_ERROR:
+    "Something wrong happened while adding your like...",
+  IMAGE_UPLOAD_FAIL: "Image upload failed",
+  IMAGE_TOO_BIG: "Maximum size of file is 1Mo",
+  LESSON_NOT_SAVED:
+    "You haven't saved your changes, do you want to leave the page anyway ?",
 
   //success messages
   LOGIN_SUCCESSFUL: "Happy to see you back {firstname} !",
   FIND_EMAIL_SUCCESSFUL: "We have found your account !",
   PASSWORD_UPDATE_SUCCESSFUL: "You're password has been updated !",
+  SAVED_CHANGES_SUCCESS: "Saved changes successfully",
 
   //forgot password
   FORGOT_PASSWORD_TITLE1: "You forgot your password ?",
@@ -117,9 +159,9 @@ export const en = {
   CREATE_LESSON_ISPRIVATE_TITLE: "Is your lesson private ?",
   CREATE_LESSON_ISPRIVATE_DESCRIPTION:
     "Only you and the people you have authorized will be able to access the course",
-  CREATE_LESSON_CGV_TITLE: "General Terms & Conditions of Sale",
-  CREATE_LESSON_CGV_DESCRIPTION:
-    "I certify that I have read and accept the general conditions of sale",
+  CREATE_LESSON_CGU_TITLE: "Terms of Service",
+  CREATE_LESSON_CGU_PART_ONE: "I certify that I have read and accept the ",
+  CREATE_LESSON_CGU_PART_TWO: "general conditions of use",
 
   //degrees
   SIXTH_GRADE: "First class",

@@ -1,0 +1,47 @@
+.landingCreateLesson {
+  &__container {
+    background-color: #70529d;
+    border-radius: 20px;
+    height: 400px;
+    margin: 100px 0;
+    display: flex;
+  }
+
+  &__leftElement {
+    flex: 1;
+    padding: 50px;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__rightElement {
+    flex: 1.5;
+  }
+
+  &__title {
+    font-weight: 800;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+  }
+
+  &__button {
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 500px;
+    background-color: #fff;
+    color: #70529d;
+    transition: 0.5s;
+    font-family: "MarkPro";
+    font-weight: 700;
+    font-size: 20px;
+    width: fit-content;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

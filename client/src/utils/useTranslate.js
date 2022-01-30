@@ -16,7 +16,7 @@ export const useTranslate = () => {
       en: en,
     };
     const currentLanguage = store.getState().language.current_language;
-    let translate = languages[currentLanguage][id] || "undefined";
+    let translate = languages[currentLanguage][id] || "translate_error";
     if (args) {
       args.map(({ argument, value }) => {
         return (translate = translate.replace(argument, value));

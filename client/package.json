@@ -13,6 +13,15 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@tiptap/extension-color": "^2.0.0-beta.9",
+    "@tiptap/extension-dropcursor": "^2.0.0-beta.25",
+    "@tiptap/extension-heading": "^2.0.0-beta.26",
+    "@tiptap/extension-highlight": "^2.0.0-beta.33",
+    "@tiptap/extension-image": "^2.0.0-beta.25",
+    "@tiptap/extension-text-align": "^2.0.0-beta.29",
+    "@tiptap/extension-text-style": "^2.0.0-beta.23",
+    "@tiptap/react": "^2.0.0-beta.107",
+    "@tiptap/starter-kit": "^2.0.0-beta.180",
     "@types/react-native-snap-carousel": "^3.8.3",
     "axios": "^0.21.1",
     "font-awesome": "^4.7.0",
@@ -20,6 +29,7 @@
     "jwt-decode": "^3.1.2",
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
+    "react-contenteditable": "^3.3.6",
     "react-dom": "^17.0.2",
     "react-editor-js": "^1.10.0",
     "react-redux": "^7.2.4",
@@ -28,6 +38,7 @@
     "react-select": "^4.3.1",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
+    "tiptap-extensions": "^1.35.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -54,9 +65,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "editorjs-inline-font-size-tool": "^1.0.1",
-    "editorjs-text-color-plugin": "^1.1.22"
   }
 }

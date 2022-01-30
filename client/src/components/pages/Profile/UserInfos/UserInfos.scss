@@ -1,0 +1,58 @@
+.userInfos {
+  &__container {
+    // border: 1px solid red;
+    padding: 30px 30px;
+    border-radius: 10px;
+    margin: 20px 0;
+    background-color: white;
+  }
+
+  &__sectionTitle {
+    font-family: "MarkPro";
+    font-weight: 800;
+    font-size: 22px;
+    margin: 0 0 20px 0;
+  }
+
+  &__flexContainer {
+    display: flex;
+  }
+
+  &__flexElement {
+    flex: 1;
+  }
+
+  &__label {
+    font-family: "MarkPro";
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  &__value {
+    font-family: "eina";
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  &__sectionSeparator {
+    height: 40px;
+  }
+
+  &__button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 500px;
+    background-color: #70529d;
+    color: white;
+    transition: 0.5s;
+    font-family: "MarkPro";
+    font-weight: 800;
+    font-size: 15px;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

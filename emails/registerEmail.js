@@ -1,10 +1,10 @@
-const transporter = require('./transporter')
+const transporter = require("./transporter");
 
 const registerEmail = (email, checkTokenEmail) => {
-    transporter.sendMail({
-        to: email,
-        subject: "Studiz - Confirmation de création du compte",
-        html: `<table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#f2f3f8"
+  transporter.sendMail({
+    to: email,
+    subject: "Studiz - Confirmation de création du compte",
+    html: `<table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#f2f3f8"
       style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
       <tr>
           <td>
@@ -16,7 +16,7 @@ const registerEmail = (email, checkTokenEmail) => {
                   <tr>
                       <td style="text-align:center;">
                         <a href="https://${process.env.CLIENT_PORT}/" title="logo" target="_blank">
-                          <img width="60" src="" title="logo" alt="logo">
+                          <img width="60" src="https://studiz.s3.eu-west-3.amazonaws.com/assets/logo.png" title="logo" alt="logo">
                         </a>
                       </td>
                   </tr>
@@ -64,8 +64,7 @@ const registerEmail = (email, checkTokenEmail) => {
           </td>
       </tr>
   </table>`,
+  });
+};
 
-    });
-}
-
-module.exports = registerEmail
+module.exports = registerEmail;
