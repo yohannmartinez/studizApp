@@ -1,47 +1,40 @@
 @font-face {
-  font-family: "eina";
-  src: url("./assets/fonts/Eina/Eina01-Light.ttf") format("truetype");
+  font-family: "circular";
+  src: url("./assets/fonts/Circular/CircularStd-Light.otf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "eina";
-  src: url("./assets/fonts/Eina/Eina01-Regular.ttf") format("truetype");
+  font-family: "circular";
+  src: url("./assets/fonts/Circular/CircularStd-Book.otf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "eina";
-  src: url("./assets/fonts/Eina/Eina01-SemiBold.ttf") format("truetype");
+  font-family: "circular";
+  src: url("./assets/fonts/Circular/CircularStd-Medium.otf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "eina";
-  src: url("./assets/fonts/Eina/Eina01-Bold.ttf") format("truetype");
+  font-family: "circular";
+  src: url("./assets/fonts/Circular/CircularStd-Bold.otf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MarkPro";
-  src: url("./assets/fonts/MarkPro/MarkPro-Bold.otf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MarkPro";
-  src: url("./assets/fonts/MarkPro/MarkPro-Heavy.otf") format("truetype");
+  font-family: "circular";
+  src: url("./assets/fonts/Circular/CircularStd-Black.otf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 
 body {
-  font-family: "eina";
+  font-family: "circular";
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -77,13 +70,12 @@ a {
       &__title {
         margin: 10px 0;
         font-weight: 800;
-        font-family: "MarkPro";
+        font-family: "circular";
         font-size: 23px;
       }
       &__message {
         margin: 0;
         font-weight: 500;
-        font-family: "eina";
         font-size: 15px;
         max-width: 350px;
         text-align: center;

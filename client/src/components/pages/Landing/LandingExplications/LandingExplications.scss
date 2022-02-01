@@ -1,11 +1,9 @@
 .landingExplications {
   &__globalContainer {
-    // border: 1px solid red;
     padding: 20px 0;
   }
 
   &__container {
-    // border: 1px solid red;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -14,10 +12,8 @@
   &__title {
     text-align: center;
     font-weight: 800;
-    font-family: "MarkPro";
     font-size: 40px;
     max-width: 700px;
-    // border: 1px solid red;
   }
 
   &__flexContainer {
@@ -36,13 +32,11 @@
   }
 
   &__elementTitle {
-    font-family: "MarkPro";
     font-weight: 800;
     font-size: 25px;
   }
 
   &__elementDescription {
-    font-family: "MarkPro";
     font-weight: 700;
     color: rgb(153, 153, 153);
   }

@@ -11,7 +11,6 @@ import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
 import { useTranslate } from "../../../../utils/useTranslate";
 
 import LessonTopInformations from "./LessonTopInformations/LessonTopInformations";
-import LessonContent from "../LessonContent/LessonContent";
 
 import "./LessonInformations.scss";
 

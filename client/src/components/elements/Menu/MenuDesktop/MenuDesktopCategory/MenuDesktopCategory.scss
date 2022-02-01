@@ -29,7 +29,6 @@
   }
 
   &__categoryName {
-    font-family: "MarkPro", sans-serif;
     font-weight: 700;
     font-size: 15px;
     justify-content: center;
@@ -94,13 +93,11 @@
     }
 
     &Name {
-      font-family: "MarkPro", sans-serif;
       font-weight: 700;
       font-size: 15px;
       margin-bottom: 0.3em;
     }
     &Description {
-      font-family: "eina", sans-serif;
       font-weight: 600;
       font-size: 12px;
       color: rgb(104, 104, 104);

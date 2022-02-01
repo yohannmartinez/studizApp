@@ -17,12 +17,15 @@ const ThirdStep = ({
 
   const onCitySearch = async (inputValue, callback) => {
     if (inputValue === "") callback([]);
+    console.log(inputValue.toLowerCase());
     const cities = await getCities(inputValue);
     const formatted_cities = cities.data.cities
       .map((city) => {
         return { label: city.name, value: city.name };
       })
-      .filter((city) => city.label.toLowerCase().startsWith(inputValue));
+      .filter((city) =>
+        city.label.toLowerCase().startsWith(inputValue.toLowerCase())
+      );
     callback(formatted_cities);
   };
 

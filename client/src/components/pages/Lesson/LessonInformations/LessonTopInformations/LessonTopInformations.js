@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as NotLikedIcon } from "@fortawesome/fontawesome-free-regular";
 import { faHeart as LikedIcon } from "@fortawesome/fontawesome-free-solid";
 
+import { useState } from "react";
 import { setSnack, resetSnack } from "../../../../../actions/snackActions";
 import { useTranslate } from "../../../../../utils/useTranslate";
 import "./LessonTopInformations.scss";
@@ -16,6 +17,7 @@ const LessonTopInformations = ({
   resetSnack,
 }) => {
   const { t } = useTranslate();
+  const [likeLoading, setLikeLoading] = useState(false);
 
   const userLikeLesson = lesson.likes.find(
     (like) => like.userId === auth.user._id
@@ -34,6 +36,7 @@ const LessonTopInformations = ({
   };
 
   const handleLikeLesson = async () => {
+    setLikeLoading(true);
     if (!auth.isAuthenticated) {
       handleSnack("error", "NEED_AUTH_ERROR");
     } else {
@@ -51,6 +54,7 @@ const LessonTopInformations = ({
             likes: [...lesson.likes, likedOrDisliked.data.like],
           });
     }
+    setLikeLoading(false);
   };
 
   return (
@@ -63,7 +67,7 @@ const LessonTopInformations = ({
                 <div
                   className="lessonTopData__headingInfos__infoHeading lessonTopData__headingInfos__heart"
                   onClick={() => {
-                    handleLikeLesson();
+                    !likeLoading && handleLikeLesson();
                   }}
                 >
                   <FontAwesomeIcon

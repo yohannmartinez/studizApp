@@ -1,7 +1,6 @@
 .forgotPassword {
   &__stepTitle {
     text-align: center;
-    font-family: "MarkPro";
     font-size: 27px;
     font-weight: 800;
     text-align: center;
@@ -9,7 +8,6 @@
   }
 
   &__stepDescription {
-    font-family: "eina";
     font-size: 14px;
     font-weight: 500;
     text-align: center;
@@ -25,7 +23,6 @@
     border-radius: 10px;
     color: white;
     font-weight: 700;
-    font-family: "MarkPro";
     font-size: 14px;
     cursor: pointer;
     transition: 0.5s;
