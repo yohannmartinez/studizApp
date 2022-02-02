@@ -53,7 +53,9 @@ const LessonDetails = ({ editor, lesson, setShowDetails }) => {
               onElementClick={closeLessonDetails}
             />
           )}
-          <p>{lesson.description}</p>
+          <p>
+            <b>Description:</b> {lesson.description}
+          </p>
         </div>
       </div>
     </div>

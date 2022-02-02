@@ -1,0 +1,12 @@
+.contentTable {
+  &__container {
+    padding: 20px 0;
+  }
+
+  &__element {
+    color: #aeadab;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 5px 0;
+  }
+}
