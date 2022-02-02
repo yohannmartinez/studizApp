@@ -11,6 +11,7 @@
 
   &__title {
     text-align: center;
+    font-family: "MarkPro";
     font-weight: 800;
     font-size: 40px;
     max-width: 700px;
@@ -32,12 +33,12 @@
   }
 
   &__elementTitle {
+    font-family: "MarkPro";
     font-weight: 800;
     font-size: 25px;
   }
 
   &__elementDescription {
-    font-weight: 700;
-    color: rgb(153, 153, 153);
+    font-weight: 500;
   }
 }

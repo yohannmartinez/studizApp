@@ -16,6 +16,7 @@
   &__title {
     width: 100%;
     text-align: center;
+    font-family: "MarkPro";
     font-weight: 800;
     margin: 0;
     font-size: 34px;
@@ -43,6 +44,7 @@
     align-items: center;
 
     &__text {
+      font-family: "MarkPro";
       font-weight: 800;
       font-size: 21px;
       color: white;
@@ -50,9 +52,11 @@
     }
 
     &__button {
+      font-family: "circular";
       border-radius: 40px;
       height: 40px;
       color: #70529d;
+      font-family: "MarkPro";
       font-weight: 800;
       font-size: 14px;
       background-color: white;

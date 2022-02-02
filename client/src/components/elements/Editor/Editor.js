@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { connect } from "react-redux";
 import { useEditor, EditorContent } from "@tiptap/react";
 
 import Color from "@tiptap/extension-color";
-import Dropcursor from "@tiptap/extension-dropcursor";
 import EditorTooltip from "./EditorTooltip/EditorTooltip";
 import Highlight from "@tiptap/extension-highlight";
 import Image from "@tiptap/extension-image";
@@ -14,15 +14,13 @@ import { setSnack, resetSnack } from "../../../actions/snackActions";
 import EditorAddElement from "./EditorAddElement/EditorAddElement";
 import { saveLessonChanges } from "../../../services/lessons";
 import { useTranslate } from "../../../utils/useTranslate";
-import "./Editor.scss";
-import { useEffect, useState } from "react";
 import { Prompt } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LessonDetails from "./LessonDetails/LessonDetails";
-import { BlockId } from "./test";
+import { UniqueID } from "./UniqueID";
+import "./Editor.scss";
 
 const Editor = ({ lesson, lessonData, canEdit, setSnack, resetSnack }) => {
-  console.log(lessonData);
   const [hasSaved, setHaveSaved] = useState(true);
   const [showDetails, setShowDetails] = useState(false);
   const { t } = useTranslate();
@@ -38,17 +36,27 @@ const Editor = ({ lesson, lessonData, canEdit, setSnack, resetSnack }) => {
     });
   };
 
+  const allBlockItems = [
+    "heading",
+    "paragraph",
+    "image",
+    "bulletList",
+    "listItem",
+    "orderedList",
+  ];
+
   const editor = useEditor({
     editable: canEdit,
     extensions: [
-      BlockId,
+      UniqueID.configure({
+        types: allBlockItems,
+      }),
       StarterKit,
       TextAlign.configure({
-        types: ["heading", "paragraph", "image"],
+        types: allBlockItems,
       }),
       Highlight,
       Image,
-      Dropcursor,
       TextStyle,
       Color.configure({
         types: ["textStyle"],
@@ -69,12 +77,7 @@ const Editor = ({ lesson, lessonData, canEdit, setSnack, resetSnack }) => {
   };
 
   return (
-    <div
-      className="editor__container"
-      onClick={() => {
-        console.log(editor.getHTML(), editor.getJSON());
-      }}
-    >
+    <div className="editor__container">
       <div className="editor__contentContainer">
         {editor && canEdit && <EditorTooltip editor={editor} />}
 
@@ -103,7 +106,7 @@ const Editor = ({ lesson, lessonData, canEdit, setSnack, resetSnack }) => {
           </div>
         )}
 
-        <Prompt when={!hasSaved} message={t("LESSON_NOT_SAVED")} />
+        <Prompt when={!hasSaved && canEdit} message={t("LESSON_NOT_SAVED")} />
 
         {showDetails && (
           <LessonDetails

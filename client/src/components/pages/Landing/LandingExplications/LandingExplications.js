@@ -32,7 +32,7 @@ const LandingExplications = () => {
               </h2>
               <p className="landingExplications__elementDescription">
                 Les cours les plus aimés et vus dans toutes les matières vous
-                seront mis en avant, pas de perte de temps avec studiz !
+                seront mis en avant, pas de perte de temps avec studiz
               </p>
             </div>
             <div className="landingExplications__flexElement">

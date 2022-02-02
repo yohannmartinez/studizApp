@@ -73,16 +73,20 @@ const SearchResults = ({ filters, auth }) => {
         ))}
 
         {/* case they are more results to load */}
-        {!isLoading && isMoreLessons && (
+        {isMoreLessons && (
           <div
             className="searchResults__loadMoreResults"
             onClick={() => {
               loadMoreResults();
             }}
           >
-            <button className="searchResults__loadMoreResults__button">
-              {t("LOAD_MORE")}
-            </button>
+            {isLoading ? (
+              <Loading />
+            ) : (
+              <button className="searchResults__loadMoreResults__button">
+                {t("LOAD_MORE")}
+              </button>
+            )}
           </div>
         )}
 

@@ -23,6 +23,7 @@
   &__lessonTitle {
     margin: 0;
     font-size: 19px;
+    font-family: "MarkPro";
     font-weight: 700;
     text-align: left;
     display: flex;
@@ -51,7 +52,7 @@
     font-weight: 500;
     color: #222222;
     margin: 20px 0;
-    height: 55px;
+    height: 50px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -92,6 +93,7 @@
 
   &__tag {
     font-size: 13px;
+    font-family: "MarkPro";
     font-weight: 700;
     padding: 1px 15px 0 15px;
     height: 30px;

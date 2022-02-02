@@ -29,6 +29,7 @@
   }
 
   &__categoryName {
+    font-family: "MarkPro";
     font-weight: 700;
     font-size: 15px;
     justify-content: center;
@@ -93,13 +94,14 @@
     }
 
     &Name {
+      font-family: "MarkPro";
       font-weight: 700;
-      font-size: 15px;
+      font-size: 16px;
       margin-bottom: 0.3em;
     }
     &Description {
       font-weight: 600;
-      font-size: 12px;
+      font-size: 13px;
       color: rgb(104, 104, 104);
     }
     &:hover {

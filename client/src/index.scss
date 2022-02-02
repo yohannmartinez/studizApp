@@ -33,6 +33,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "MarkPro";
+  src: url("./assets/fonts/MarkPro/MarkPro-Bold.otf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MarkPro";
+  src: url("./assets/fonts/MarkPro/MarkPro-Heavy.otf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
 body {
   font-family: "circular";
   font-weight: 500;

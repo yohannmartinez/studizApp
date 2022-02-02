@@ -17,6 +17,10 @@ const LessonDetails = ({ editor, lesson, setShowDetails }) => {
     };
   }, []);
 
+  const closeLessonDetails = () => {
+    setShowDetails(false);
+  };
+
   return (
     <div className="lessonDetails__globalContainer">
       <div
@@ -44,7 +48,10 @@ const LessonDetails = ({ editor, lesson, setShowDetails }) => {
             />
           </button>
           {isContentTableOpened && (
-            <ContentTable lessonContentToJson={editor.getJSON()} />
+            <ContentTable
+              lessonContentToJson={editor.getJSON()}
+              onElementClick={closeLessonDetails}
+            />
           )}
           <p>{lesson.description}</p>
         </div>

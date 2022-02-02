@@ -1,7 +1,7 @@
 import { findChildren } from "@tiptap/react";
 import { useEffect, useState } from "react";
 
-const ContentTable = ({ lessonContentToJson }) => {
+const ContentTable = ({ lessonContentToJson, onElementClick }) => {
   const [titles, setTitles] = useState([]);
   console.log(lessonContentToJson);
 
@@ -22,7 +22,10 @@ const ContentTable = ({ lessonContentToJson }) => {
       {titles.map((item) => (
         <div
           onClick={() => {
-            console.log(findChildren(lessonContentToJson));
+            onElementClick();
+            document
+              .getElementById(`${item.node.attrs.id}`)
+              .scrollIntoView({ block: "center" });
           }}
         >
           {item.title}

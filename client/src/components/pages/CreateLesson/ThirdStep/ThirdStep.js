@@ -51,11 +51,14 @@ const ThirdStep = ({
           lesson.city === "" ? "" : { label: lesson.city, value: lesson.city }
         }
         onChange={(option) => {
-          updateLesson("city", option.value.toString());
+          option
+            ? updateLesson("city", option.value.toString())
+            : updateLesson("city", "");
         }}
         label="LESSON_CITY"
         isSearchable
         isMulti={false}
+        isClearable={true}
       />
       <div className="createLesson__thirdStep__checkboxSeparator"></div>
       <CheckBox
