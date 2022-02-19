@@ -77,12 +77,7 @@ const Editor = ({ lesson, lessonData, canEdit, setSnack, resetSnack }) => {
   };
 
   return (
-    <div
-      className="editor__container"
-      onClick={() => {
-        console.log(editor.getHTML());
-      }}
-    >
+    <div className="editor__container">
       <div className="editor__contentContainer">
         {editor && canEdit && <EditorTooltip editor={editor} />}
 

@@ -5,8 +5,7 @@ import { useTranslate } from "../../../../../utils/useTranslate";
 import "./MenuDesktopCategory.scss";
 
 //images
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/fontawesome-free-solid";
+import { FiChevronDown } from "react-icons/fi";
 
 const MenuDesktopCategory = ({ name, subMenus, link }) => {
   const history = useHistory();
@@ -25,7 +24,7 @@ const MenuDesktopCategory = ({ name, subMenus, link }) => {
       <div className="menuDesktopCategory__categoryName">{t(name)}</div>
       {subMenus.length > 0 && (
         <div className="menuDesktopCategory__dropdownIcon">
-          <FontAwesomeIcon icon={faChevronDown} />
+          <FiChevronDown />
         </div>
       )}
       {subMenus.length > 0 && (

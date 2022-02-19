@@ -1,22 +1,22 @@
+import { useState } from "react";
 import StudizLogo from "../../../assets/pictures/logo_base.svg";
+import StudizLogoWhite from "../../../assets/pictures/logo_white.svg";
 import "./Logo.scss";
 
-const Logo = ({ action, fontSize, logoHeight }) => {
+const Logo = ({ action, fontClassName, logoClassName, type = "default" }) => {
   return (
     <div
       className="logo__container"
-      style={{ fontSize }}
       onClick={() => {
         action();
       }}
     >
       <img
-        src={StudizLogo}
-        className="logo__image"
-        style={{ height: logoHeight }}
+        src={type === "default" ? StudizLogo : StudizLogoWhite}
+        className={`logo__image ${logoClassName}`}
         alt="studiz home"
       />
-      Studiz
+      <span className={`logo__text__${type} ${fontClassName}`}>Studiz</span>
     </div>
   );
 };

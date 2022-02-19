@@ -1,0 +1,173 @@
+@import "../../../basics.scss";
+.footer {
+  &__globalContainer {
+    background: $dark;
+    padding: 100px 0;
+  }
+
+  &__container {
+    padding: 0 40px;
+  }
+
+  &__pagesContainer {
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  &__pageContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__category {
+    font-family: $text-font;
+    color: white;
+    font-weight: 800;
+    padding: 15px 0 20px 0;
+    font-size: 16px;
+  }
+
+  &__pageName {
+    font-family: $text-font;
+    color: #9399a2;
+    font-weight: 600;
+    padding: 0 0 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+    width: fit-content;
+    font-size: 16px;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__separator {
+    width: 100%;
+    height: 1px;
+    background: #9399a2;
+    margin: 10px 0;
+  }
+
+  &__flexContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__studizDescription {
+    font-family: $text-font;
+    font-weight: 600;
+    font-size: 16px;
+    color: #9399a2;
+    max-width: 400px;
+    line-height: 26px;
+    padding: 10px 0;
+  }
+
+  &__legalContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $text-font;
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+  }
+
+  &__legal {
+    line-height: 26px;
+    cursor: pointer;
+    padding-left: 30px;
+    transition: 0.5s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__studizCopyright {
+    font-family: $text-font;
+    font-weight: 600;
+    font-size: 13px;
+    color: #9399a2;
+    max-width: 400px;
+    line-height: 26px;
+    padding: 10px 0;
+  }
+
+  &__socialContainer {
+    padding: 10px 0 0 0;
+    display: flex;
+    color: white;
+    font-size: 24px;
+  }
+
+  &__social {
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .footer {
+    &__globalContainer {
+      padding: 40px 0;
+    }
+
+    &__pagesContainer {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    &__category {
+      font-weight: 800;
+      padding: 45px 0 20px 0;
+      font-size: 18px;
+    }
+
+    &__pageName {
+      font-size: 16px;
+    }
+
+    &__flexContainer {
+      flex-direction: column;
+    }
+
+    &__studizDescription {
+      font-size: 15px;
+      color: #9399a2;
+      max-width: 400px;
+    }
+
+    &__legalContainer {
+      justify-content: flex-start;
+      margin-bottom: 20px;
+    }
+
+    &__legal {
+      padding-left: 0;
+      padding-right: 20px;
+    }
+
+    &__social {
+      margin-left: 0;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .footer {
+    &__container {
+      padding: 0 10px;
+    }
+  }
+}

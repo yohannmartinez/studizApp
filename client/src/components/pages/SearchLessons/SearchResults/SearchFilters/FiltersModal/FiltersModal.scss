@@ -1,41 +1,38 @@
+@import "../../../../../../basics.scss";
+
 .modalFilters {
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 30px;
   }
 
   &__title {
     font-size: 28px;
-    font-family: "MarkPro";
-    font-weight: 800;
-    margin-bottom: 5px;
-  }
-
-  &__subTitle {
-    font-size: 14px;
-    font-weight: 400;
-    margin-bottom: 10px;
-    width: 350px;
+    font-family: $title-font;
+    font-weight: 700;
+    margin-bottom: 0px;
     text-align: center;
   }
 
-  &__button {
-    border-radius: 20px;
-    background-color: #70529d;
-    color: white;
-    font-family: "MarkPro";
-    font-weight: 700;
-    border: none;
-    font-size: 17px;
-    cursor: pointer;
-    padding: 10px 20px;
-    margin: 10px 0;
-    transition: 0.5s;
-    &:hover {
-      transform: scale(1.02);
+  &__subTitle {
+    font-family: $text-font;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 10px;
+    max-width: 350px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .modalFilters {
+    &__container {
+      padding: 0 15px;
     }
   }
 }

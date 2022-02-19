@@ -8,7 +8,7 @@ const initialState = {
   action: () => {},
 };
 
-export default function (state = initialState, action) {
+export default function setReducerFunctions(state = initialState, action) {
   switch (action.type) {
     case SET_SNACK:
       return {

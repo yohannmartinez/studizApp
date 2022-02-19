@@ -1,3 +1,5 @@
+@import "../../../../../basics.scss";
+
 .menuDesktopCategory {
   &__categoryContainer {
     padding: 10px 10px;
@@ -5,8 +7,7 @@
     justify-content: center;
     border-radius: 4px;
     cursor: pointer;
-    margin-right: 5px;
-    margin-top: 2px;
+    margin: 2px 3.5px 0 3.5px;
     transition: 0.5s;
     position: relative;
 
@@ -23,32 +24,32 @@
       top: 0;
       left: 0;
       pointer-events: none;
-      background-color: black;
+      background-color: rgb(121, 121, 121);
       opacity: 0;
     }
   }
 
   &__categoryName {
-    font-family: "MarkPro";
-    font-weight: 700;
+    font-family: $text-font;
+    font-weight: 800;
     font-size: 15px;
     justify-content: center;
     align-items: center;
     display: flex;
-    color: #222;
+    color: $dark;
   }
 
   &__dropdownIcon {
     justify-content: center;
     align-items: center;
     display: flex;
-    padding: 0 0 0 0.8em;
-    font-size: 13px;
+    padding: 0 0 0 4px;
+    font-size: 15px;
     transition: 0.3s;
   }
 
   &__categoryContainer:hover &__dropdownIcon {
-    padding: 0 0.8em 0 0;
+    padding: 0 4px 0 0;
     transform: rotate(180deg);
   }
 
@@ -74,6 +75,7 @@
     padding: 0.5em;
     display: flex;
     flex-direction: column;
+    border: 1px solid $border-grey;
     box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.15);
     -webkit-box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.15);
     -moz-box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.15);
@@ -94,15 +96,19 @@
     }
 
     &Name {
-      font-family: "MarkPro";
+      font-family: $title-font;
       font-weight: 700;
       font-size: 16px;
       margin-bottom: 0.3em;
+      color: $dark;
     }
     &Description {
+      font-family: $text-font;
+      padding: 0 10px 0 0;
       font-weight: 600;
       font-size: 13px;
-      color: rgb(104, 104, 104);
+      line-height: 22px;
+      color: $dark;
     }
     &:hover {
       background-color: rgb(240, 240, 240);

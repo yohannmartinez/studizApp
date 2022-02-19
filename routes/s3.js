@@ -46,8 +46,8 @@ router.post("/upload", (req, res) => {
       const timestamp = Date.now().toString();
       const fileName = `${
         timestamp +
-        originalFilename +
-        Math.floor(100000 + Math.random() * 900000)
+        Math.floor(100000 + Math.random() * 900000) +
+        originalFilename
       }`;
       const { Location: fileLink } = await uploadFile(buffer, fileName, type);
       return res.status(200).send({ success: true, file: fileLink });

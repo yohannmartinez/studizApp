@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 
+import Button from "../../elements/Button/Button";
+import DecorativeCircle from "../../elements/DecorativeCircle/DecorativeCircle";
+import Footer from "../../elements/Footer/Footer";
 import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import Menu from "../../elements/Menu/Menu";
 import PageWrapper from "../../elements/PageWrapper/PageWrapper";
 import {
   filtersToSelectFormat,
-  getSearchFilters,
   launchSearch,
 } from "../../../utils/searchLessons";
 import SearchResults from "./SearchResults/SearchResults";
 
-import "./SearchLessons.scss";
 import { useTranslate } from "../../../utils/useTranslate";
+import "./SearchLessons.scss";
 
 const SearchLessons = (props) => {
   const { t } = useTranslate();
@@ -48,9 +50,26 @@ const SearchLessons = (props) => {
         <div className="searchLessons__container">
           <div className="searchLessons__header">
             <h1 className="searchLessons__header__title">
+              <DecorativeCircle
+                type={"border"}
+                size={"20px"}
+                top={"-40px"}
+                left={"40%"}
+              />
+              <DecorativeCircle
+                type={"default"}
+                size={"14px"}
+                bottom={"-40px"}
+                left={"-60px"}
+              />
+              <DecorativeCircle
+                type={"default"}
+                size={"12px"}
+                bottom={"-70px"}
+                right={"-10px"}
+              />
               {t("SEARCH_LESSON_TITLE")}
             </h1>
-            <div className="searchLessons__header__imageContainer"></div>
             <form
               className="searchLessons__searchBar"
               onSubmit={(e) => {
@@ -62,11 +81,10 @@ const SearchLessons = (props) => {
                 className="searchLessons__input"
                 value={search.name}
                 onChange={handleChangeInput}
-                placeholder={t("SEARCH_LESSON_SEARCH_PLACEHOLDER")}
               />
-              <button type="submit" className="searchLessons__searchButton">
+              <Button model="dark" type="submit">
                 {t("SEARCH")}
-              </button>
+              </Button>
             </form>
           </div>
           <div className="searchLessons__resultsContainer">
@@ -74,6 +92,7 @@ const SearchLessons = (props) => {
           </div>
         </div>
       </PageWrapper>
+      <Footer />
     </div>
   );
 };

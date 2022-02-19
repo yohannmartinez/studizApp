@@ -1,5 +1,6 @@
 import "./Menu.scss";
 import MenuDesktop from "./MenuDesktop/MenuDesktop";
+import MenuMobile from "./MenuMobile/MenuMobile";
 
 const Menu = ({ backgroundColor }) => {
   return (
@@ -7,7 +8,9 @@ const Menu = ({ backgroundColor }) => {
       <div className="menu__desktop__globalContainer">
         <MenuDesktop backgroundColor={backgroundColor} />
       </div>
-      <div className="menu__mobile__globalContainer">mobile</div>
+      <div className="menu__mobile__globalContainer">
+        <MenuMobile backgroundColor={backgroundColor} />
+      </div>
     </div>
   );
 };

@@ -1,54 +1,82 @@
 @font-face {
-  font-family: "circular";
-  src: url("./assets/fonts/Circular/CircularStd-Light.otf") format("truetype");
+  font-family: "Robert";
+  src: url("./assets/fonts/Robert/RobertSans-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Robert";
+  src: url("./assets/fonts/Robert/RobertSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Robert";
+  src: url("./assets/fonts/Robert/RobertSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "circular";
-  src: url("./assets/fonts/Circular/CircularStd-Book.otf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "circular";
-  src: url("./assets/fonts/Circular/CircularStd-Medium.otf") format("truetype");
+  font-family: "Robert";
+  src: url("./assets/fonts/Robert/RobertSans-Medium.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "circular";
-  src: url("./assets/fonts/Circular/CircularStd-Bold.otf") format("truetype");
+  font-family: "Robert";
+  src: url("./assets/fonts/Robert/RobertSans-SemiBold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "circular";
-  src: url("./assets/fonts/Circular/CircularStd-Black.otf") format("truetype");
+  font-family: "Robert";
+  src: url("./assets/fonts/Robert/RobertSans-Bold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MarkPro";
-  src: url("./assets/fonts/MarkPro/MarkPro-Bold.otf") format("truetype");
+  font-family: "Robert";
+  src: url("./assets/fonts/Robert/RobertSans-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Robert";
+  src: url("./assets/fonts/Robert/RobertSans-Black.ttf") format("truetype");
+  font-weight: 1000;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Basier";
+  src: url("./assets/fonts/Basier/BasierSquare-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Basier";
+  src: url("./assets/fonts/Basier/BasierSquare-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Basier";
+  src: url("./assets/fonts/Basier/BasierSquare-Bold.ttf") format("truetype");
   font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MarkPro";
-  src: url("./assets/fonts/MarkPro/MarkPro-Heavy.otf") format("truetype");
-  font-weight: 800;
   font-style: normal;
 }
 
 body {
-  font-family: "circular";
+  font-family: "Basier";
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -60,40 +88,4 @@ html {
 
 a {
   color: #5a5a5a;
-}
-
-@media (min-width: 1050px) {
-  .app {
-    &__notSupportedDevice {
-      display: none;
-    }
-  }
-}
-@media (max-width: 1050px) {
-  .app {
-    &__notSupportedDevice {
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-      background-color: white;
-      z-index: 99999999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      &__title {
-        margin: 10px 0;
-        font-weight: 800;
-        font-family: "circular";
-        font-size: 23px;
-      }
-      &__message {
-        margin: 0;
-        font-weight: 500;
-        font-size: 15px;
-        max-width: 350px;
-        text-align: center;
-      }
-    }
-  }
 }

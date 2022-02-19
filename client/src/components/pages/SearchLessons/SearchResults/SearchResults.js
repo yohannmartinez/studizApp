@@ -8,6 +8,7 @@ import { getLessons } from "../../../../services/lessons";
 import SearchFilters from "./SearchFilters/SearchFilters";
 import "./SearchResults.scss";
 import { useTranslate } from "../../../../utils/useTranslate";
+import Button from "../../../elements/Button/Button";
 
 const SearchResults = ({ filters, auth }) => {
   const { t } = useTranslate();
@@ -49,64 +50,82 @@ const SearchResults = ({ filters, auth }) => {
 
   const getTitleValue = () => {
     if (isLoading) return "LOADING";
-    if (lessons.length === 0) return `SEARCH_RESULTS_NO_RESULTS`;
-    if (filters.length > 0 && lessons.length > 0) return `SEARCH_RESULTS_TITLE`;
-    if (filters.length === 0 && lessons.length > 0)
-      return `SEARCH_RESULTS_MOST_POPULAR`;
+    if (filters.length > 0) return `SEARCH_RESULTS_TITLE`;
+    if (filters.length === 0) return `SEARCH_RESULTS_MOST_POPULAR`;
   };
 
   return (
     <>
       <div className="searchResults__header">
-        <div className="searchResults__subTitle">
-          {t("SEARCH_RESULTS_SUBTITLE")}
-        </div>
         <h1 className="searchResults__title">{t(getTitleValue())}</h1>
+        <SearchFilters filters={filters} />
       </div>
-      {isLoading && <Loading />}
+      {isLoading && (
+        <div style={{ margin: "100px 0 150px 0" }}>
+          <Loading />
+        </div>
+      )}
 
-      {!isLoading && <SearchFilters filters={filters} />}
+      {lessons.length > 0 && (
+        <div className="searchResults__globalContainer">
+          {lessons.map((lesson) => (
+            <LessonResult key={"lesson" + lesson._id} lesson={lesson} />
+          ))}
 
-      <div className="searchResults__globalContainer">
-        {lessons.map((lesson) => (
-          <LessonResult key={"lesson" + lesson._id} lesson={lesson} />
-        ))}
-
-        {/* case they are more results to load */}
-        {isMoreLessons && (
-          <div
-            className="searchResults__loadMoreResults"
-            onClick={() => {
-              loadMoreResults();
-            }}
-          >
-            {isLoading ? (
-              <Loading />
-            ) : (
-              <button className="searchResults__loadMoreResults__button">
-                {t("LOAD_MORE")}
-              </button>
-            )}
-          </div>
-        )}
-
-        {/* case they are no more results to load */}
-        {!isLoading && !isMoreLessons && lessons.length > 0 && (
-          <div className="searchResults__noMoreResults">
-            <p className="searchResults__noMoreResults__text">
-              {t("SEARCH_RESULTS_NO_MORE_TITLE")}
-            </p>
-            <button
-              className="searchResults__noMoreResults__button"
+          {/* case they are more results to load */}
+          {isMoreLessons && (
+            <div
+              className="searchResults__loadMoreResults"
               onClick={() => {
-                history.push("/createLesson");
+                loadMoreResults();
               }}
             >
-              {t("SEARCH_RESULTS_NO_MORE_BUTTON")}
-            </button>
-          </div>
-        )}
-      </div>
+              <p className="searchResults__noMoreResults__text">
+                {t("SEARCH_RESULTS_LOAD_MORE_TITLE")}
+              </p>
+              {isLoading ? (
+                <Loading />
+              ) : (
+                <Button
+                  model={"white"}
+                  action={() => {
+                    loadMoreResults();
+                  }}
+                  className="searchResults__loadMoreResults__button"
+                >
+                  {t("LOAD_MORE")}
+                </Button>
+              )}
+            </div>
+          )}
+
+          {/* case they are no more results to load */}
+          {!isLoading && !isMoreLessons && lessons.length > 0 && (
+            <div className="searchResults__noMoreResults">
+              <p className="searchResults__noMoreResults__text">
+                {t("SEARCH_RESULTS_NO_MORE_TITLE")}
+              </p>
+              <Button
+                model={"white"}
+                className="searchResults__noMoreResults__button"
+                action={() => {
+                  history.push("/createLesson");
+                }}
+              >
+                {t("SEARCH_RESULTS_NO_MORE_BUTTON")}
+              </Button>
+            </div>
+          )}
+        </div>
+      )}
+      {!isLoading && !isMoreLessons && lessons.length === 0 && (
+        <div className="searchResults__noResults">
+          <h1 className="searchResults__noResults__title">
+            {t("SEARCH_RESULTS_NO_RESULTS")}
+          </h1>
+          <Button model={"white"}>Créer le cours</Button>
+        </div>
+      )}
     </>
   );
 };

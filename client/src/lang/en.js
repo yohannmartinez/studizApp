@@ -12,19 +12,25 @@ export const en = {
   LIKES: "Likes",
   CONFIRM: "Confirm",
   GO_BACK_HOME: "Go back home",
+  GO_BACK: "Go back",
   NO_LESSON: "No lesson",
   YOU: "you",
+  PRIVATE: "Private",
+  NOT_PRIVATE: "Not private",
 
   //lesson
   SAVE: "Save changes",
   READONLY: "Read only",
   LESSON_DETAILS: "Lesson details",
+  LESSON_DETAILS_INSTITUTION: "Educational institution",
+  LESSON_DETAILS_CITY: "Institution city",
   CONTENT_TABLE: "Table of content",
 
   //menu
   HOME: "Home",
   LESSONS: "Lessons",
   QUIZZS: "Quizzes",
+  FEEDBACKS: "Feedbacks",
   PRIVATE_INSTRUCTOR: "Private instructors",
   LOGIN: "Log In",
   REGISTER: "Sign Up",
@@ -48,6 +54,7 @@ export const en = {
   LESSON_YEAR: "Course year",
   LESSON_INSTITUTION: "Educational institution",
   LESSON_CITY: "Institution city",
+  LESSON_PRIVATE: "Lesson accessibility",
 
   //menu sub categories
   CREATE_LESSON: "Create a lesson",
@@ -84,8 +91,9 @@ export const en = {
   LANDING_INTRO_BUTTON: "Tell me more !",
 
   //not found
-  PAGE_NOT_FOUND:
-    "Oups, the page you are searching for does not exist or is in progress",
+  PAGE_NOT_FOUND_TITLE: "Oups, something went wrong",
+  PAGE_NOT_FOUND_TEXT:
+    "The page you are searching for does not exist or is in progress",
 
   // error messages
   USER_DONT_EXIST_ERROR: "User does not exist",
@@ -135,19 +143,24 @@ export const en = {
   FORGOT_PASSWORD_ENTER_PASSWORD: "Please enter your new password",
 
   //Search lesson page
-  SEARCH_LESSON_TITLE:
-    "Find the course you need among those written by the community",
+  SEARCH_LESSON_TITLE: "What course are you looking for ?",
   SEARCH_LESSON_SEARCH_PLACEHOLDER: "Exemple: Pythagorean theorem",
   SEARCH_RESULTS_SUBTITLE: "You are currently seeing",
   SEARCH_RESULTS_TITLE: `Results for the search`,
   SEARCH_RESULTS_NO_RESULTS: `No results for the search`,
-  SEARCH_RESULTS_MOST_POPULAR: "The most popular lessons",
+  SEARCH_RESULTS_MOST_POPULAR: "Popular right now",
   SEARCH_RESULTS_NO_MORE_TITLE: "You did not find the course you needed ?",
   SEARCH_RESULTS_NO_MORE_BUTTON: "Create it !",
-  FILTERS: "Filters",
+  SEARCH_RESULTS_LOAD_MORE_TITLE: "Load more results for your search ?",
+  FILTERS: "Active filters",
   RESULTS_FILTERS: "Filter results",
   RESULTS_FILTERS_TEXT:
     "Add filters to make your search as precise as possible",
+  LESSON_RESULT_PRIVATE: "This lesson is ",
+  LESSON_RESULT_NOT_PRIVATE: "This lesson",
+  LESSON_RESULT_LEVEL: "Degree is ",
+  LESSON_RESULT_FACULTY: "Faculty is",
+  LESSON_RESULT_VIEWS: "on this lesson",
 
   //create lesson page
   CREATE_LESSON_SUBTITLE: "Let's start",

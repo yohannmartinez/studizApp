@@ -112,6 +112,7 @@ router.get("/search", (req, res) => {
   const { filters, numberOfLessons, userId } = req.query;
   const isFilters = JSON.parse(filters.toString()).length > 0;
   const { searchFilters, isTextFilters } = getSearchFilters(filters);
+  console.log(searchFilters, isTextFilters);
 
   const returnFormatLessons = async (lessons) => {
     lessonWithCreators = await getLessonsCreators(lessons);

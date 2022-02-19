@@ -1,15 +1,28 @@
+@import "../../../basics.scss";
+
 .logo {
   &__container {
     display: inline-flex;
     align-items: center;
     justify-content: left;
-    font-family: "MarkPro";
-    font-weight: 800;
+    font-family: $title-font;
+    color: $dark;
+    font-size: 24px;
+    font-weight: 700;
     width: min-content;
     cursor: pointer;
   }
 
   &__image {
     margin-right: 10px;
+    height: 40px;
+  }
+
+  &__text__default {
+    color: $dark;
+  }
+
+  &__text__white {
+    color: white;
   }
 }

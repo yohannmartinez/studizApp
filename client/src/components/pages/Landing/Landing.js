@@ -1,11 +1,10 @@
 import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import Menu from "../../elements/Menu/Menu";
-import PageWrapper from "../../elements/PageWrapper/PageWrapper";
-import "./Landing.scss";
-
+import Footer from "../../elements/Footer/Footer";
+import LandingCallToAction from "./LandingCallToAction/LandingCallToAction";
 import LandingExplications from "./LandingExplications/LandingExplications";
-import LandingCreateLesson from "./LandingCreateLesson/LandingCreateLesson";
 import LandingIntro from "./LandingIntro/LandingIntro";
+import "./Landing.scss";
 
 const Landing = () => {
   return (
@@ -14,7 +13,8 @@ const Landing = () => {
       <LanguageSelect />
       <LandingIntro />
       <LandingExplications />
-      <LandingCreateLesson />
+      <LandingCallToAction />
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,28 @@
+@import "../../../../../basics.scss";
+
+.menuMobileCategory {
+  &__container {
+    margin: 20px 0;
+    font-family: $text-font;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__subCategory {
+    padding-left: 15px;
+    border-left: 1px solid black;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: $text-font;
+    width: fit-content;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}

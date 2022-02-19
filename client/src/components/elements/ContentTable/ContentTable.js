@@ -3,7 +3,6 @@ import "./ContentTable.scss";
 
 const ContentTable = ({ lessonContentToJson, onElementClick }) => {
   const [titles, setTitles] = useState([]);
-  console.log(lessonContentToJson);
 
   useEffect(() => {
     const items = [];
@@ -25,7 +24,6 @@ const ContentTable = ({ lessonContentToJson, onElementClick }) => {
               key={`contentTable__element${item.node.attrs.id}`}
               onClick={() => {
                 onElementClick();
-                console.log(item.node.attrs);
                 document
                   .getElementById(`${item.node.attrs.id}`)
                   .scrollIntoView({ block: "center" });
@@ -42,7 +40,8 @@ const ContentTable = ({ lessonContentToJson, onElementClick }) => {
               }}
               className="contentTable__element"
               style={{
-                fontSize: item.node.attrs.level === 1 ? "17px" : "14px",
+                fontSize: item.node.attrs.level === 1 ? "15px" : "14px",
+                fontWeight: item.node.attrs.level === 1 ? "bold" : "normal",
               }}
             >
               {item.title}

@@ -5,26 +5,32 @@ export const fr = {
   NEXT_STEP: "Étape suivante",
   PREVIOUS_STEP: "Étape précédante",
   SEARCH: "Chercher",
-  LOAD_MORE: "Charger d'avantage",
+  LOAD_MORE: "Charger plus",
   VIEWS: "vues",
   LOADING: "Chargement...",
-  WRITTEN_BY: "Rédigé par",
+  WRITTEN_BY: "Ecrit par",
   LIKES: "J'aime",
   CONFIRM: "Confirmer",
   GO_BACK_HOME: "Retourner à l'accueil",
+  GO_BACK: "Retour",
   NO_LESSON: "Aucun cours",
-  YOU: "toi",
+  YOU: "Vous",
+  PRIVATE: "Privé",
+  NOT_PRIVATE: "Non privé",
 
   //lesson
   SAVE: "Sauvegarder",
   READONLY: "Lecture seule",
   LESSON_DETAILS: "Détails du cours",
+  LESSON_DETAILS_INSTITUTION: "Institution scolaire",
+  LESSON_DETAILS_CITY: "Ville de l'institution",
   CONTENT_TABLE: "Table des matières",
 
   //menu categories
   HOME: "Accueil",
   LESSONS: "Cours",
   QUIZZS: "Quizzs",
+  FEEDBACKS: "Feedbacks",
   PRIVATE_INSTRUCTOR: "Professeurs particuliers",
   LOGIN: "Se connecter",
   REGISTER: "Se créer un compte",
@@ -47,7 +53,8 @@ export const fr = {
   LESSON_STUDY_FIELD: "Matière du cours",
   LESSON_YEAR: "Année du cours",
   LESSON_INSTITUTION: "Établissement scolaire",
-  LESSON_CITY: "ville de l'établissement",
+  LESSON_CITY: "Ville de l'établissement",
+  LESSON_PRIVATE: "Accèssibilité du cours",
 
   //menu sub categories
   CREATE_LESSON: "Créer un cours",
@@ -88,8 +95,9 @@ export const fr = {
   LANDING_INTRO_BUTTON: "Je veux en savoir plus !",
 
   //not found
-  PAGE_NOT_FOUND:
-    "Oups, la page que vous essayez de voir n'existe pas ou est en cours de construction",
+  PAGE_NOT_FOUND_TITLE: "Oups, un problème est survenu",
+  PAGE_NOT_FOUND_TEXT:
+    "La page que vous essayez de voir n'existe pas ou est en cours de construction",
 
   //error messages
   USER_DONT_EXIST_ERROR: "L'utilisateur n'existe pas",
@@ -141,20 +149,25 @@ export const fr = {
   FORGOT_PASSWORD_ENTER_PASSWORD: "Entres maintenant ton nouveau mot de passe",
 
   //Search lesson page
-  SEARCH_LESSON_TITLE:
-    "Trouvez le cours qu'il vous faut parmis ceux rédigés par la communauté",
+  SEARCH_LESSON_TITLE: "Quel cours cherches-tu ?",
   SEARCH_LESSON_SEARCH_PLACEHOLDER: "Exemple: théorème de Pythagore",
   SEARCH_RESULTS_SUBTITLE: "Vous voyez actuellement",
   SEARCH_RESULTS_TITLE: "Résultats pour la recherche",
   SEARCH_RESULTS_NO_RESULTS: "Aucun résultat pour la recherche",
-  SEARCH_RESULTS_MOST_POPULAR: "Les cours les plus populaires",
+  SEARCH_RESULTS_MOST_POPULAR: "Populaires en ce moment",
   SEARCH_RESULTS_NO_MORE_TITLE:
     "Tu n'as pas trouvé le cours qu'il te fallait ?",
+  SEARCH_RESULTS_LOAD_MORE_TITLE:
+    "Charger d’avantage de résultats pour cette recherche ?",
   SEARCH_RESULTS_NO_MORE_BUTTON: "Crées le !",
-  FILTERS: "Filtres",
+  FILTERS: "Filtres actifs",
   RESULTS_FILTERS: "Filtrer les résultats",
   RESULTS_FILTERS_TEXT:
     "Ajoutes des filtres pour que ta recherche soit la plus pertinente possible",
+  LESSON_RESULT_PRIVATE: "Ce cours est ",
+  LESSON_RESULT_LEVEL: "Le niveau du cours est ",
+  LESSON_RESULT_FACULTY: "La matière est ",
+  LESSON_RESULT_VIEWS: "sur ce cours",
 
   //create lesson page
   CREATE_LESSON_SUBTITLE: "Commençons la",

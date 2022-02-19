@@ -1,6 +1,5 @@
 import BookIcon from "../../../assets/pictures/menu/book.svg";
 import QuizzIcon from "../../../assets/pictures/menu/quizz.svg";
-import TeacherIcon from "../../../assets/pictures/menu/teacher.svg";
 import FindTeacherIcon from "../../../assets/pictures/menu/find.svg";
 
 const categoriesList = [
@@ -33,6 +32,7 @@ const categoriesList = [
       },
     ],
   },
+  { name: "FEEDBACKS", subMenus: [], link: "/feedbacks" },
   // {
   //   name: "PRIVATE_INSTRUCTOR",
   //   subMenus: [

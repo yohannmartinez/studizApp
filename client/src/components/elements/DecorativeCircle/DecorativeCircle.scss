@@ -1,0 +1,32 @@
+@import "../../../basics.scss";
+
+.decorativeCircle {
+  &__default,
+  &__border,
+  &__inverse,
+  &__inverseBorder {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &__default {
+    background: $purple-gradient;
+  }
+
+  &__border {
+    background: $purple-gradient;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      background-color: white;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

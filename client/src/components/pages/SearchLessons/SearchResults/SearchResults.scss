@@ -1,25 +1,21 @@
+@import "../../../../basics.scss";
+
 .searchResults {
   &__header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    max-width: 400px;
-    margin: 0 auto 0 auto;
-  }
-
-  &__subTitle {
-    font-size: 14px;
-    font-weight: 400;
+    margin: 20px 0 50px 0;
   }
 
   &__title {
-    width: 100%;
     text-align: center;
-    font-family: "MarkPro";
-    font-weight: 800;
+    font-family: $title-font;
+    font-weight: 700;
     margin: 0;
-    font-size: 34px;
+    font-size: 26px;
+    color: $dark;
   }
 
   &__globalContainer {
@@ -32,11 +28,11 @@
 
   &__loadMoreResults,
   &__noMoreResults {
-    background-color: #70529d;
-    border-radius: 10px;
+    background: $purple-gradient;
+    border-radius: 20px;
     transition: 0.5s;
     box-sizing: border-box;
-    padding: 30px;
+    padding: 10px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -44,30 +40,52 @@
     align-items: center;
 
     &__text {
-      font-family: "MarkPro";
-      font-weight: 800;
-      font-size: 21px;
+      font-family: $title-font;
+      max-width: 230px;
+      font-weight: 600;
+      font-size: 22px;
       color: white;
       text-align: center;
     }
+  }
 
-    &__button {
-      font-family: "circular";
-      border-radius: 40px;
-      height: 40px;
-      color: #70529d;
-      font-family: "MarkPro";
-      font-weight: 800;
-      font-size: 14px;
-      background-color: white;
-      cursor: pointer;
-      border: none;
-      padding: 0 15px;
-      transition: 0.5s;
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.15);
-      }
+  &__noResults {
+    background: $purple-gradient;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0 50px 0;
+    margin: 50px 0 50px 0;
+    border-radius: 20px;
+    align-items: center;
+    &__title {
+      font-family: $title-font;
+      font-weight: 700;
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      width: 100%;
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+@media (max-width: 1060px) {
+  .searchResults {
+    &__globalContainer {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .searchResults {
+    &__globalContainer {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    &__title {
+      text-align: left;
+      font-size: 23px;
     }
   }
 }

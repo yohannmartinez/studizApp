@@ -1,3 +1,5 @@
+@import "../../../../basics.scss";
+
 .menuDesktop {
   &__background {
     width: 100%;
@@ -26,22 +28,13 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    &__logo {
-      height: 35px;
-      margin-right: 10px;
-    }
-    &__logoText {
-      font-family: "MarkPro";
-      font-weight: 800;
-      font-size: 24px;
-      margin-right: 20px;
-    }
     &__categoriesContainer {
       height: 100%;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      margin-left: 23px;
     }
   }
 
@@ -51,32 +44,15 @@
     justify-content: center;
     align-items: center;
 
-    &__logInButton,
-    &__registerButton {
-      font-family: "MarkPro";
-      font-weight: 700;
-      border: none;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
     &__logInButton {
-      color: #222;
-      background: transparent;
-      padding: 10px 10px;
-    }
-
-    &__registerButton {
-      color: #222;
-      margin-left: 15px;
-      padding: 10px 20px;
-      border-radius: 500px;
-      background-color: #70529d;
-      color: white;
-      transition: 0.5s;
-      &:hover {
-        transform: scale(1.05);
-      }
+      font-family: $text-font;
+      color: $dark;
+      font-weight: 800;
+      font-size: 15px;
+      background-color: white;
+      border: none;
+      cursor: pointer;
+      margin-right: 20px;
     }
   }
 }

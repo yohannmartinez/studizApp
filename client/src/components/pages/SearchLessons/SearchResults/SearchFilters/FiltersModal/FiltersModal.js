@@ -12,6 +12,7 @@ import SelectInput from "../../../../../elements/SelectInput/SelectInput";
 import "./FiltersModal.scss";
 import { getCities } from "../../../../../../services/cities";
 import { launchSearch } from "../../../../../../utils/searchLessons";
+import Button from "../../../../../elements/Button/Button";
 
 const FiltersModal = ({ filtersList, setShowFilters, changeFiltersValue }) => {
   const { t } = useTranslate();
@@ -36,7 +37,8 @@ const FiltersModal = ({ filtersList, setShowFilters, changeFiltersValue }) => {
         setShowFilters(false);
       }}
       height="80vh"
-      maxWidth="700px"
+      width="90vw"
+      maxWidth="500px"
       maxHeight="700px"
     >
       <form
@@ -112,9 +114,9 @@ const FiltersModal = ({ filtersList, setShowFilters, changeFiltersValue }) => {
           isMulti={false}
           isClearable={true}
         />
-        <button className="modalFilters__button" type="submit">
+        <Button model={"basic"} type="submit" style={{ margin: "20px 0" }}>
           Chercher
-        </button>
+        </Button>
       </form>
     </Modal>
   );

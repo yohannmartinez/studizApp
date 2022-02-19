@@ -1,44 +1,152 @@
+@import "../../../../basics.scss";
+
 .landingExplications {
   &__globalContainer {
-    padding: 20px 0;
   }
 
   &__container {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  &__title {
-    text-align: center;
-    font-family: "MarkPro";
-    font-weight: 800;
-    font-size: 40px;
-    max-width: 700px;
+    justify-content: center;
+    margin-bottom: 100px;
   }
 
   &__flexContainer {
     display: flex;
-    width: 100%;
+    max-width: 1000px;
   }
 
-  &__flexElement {
+  &__shape {
+    &__left,
+    &__right {
+      background: linear-gradient(
+        42.34deg,
+        #785bab 4.84%,
+        #a268cf 4.85%,
+        #9a63cc 4.85%,
+        #6b40b6 42.35%,
+        #6525d5 69.73%
+      );
+      width: 265px;
+      height: 560px;
+      flex: 1;
+    }
+
+    &__left {
+      border-top-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+    }
+
+    &__right {
+      border-bottom-left-radius: 100px;
+      border-top-right-radius: 100px;
+    }
+  }
+
+  &__bloc {
+    display: flex;
     flex: 1;
-    padding: 40px;
-    text-align: center;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  &__elementIcon {
-    width: 200px;
-  }
-
-  &__elementTitle {
-    font-family: "MarkPro";
-    font-weight: 800;
-    font-size: 25px;
-  }
-
-  &__elementDescription {
+  &__subTitle {
+    position: relative;
+    font-family: $text-font;
+    color: #6f6f6f;
+    font-size: 14px;
     font-weight: 500;
+  }
+
+  &__title {
+    position: relative;
+    font-family: $title-font;
+    font-size: 43px;
+    margin: 10px 0;
+    color: $dark;
+  }
+
+  &__text {
+    position: relative;
+    font-family: $text-font;
+    color: $dark;
+    font-size: 15px;
+    margin: 0;
+    line-height: 26px;
+    max-width: 535px;
+    font-weight: 400;
+  }
+}
+
+#landingExplicationsRightBloc {
+  padding: 0 0 0 100px;
+}
+
+#landingExplicationsLeftBloc {
+  padding: 0 100px 0 0;
+}
+
+@media (max-width: 1000px) {
+  #landingExplicationsRightBloc {
+    padding: 0 0 0 50px;
+  }
+
+  #landingExplicationsLeftBloc {
+    padding: 0 50px 0 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .landingExplications {
+    &__shape {
+      width: 200px;
+      height: 490px;
+      border-bottom-left-radius: 100px;
+    }
+
+    &__title {
+      font-size: 35px;
+    }
+  }
+
+  #landingExplicationsRightBloc {
+    padding: 0 0 0 50px;
+  }
+
+  #landingExplicationsLeftBloc {
+    padding: 0 50px 0 0;
+  }
+}
+
+@media (max-width: 570px) {
+  .landingExplications {
+    &__shape__left,
+    &__shape__right {
+      display: none;
+    }
+
+    &__subTitle:nth-last-child() {
+      text-align: right;
+    }
+  }
+
+  #landingExplicationsSecondBlock {
+    padding-top: 100px;
+    text-align: right;
+  }
+
+  #landingExplicationsRightBloc {
+    padding: 0 0 0 0;
+  }
+
+  #landingExplicationsLeftBloc {
+    padding: 0 0 0 0;
+  }
+}
+
+@media (max-width: 570px) {
+  .landingExplications {
+    &__title {
+      font-size: 30px;
+    }
   }
 }

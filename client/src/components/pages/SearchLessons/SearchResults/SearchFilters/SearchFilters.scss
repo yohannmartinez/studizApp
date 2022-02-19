@@ -1,32 +1,24 @@
+@import "../../../../../basics.scss";
 .searchFilters {
   &__globalContainer {
     display: flex;
     justify-content: flex-end;
-    padding: 10px 0 20px 0;
   }
 
   &__showFilters {
-    background-color: #8a6bb9;
     color: #fff;
-    font-family: "MarkPro";
-    font-weight: 700;
     font-size: 14px;
-    padding: 8px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px;
     cursor: pointer;
     transition: 0.5s;
-
-    &:hover {
-      transform: scale(1.05);
-    }
+    width: max-content;
 
     &__filtersLength {
       margin-left: 20px;
-      background-color: #482779;
-      color: white;
+      background-color: white;
+      color: $purple;
       width: 25px;
       height: 25px;
       border-radius: 50%;

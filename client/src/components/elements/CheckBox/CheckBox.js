@@ -1,7 +1,5 @@
 import "./CheckBox.scss";
-import { useEffect } from "react";
-
-import CheckIcon from "../../../assets/icons/check.svg";
+import { BsCheckLg } from "react-icons/bs";
 
 const CheckBox = ({ isChecked, children, action }) => {
   return (
@@ -16,11 +14,7 @@ const CheckBox = ({ isChecked, children, action }) => {
           action();
         }}
       >
-        <img
-          src={CheckIcon}
-          className="checkbox__button__indicator"
-          alt="checkbox"
-        />
+        <BsCheckLg style={{ color: "white" }} />
       </div>
       <div className="checkbox__text">{children}</div>
     </div>

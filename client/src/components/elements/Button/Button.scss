@@ -1,0 +1,34 @@
+@import "../../../basics.scss";
+
+.button {
+  &__basic,
+  &__white,
+  &__dark {
+    font-size: 14px;
+    border: none;
+    border-radius: 150px;
+    padding: 12px 25px;
+    font-weight: 400;
+    font-family: $title-font;
+    cursor: pointer;
+    transition: 0.5s;
+    width: fit-content;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__basic {
+    color: white;
+    background: $purple-gradient;
+  }
+
+  &__white {
+    color: #8957c4;
+    background: white;
+  }
+  &__dark {
+    color: white;
+    background: $dark;
+  }
+}

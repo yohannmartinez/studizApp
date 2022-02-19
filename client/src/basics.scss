@@ -1,9 +1,22 @@
-$base-color: #500182;
-$darker-base-color: #38025a;
-$clearer-base-color: #d8aaf5;
+$dark: #2b262d;
 
-$secondary-color: #fdc314;
-$darker-secondary-color: #d8a50b;
-$clearer-secondary-color: #f7e2a2;
+$purple: #672ecc;
+$yellow: #eebd33;
+$green: #63ae77;
 
-$clear-grey: #e6e6e6;
+$clear-purple: #7444cb;
+$clear-yellow: #fad04c;
+$clear-green: #6ec685;
+
+$purple-gradient: linear-gradient(
+  86.03deg,
+  #785bab -8.57%,
+  #a268cf -8.56%,
+  #6b40b6 57.35%,
+  #6525d5 105.45%
+);
+
+$border-grey: #dedede;
+
+$title-font: "Basier";
+$text-font: "Robert";

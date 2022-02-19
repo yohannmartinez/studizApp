@@ -41,7 +41,7 @@ const SelectInput = ({
       boxShadow: "none",
       width: "100%",
       fontSize: "14px",
-      fontFamily: "circular",
+      fontFamily: "Robert",
       fontWeight: "500",
     }),
     option: (styles, { isFocused, isSelected }) => ({
@@ -52,7 +52,7 @@ const SelectInput = ({
         ? "#e8d0f2"
         : undefined,
       fontSize: "14px",
-      fontFamily: "circular",
+      fontFamily: "Robert",
       fontWeight: "500",
     }),
   };

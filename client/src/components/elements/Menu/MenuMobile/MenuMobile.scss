@@ -1,0 +1,56 @@
+@import "../../../../basics.scss";
+
+.menuMobile {
+  &__container {
+    display: flex;
+    padding: 20px 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__button {
+    font-size: 24px;
+    padding: 10px 0 10px 10px;
+    cursor: pointer;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 13;
+    transition: transform 0.5s;
+
+    &__topBar {
+      display: flex;
+      width: 100%;
+      border-bottom: 1px solid $border-grey;
+      padding: 20px 30px;
+      justify-content: space-between;
+      box-sizing: border-box;
+      align-items: center;
+    }
+
+    &__closeButton {
+      font-size: 26px;
+      padding: 5px 0 5px 5px;
+      cursor: pointer;
+    }
+
+    &__container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 10;
+    }
+
+    &__categoriesContainer {
+      padding: 30px;
+    }
+  }
+}

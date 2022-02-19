@@ -1,58 +1,79 @@
+@import "../../../../../basics.scss";
+
 .lessonResult {
   &__container {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 1px solid $border-grey;
     cursor: pointer;
     transition: 0.5s;
     box-sizing: border-box;
-    padding: 30px 30px 25px 30px;
+    padding: 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0px 7px 24px -10px rgba(66, 54, 92, 0.2);
     &:hover {
-      transform: scale(1.02);
-      box-shadow: 3px 3px 30px 0 rgba(85, 85, 85, 0.15);
+      transform: scale(1.01);
     }
   }
 
-  &__header {
+  &__likeContainer {
+    color: #a7a7a7;
+    font-size: 24px;
     display: flex;
-    justify-content: space-between;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 
   &__lessonTitle {
-    margin: 0;
-    font-size: 19px;
-    font-family: "MarkPro";
-    font-weight: 700;
+    margin: 20px 0 0 0;
+    font-size: 22px;
+    font-family: $title-font;
+    font-weight: 600;
     text-align: left;
+    color: $dark;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__creatorContainer {
+    margin-top: 5px;
     display: flex;
-    justify-content: center;
     align-items: center;
   }
 
-  &__lessonViews {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 13px;
+  &__creatorImage {
+    width: 23px;
+    height: 23px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    border: 3px solid white;
+  }
+
+  &__creatorName {
+    font-size: 11px;
     font-weight: 500;
-    color: #8d8d8d;
-    // border: 1px solid blue;
-    width: 30px;
-    margin-left: 50px;
-    &__icon {
-      font-size: 19px;
-      margin-right: 5px;
-    }
+    color: #646464;
   }
 
   &__description {
+    color: $dark;
+    font-family: $text-font;
     font-size: 13px;
     font-weight: 500;
-    color: #222222;
-    margin: 20px 0;
-    height: 50px;
+    color: $dark;
+    line-height: 20px;
+    margin: 20px 0 30px 0;
+    height: 60px;
+    max-width: 300px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -60,67 +81,23 @@
     text-overflow: ellipsis;
   }
 
-  &__creatorContainer {
-    margin-top: 10px;
+  &__detailContainer {
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
   }
 
-  &__creatorImage {
-    width: 30px;
-    height: 30px;
-    overflow: hidden;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  &__detailIcon {
+    font-size: 19px;
     margin-right: 10px;
-    border: 3px solid #ded2f0;
-  }
-
-  &__creatorName {
-    font-size: 13px;
-    font-weight: 500;
-    color: #222222;
-  }
-
-  &__tagsContainer {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    flex-grow: 1;
-  }
-
-  &__tag {
-    font-size: 13px;
-    font-family: "MarkPro";
-    font-weight: 700;
-    padding: 1px 15px 0 15px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 100px;
-    margin: 0 10px 10px 0;
+    justify-content: center;
   }
 
-  &__purpleTag {
-    background-color: #ded2f0;
-    color: #835bbe;
-  }
-
-  &__yellowTag {
-    background-color: #f5e8d2;
-    color: #a57b3c;
-  }
-
-  &__greenTag {
-    background-color: #cdf1e2;
-    color: #4d9e7a;
-  }
-
-  &__blueTag {
-    background-color: #d9e5f3;
-    color: #4d679e;
+  &__detailText {
+    font-family: $text-font;
+    font-size: 13px;
+    margin: 0;
   }
 }

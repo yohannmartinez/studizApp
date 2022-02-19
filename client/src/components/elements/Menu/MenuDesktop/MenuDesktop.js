@@ -4,13 +4,14 @@ import { useHistory } from "react-router-dom";
 
 import categoriesList from "../config";
 import MenuDesktopCategory from "./MenuDesktopCategory/MenuDesktopCategory";
+import Logo from "../../../elements/Logo/Logo";
 import { windowScrollListener } from "./utils";
 import { useTranslate } from "../../../../utils/useTranslate";
 import { getUserById } from "../../../../services/user";
 import "./MenuDesktop.scss";
 
 //images
-import Logo from "../../../../assets/pictures/logo_base.svg";
+import Button from "../../Button/Button";
 
 const MenuDesktop = ({ backgroundColor, auth }) => {
   const history = useHistory();
@@ -35,22 +36,11 @@ const MenuDesktop = ({ backgroundColor, auth }) => {
     >
       <div className="menuDesktop__container" id="menuDesktop">
         <div className="menuDesktop__leftPart">
-          <img
-            src={Logo}
-            alt="studiz logo"
-            onClick={() => {
-              window.location.href = "/";
+          <Logo
+            action={() => {
+              history.push("/");
             }}
-            className="menuDesktop__leftPart__logo"
           />
-          <div
-            className="menuDesktop__leftPart__logoText"
-            onClick={() => {
-              window.location.href = "/";
-            }}
-          >
-            Studiz
-          </div>
           <div className="menuDesktop__leftPart__categoriesContainer">
             {categoriesList.map(
               ({
@@ -78,26 +68,26 @@ const MenuDesktop = ({ backgroundColor, auth }) => {
             >
               {t("LOGIN")}
             </button>
-            <button
-              className="menuDesktop__rightPart__registerButton"
-              onClick={() => {
+            <Button
+              action={() => {
                 history.push("/register");
               }}
+              model={"basic"}
             >
               {t("REGISTER")}
-            </button>
+            </Button>
           </div>
         )}
         {!auth.loading && auth.isAuthenticated && user && (
           <div className="menuDesktop__rightPart">
-            <button
-              className="menuDesktop__rightPart__registerButton"
-              onClick={() => {
+            <Button
+              model={"basic"}
+              action={() => {
                 history.push("/profile");
               }}
             >
               {t("PROFILE")}
-            </button>
+            </Button>
           </div>
         )}
       </div>

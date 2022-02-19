@@ -1,12 +1,20 @@
 .contentTable {
   &__container {
-    padding: 20px 0;
+    padding: 50px 30px 40px 30px;
+    width: 400px;
+    margin-top: -20px;
+    border-radius: 20px;
+    background-color: #f3f0fc;
+    // border: 2px solid #70529d;
   }
 
   &__element {
-    color: #aeadab;
-    text-decoration: underline;
+    color: #452f66;
     cursor: pointer;
     padding: 5px 0;
+    transition: 0.5s;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }

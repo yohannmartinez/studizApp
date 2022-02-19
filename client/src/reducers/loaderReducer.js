@@ -4,13 +4,13 @@ const initialState = {
   showLoader: false,
 };
 
-export default function (state = initialState, action) {
+export default function setReducerFunctions(state = initialState, action) {
   switch (action.type) {
     case SET_LOADER:
       return {
         ...state,
-        showLoader : action.payload
-      }
+        showLoader: action.payload,
+      };
     default:
       return state;
   }

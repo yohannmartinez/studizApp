@@ -17,7 +17,6 @@ const ThirdStep = ({
 
   const onCitySearch = async (inputValue, callback) => {
     if (inputValue === "") callback([]);
-    console.log(inputValue.toLowerCase());
     const cities = await getCities(inputValue);
     const formatted_cities = cities.data.cities
       .map((city) => {

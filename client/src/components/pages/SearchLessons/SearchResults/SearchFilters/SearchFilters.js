@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+
+import Button from "../../../../elements/Button/Button";
 import { filtersToSelectFormat } from "../../../../../utils/searchLessons";
 import { useTranslate } from "../../../../../utils/useTranslate";
 import FiltersModal from "./FiltersModal/FiltersModal";
@@ -27,17 +29,19 @@ const SearchFilters = ({ filters }) => {
 
   return (
     <div className="searchFilters__globalContainer">
-      <div
-        className="searchFilters__showFilters"
-        onClick={() => {
+      <Button
+        model={"basic"}
+        action={() => {
           setShowFilters(true);
         }}
       >
-        <div>{t("FILTERS")}</div>
-        <div className="searchFilters__showFilters__filtersLength">
-          {filters.length}
+        <div className="searchFilters__showFilters">
+          <div>{t("FILTERS")}</div>
+          <div className="searchFilters__showFilters__filtersLength">
+            {filters.length}
+          </div>
         </div>
-      </div>
+      </Button>
 
       {showFilters && (
         <FiltersModal

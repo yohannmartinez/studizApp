@@ -56,14 +56,6 @@ const App = () => {
       <ScrollToTop />
       <Snack />
       <div className="App" id="App">
-        <div className="app__notSupportedDevice">
-          <Logo fontSize="0px" logoHeight="80px" />
-          <h1 className="app__notSupportedDevice__title">Oops</h1>
-          <p className="app__notSupportedDevice__message">
-            Nous sommes désolés, Studizz n'est pas encore disponible sur cette
-            taille d'écran
-          </p>
-        </div>
         <Switch>
           <Route exact path="/" component={Landing} />
 

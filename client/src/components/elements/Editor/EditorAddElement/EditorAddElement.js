@@ -68,13 +68,7 @@ const EditorAddElement = ({ editor, setSnack, resetSnack }) => {
       >
         <FontAwesomeIcon icon={"list"} />
       </button>
-      <label
-        className="editorAddElement__button"
-        htmlFor="imageInput"
-        onChange={() => {
-          console.log("test");
-        }}
-      >
+      <label className="editorAddElement__button" htmlFor="imageInput">
         <FontAwesomeIcon icon={"images"} />
       </label>
       <input

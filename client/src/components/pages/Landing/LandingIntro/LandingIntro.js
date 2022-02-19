@@ -1,11 +1,8 @@
 import "./LandingIntro.scss";
-import Pen from "../../../../assets/icons/pen.png";
-import Lesson from "../../../../assets/icons/lesson.png";
 import { useTranslate } from "../../../../utils/useTranslate";
 import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark } from "@fortawesome/fontawesome-free-solid";
-import LandingImage from "../../../../assets/pictures/landing1.png";
+import Button from "../../../elements/Button/Button";
+import DecorativeCircle from "../../../elements/DecorativeCircle/DecorativeCircle";
 
 const LandingIntro = () => {
   const { t } = useTranslate();
@@ -13,35 +10,37 @@ const LandingIntro = () => {
   return (
     <div className="landingIntro__globalContainer">
       <PageWrapper>
-        <div className="landingIntro__container">
-          <div className="landingIntro__flexElementLeft">
-            <div className="landingIntro__subTitle">
-              <FontAwesomeIcon
-                icon={"bullhorn"}
-                style={{ marginRight: "10px" }}
-              />
-              Commencez à apprendre plus rapidement !
-            </div>
+        <div className="landingIntro__flexContainer">
+          <div className="landingIntro__container">
+            <DecorativeCircle
+              type={"border"}
+              size={"20px"}
+              top={"-50px"}
+              left={"40%"}
+            />
+            <DecorativeCircle
+              type={"border"}
+              size={"15px"}
+              bottom={"30%"}
+              left={"-20px"}
+            />
+            <DecorativeCircle
+              type={"default"}
+              size={"14px"}
+              top={"40%"}
+              right={"-10px"}
+            />
             <h1 className="landingIntro__title">
-              On aide{" "}
-              <b style={{ fontWeight: "800", color: "#70529d" }}>
-                les étudiants
-              </b>{" "}
-              à centraliser leurs besoins scolaires
+              La plateforme qui regroupe tous les besoins des étudiants
             </h1>
             <p className="landingIntro__text">
-              Studiz est une plateforme qui favorise l'apprentisage pour les
-              étudiants, des cours, des leçons et plein d'autres choses vous
-              attendent !
+              Studiz aide les étudiants à centraliser les différents besoins des
+              étudiants en proposant de nombreuses fonctionnalités comme
+              l’écriture et le partage de cours et bien d’autres.
             </p>
-            <button className="landingIntro__button">Voir la suite</button>
-          </div>
-          <div className="landingIntro__flexElementRight">
-            <img
-              src={LandingImage}
-              className="landingIntro__image"
-              alt={"landing studiz"}
-            />
+            <Button model={"basic"}>
+              <span className="landingIntro__button">En savoir plus</span>
+            </Button>
           </div>
         </div>
       </PageWrapper>
