@@ -51,8 +51,7 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
-
-ReactGA.initialize(process.env.REACT_GA_TRACKING_ID);
+ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
 
 const App = () => {
   return (
