@@ -6,7 +6,6 @@ import "./LessonContent.scss";
 
 const LessonContent = ({ lesson, auth }) => {
   const canEdit = lesson.userId === auth.user._id;
-  console.log(lesson);
 
   return (
     <div className="lessonContent__container">

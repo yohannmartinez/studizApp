@@ -81,7 +81,7 @@ export const en = {
     "Create your account and access all Studiz functionalities !",
   REGISTER_SUBMIT: "Sign up",
   ALREADY_HAVE_ACCOUNT: "I already have an account",
-  DONT_HAVE_ACCOUNT: "I don't have account",
+  DONT_HAVE_ACCOUNT: "No account",
   USER_CREATED: "Account created successfully",
 
   //landing

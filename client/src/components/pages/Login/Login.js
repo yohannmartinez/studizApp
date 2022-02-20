@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 
 import { resetSnack, setSnack } from "../../../actions/snackActions";
 import { loginUser } from "../../../actions/authActions";
+import Button from "../../elements/Button/Button";
 import Input from "../../elements/Input/Input";
 import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import Logo from "../../elements/Logo/Logo";
@@ -55,59 +56,68 @@ const Login = (props) => {
             action={() => {
               history.push("/");
             }}
-            fontSize="24px"
-            logoHeight="35px"
           />
         </div>
-        <div className="login__whiteContainer">
-          <h1 className="login__title">{t("LOGIN_TITLE")}</h1>
-          <p className="login__description">{t("LOGIN_DESCRIPTION")}</p>
-          <form
-            className="login__inputsContainer"
-            autoComplete="new-password"
-            onSubmit={handleFormSubmit}
-          >
-            <Input
-              value={user.email}
-              inputColor="#9652B6"
-              label="EMAIL"
-              onChange={(e) => {
-                handleChangeInput("email", e.target.value);
-              }}
-              type="text"
-            />
-            <Input
-              value={user.password}
-              inputColor="#9652B6"
-              label="PASSWORD"
-              onChange={(e) => {
-                handleChangeInput("password", e.target.value);
-              }}
-              type="password"
-            />
-            <button
-              className="login__forgotPasswordButton"
-              type="button"
-              onClick={() => {
-                history.push("/forgotPassword");
-              }}
+        <div className="login__flexContainer">
+          <div className="login__whiteContainer">
+            <h1 className="login__title">{t("LOGIN_TITLE")}</h1>
+            <p className="login__description">{t("LOGIN_DESCRIPTION")}</p>
+            <form
+              className="login__inputsContainer"
+              autoComplete="new-password"
+              onSubmit={handleFormSubmit}
             >
-              {t("FORGOT_PASSWORD")}
-            </button>
-            <button className="login__submitButton" type="submit">
-              {t("LOGIN_SUBMIT")}
-            </button>
-            <button
-              className="login__createAccountButton"
-              onClick={() => {
-                history.push("/register");
-              }}
-            >
-              {t("DONT_HAVE_ACCOUNT")}
-            </button>
-          </form>
+              <Input
+                value={user.email}
+                inputColor="#9652B6"
+                label="EMAIL"
+                onChange={(e) => {
+                  handleChangeInput("email", e.target.value);
+                }}
+                type="text"
+              />
+              <Input
+                value={user.password}
+                inputColor="#9652B6"
+                label="PASSWORD"
+                onChange={(e) => {
+                  handleChangeInput("password", e.target.value);
+                }}
+                type="password"
+              />
+              <button
+                className="login__forgotPasswordButton"
+                type="button"
+                onClick={() => {
+                  history.push("/forgotPassword");
+                }}
+              >
+                {t("FORGOT_PASSWORD")}
+              </button>
+              <Button
+                model={"basic"}
+                type="submit"
+                action={handleFormSubmit}
+                style={{ marginTop: "20px" }}
+              >
+                {t("LOGIN_SUBMIT")}
+              </Button>
+            </form>
+          </div>
         </div>
+        <span className="login__createAccount">
+          {t("DONT_HAVE_ACCOUNT")} ?{" "}
+          <b
+            className="login__createAccount__button"
+            onClick={() => {
+              history.push("/register");
+            }}
+          >
+            {t("REGISTER_TITLE")}
+          </b>
+        </span>
       </div>
+      <div className="login__sideContainer"></div>
     </div>
   );
 };

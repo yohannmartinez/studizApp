@@ -84,7 +84,7 @@ export const fr = {
     "Crée-toi un compte et accèdes à l'essemble des fonctionnalités Studiz !",
   REGISTER_SUBMIT: "Créer le compte",
   ALREADY_HAVE_ACCOUNT: "J'ai déjà un compte",
-  DONT_HAVE_ACCOUNT: "Je n'ai pas de compte",
+  DONT_HAVE_ACCOUNT: "Pas de compte",
   USER_CREATED: "Votre compte à bien été créé",
 
   //landing

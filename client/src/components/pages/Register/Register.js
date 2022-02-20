@@ -10,6 +10,7 @@ import "./Register.scss";
 import { useTranslate } from "../../../utils/useTranslate";
 import { checkIfValidInputs } from "../../../utils/inputsCheck";
 import { registerUser } from "../../../services/user";
+import Button from "../../elements/Button/Button";
 
 const Register = (props) => {
   const { t } = useTranslate();
@@ -22,7 +23,6 @@ const Register = (props) => {
     firstname: "",
     lastname: "",
   });
-  const redirectLink = props.location.state?.redirectTo;
 
   const handleChangeInput = (name, value) => {
     setUser({ ...user, [name]: value });
@@ -81,87 +81,96 @@ const Register = (props) => {
             logoHeight="35px"
           />
         </div>
-        <div className="register__whiteContainer">
-          <h1 className="register__title">{t("REGISTER_TITLE")}</h1>
-          <p className="register__description">{t("REGISTER_DESCRIPTION")}</p>
-          <form
-            className="register__inputsContainer"
-            autoComplete="new-password"
-            onSubmit={handleFormSubmit}
-          >
-            <Input
-              value={user.email}
-              inputColor="#9652B6"
-              label="EMAIL"
-              onChange={(e) => {
-                handleChangeInput("email", e.target.value);
-              }}
-              type="text"
-            />
-            <Input
-              value={user.password}
-              inputColor="#9652B6"
-              label="PASSWORD"
-              onChange={(e) => {
-                handleChangeInput("password", e.target.value);
-              }}
-              type="password"
-            />
-            <Input
-              value={user.confirmPassword}
-              inputColor="#9652B6"
-              label="CONFIRM_PASSWORD"
-              onChange={(e) => {
-                handleChangeInput("confirmPassword", e.target.value);
-              }}
-              type="password"
-            />
-
-            <Input
-              value={user.firstname}
-              inputColor="#9652B6"
-              label="FIRSTNAME"
-              onChange={(e) => {
-                handleChangeInput("firstname", e.target.value);
-              }}
-              type="text"
-            />
-
-            <Input
-              value={user.lastname}
-              inputColor="#9652B6"
-              label="LASTNAME"
-              onChange={(e) => {
-                handleChangeInput("lastname", e.target.value);
-              }}
-              type="text"
-            />
-
-            <Input
-              value={user.phoneNumber}
-              inputColor="#9652B6"
-              label="PHONE_NUMBER"
-              onChange={(e) => {
-                handleChangeInput("phoneNumber", e.target.value);
-              }}
-              type="text"
-            />
-
-            <button className="register__submitButton" type="submit">
-              {t("REGISTER_SUBMIT")}
-            </button>
-            <button
-              className="register__createAccountButton"
-              type="button"
-              onClick={() => {
-                history.push("/login");
-              }}
+        <div className="register__flexContainer">
+          <div className="register__whiteContainer">
+            <h1 className="register__title">{t("REGISTER_TITLE")}</h1>
+            <p className="register__description">{t("REGISTER_DESCRIPTION")}</p>
+            <form
+              className="register__inputsContainer"
+              autoComplete="new-password"
+              onSubmit={handleFormSubmit}
             >
-              {t("ALREADY_HAVE_ACCOUNT")}
-            </button>
-          </form>
+              <Input
+                value={user.email}
+                inputColor="#9652B6"
+                label="EMAIL"
+                onChange={(e) => {
+                  handleChangeInput("email", e.target.value);
+                }}
+                type="text"
+              />
+              <Input
+                value={user.password}
+                inputColor="#9652B6"
+                label="PASSWORD"
+                onChange={(e) => {
+                  handleChangeInput("password", e.target.value);
+                }}
+                type="password"
+              />
+              <Input
+                value={user.confirmPassword}
+                inputColor="#9652B6"
+                label="CONFIRM_PASSWORD"
+                onChange={(e) => {
+                  handleChangeInput("confirmPassword", e.target.value);
+                }}
+                type="password"
+              />
+
+              <Input
+                value={user.firstname}
+                inputColor="#9652B6"
+                label="FIRSTNAME"
+                onChange={(e) => {
+                  handleChangeInput("firstname", e.target.value);
+                }}
+                type="text"
+              />
+
+              <Input
+                value={user.lastname}
+                inputColor="#9652B6"
+                label="LASTNAME"
+                onChange={(e) => {
+                  handleChangeInput("lastname", e.target.value);
+                }}
+                type="text"
+              />
+
+              <Input
+                value={user.phoneNumber}
+                inputColor="#9652B6"
+                label="PHONE_NUMBER"
+                onChange={(e) => {
+                  handleChangeInput("phoneNumber", e.target.value);
+                }}
+                type="text"
+              />
+
+              <Button
+                model={"basic"}
+                type="submit"
+                style={{ marginTop: "20px" }}
+              >
+                {t("REGISTER_SUBMIT")}
+              </Button>
+            </form>
+          </div>
         </div>
+        <span className="register__createAccount">
+          {t("ALREADY_HAVE_ACCOUNT")} ?{" "}
+          <b
+            className="register__createAccount__button"
+            onClick={() => {
+              history.push("/login");
+            }}
+          >
+            {t("LOGIN")}
+          </b>
+        </span>
       </div>
+      <div className="register__sideContainer"></div>
     </div>
   );
 };

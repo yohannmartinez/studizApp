@@ -23,12 +23,7 @@ const LessonDetails = ({ editor, lesson, setShowDetails }) => {
   };
 
   return (
-    <div
-      className="lessonDetails__globalContainer"
-      onClick={() => {
-        console.log(lesson);
-      }}
-    >
+    <div className="lessonDetails__globalContainer">
       <div
         className="lessonDetails__background"
         onClick={() => {
