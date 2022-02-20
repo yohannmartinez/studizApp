@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ReactGA from "react-ga";
 import jwt_decode from "jwt-decode";
 import "./basics.scss";
 
@@ -11,6 +12,7 @@ import setAuthToken from "./services/setAuthToken";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute/UnauthenticatedRoute";
 import ScrollToTop from "./utils/scrollToTop";
+import RouterListener from "./RouterListener";
 
 //redux
 import { store } from "./store";
@@ -28,7 +30,6 @@ import Register from "./components/pages/Register/Register";
 
 //elements
 import Snack from "./components/elements/Snack/Snack";
-import Logo from "./components/elements/Logo/Logo";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -50,12 +51,16 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
+
+ReactGA.initialize(process.env.REACT_GA_TRACKING_ID);
+
 const App = () => {
   return (
     <Router>
       <ScrollToTop />
       <Snack />
       <div className="App" id="App">
+        <RouterListener />
         <Switch>
           <Route exact path="/" component={Landing} />
 
