@@ -10,15 +10,15 @@ import ProfileHeader from "./ProfileHeader/ProfileHeader";
 import ProfileTabs from "./ProfileTabs/ProfileTabs";
 import UserInfos from "./UserInfos/UserInfos";
 import UserLessons from "./UserLessons/UserLessons";
+import Footer from "../../elements/Footer/Footer";
 import "./Profile.scss";
+import ProfileButtons from "./ProfileButtons/ProfileButtons";
 
 const Profile = ({ auth }) => {
   const { t } = useTranslate();
   const [user, setUser] = useState(null);
   const [userLessons, setUserLessons] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  const [currentTab, setCurrentTab] = useState(0);
 
   useEffect(() => {
     const getCurrentUser = async () => {
@@ -45,17 +45,11 @@ const Profile = ({ auth }) => {
         {!loading && (
           <>
             <ProfileHeader user={user} />
-            <ProfileTabs
-              currentTab={currentTab}
-              setCurrentTab={setCurrentTab}
-            />
-
-            {currentTab === 0 && <UserInfos user={user} />}
-            {currentTab === 1 && <UserLessons lessons={userLessons} />}
-            {currentTab === 2 && <div>2</div>}
+            <ProfileButtons />
           </>
         )}
       </PageWrapper>
+      <Footer />
     </div>
   );
 };

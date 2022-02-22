@@ -1,4 +1,5 @@
 import { useTranslate } from "../../../../utils/useTranslate";
+import Button from "../../../elements/Button/Button";
 import Input from "../../../elements/Input/Input";
 import TextArea from "../../../elements/TextArea/TextArea";
 import "./FirstStep.scss";
@@ -30,15 +31,17 @@ const FirstStep = ({ lesson, updateLesson, nextStep }) => {
         }}
         type="text"
       />
-      <button
+      <Button
         className="createLesson__validateButton"
+        model={"basic"}
+        style={{ marginTop: "20px" }}
         disabled={lesson.description === "" || lesson.name === ""}
-        onClick={() => {
+        action={() => {
           nextStep();
         }}
       >
         {t("NEXT_STEP")}
-      </button>
+      </Button>
     </div>
   );
 };

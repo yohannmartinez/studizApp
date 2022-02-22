@@ -1,14 +1,33 @@
+@import "../../../../basics.scss";
 .profileHeader {
   &__container {
     width: 100%;
     margin: 50px 0;
-    padding: 10px;
-    // border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    z-index: 1;
+  }
+
+  &__background {
+    position: relative;
+    height: 230px;
+    width: 100%;
+    border-radius: 20px;
+    background: url("../.../../../../../assets/pictures/background.svg");
+    background-size: cover;
+    margin-bottom: 50px;
+  }
+
+  &__imageBackground {
+    position: absolute;
+    height: 230px;
+    width: 230px;
+    background-color: white;
+    border-radius: 50%;
+    left: 50%;
+    bottom: -50px;
+    transform: translateX(-50%);
   }
 
   &__profileImage {
@@ -18,28 +37,29 @@
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 50%;
-    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &__userName {
-    margin: 20px 0 10px 0;
+    font-family: $title-font;
+    color: $dark;
+    font-weight: 700;
+    margin: 0;
+    font-size: 35px;
+  }
+
+  &__userPseudo {
+    font-family: $text-font;
+    color: $dark;
+    font-weight: 500;
+    margin: 10px 0 30px 0;
+    font-size: 14px;
   }
 
   &__logout {
-    border: none;
-    font-family: "Basier";
-    font-weight: 800;
-    margin-left: 15px;
-    padding: 10px 20px;
-    border-radius: 500px;
-    background-color: #f55951;
-    color: white;
-    transition: 0.5s;
-    cursor: pointer;
-    line-height: 20px;
-    font-size: 15px;
-    &:hover {
-      transform: scale(1.1);
-    }
+    padding: 15px 50px;
   }
 }

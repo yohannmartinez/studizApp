@@ -7,11 +7,12 @@ import { createLesson } from "../../../services/lessons";
 
 import FirstStep from "./FirstStep/FirstStep";
 import SecondStep from "./SecondStep/SecondStep";
-import StepsBar from "./StepsBar/StepsBar";
 import ThirdStep from "./ThirdStep/ThirdStep";
 import "./CreateLesson.scss";
 import { connect } from "react-redux";
 import { useTranslate } from "../../../utils/useTranslate";
+import FormSteps from "../../elements/FormSteps/FormSteps";
+import Footer from "../../elements/Footer/Footer";
 
 const CreateLesson = ({ auth }) => {
   const history = useHistory();
@@ -49,7 +50,7 @@ const CreateLesson = ({ auth }) => {
 
   return (
     <div className="createLesson__globalContainer">
-      <Menu backgroundColor={"#F3F0FC"} />
+      <Menu backgroundColor={"#fff"} />
       <LanguageSelect />
 
       <PageWrapper>
@@ -64,8 +65,13 @@ const CreateLesson = ({ auth }) => {
               </h1>
             </div>
 
-            <StepsBar currentStep={currentStep} />
-
+            {/* <StepsBar currentStep={currentStep} /> */}
+            <div className="createLesson__stepsContainer">
+              <FormSteps
+                steps={["test", "test", "test", "test"]}
+                currentStep={currentStep}
+              />
+            </div>
             {currentStep === 0 && (
               <FirstStep
                 lesson={lesson}
@@ -94,6 +100,7 @@ const CreateLesson = ({ auth }) => {
           </div>
         </div>
       </PageWrapper>
+      <Footer />
     </div>
   );
 };

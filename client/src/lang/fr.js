@@ -17,6 +17,9 @@ export const fr = {
   YOU: "Vous",
   PRIVATE: "Privé",
   NOT_PRIVATE: "Non privé",
+  LOGIN: "Se connecter",
+  LOGOUT: "Se déconnecter",
+  REGISTER: "Se créer un compte",
 
   //lesson
   SAVE: "Sauvegarder",
@@ -32,8 +35,6 @@ export const fr = {
   QUIZZS: "Quizzs",
   FEEDBACKS: "Feedbacks",
   PRIVATE_INSTRUCTOR: "Professeurs particuliers",
-  LOGIN: "Se connecter",
-  REGISTER: "Se créer un compte",
   PROFILE: "Mon profil",
 
   //inputs
@@ -98,6 +99,17 @@ export const fr = {
   PAGE_NOT_FOUND_TITLE: "Oups, un problème est survenu",
   PAGE_NOT_FOUND_TEXT:
     "La page que vous essayez de voir n'existe pas ou est en cours de construction",
+
+  //profile
+  PROFILE_MY_INFO_TITLE: "Mes informations",
+  PROFILE_MY_INFO_DESC: "Tes informations personnelles",
+  PROFILE_MY_INFO_BUTTON: "Voir mes infos",
+  PROFILE_MY_LESSONS_TITLE: "Mes cours",
+  PROFILE_MY_LESSONS_DESC: "Les cours que tu as écrit",
+  PROFILE_MY_LESSONS_BUTTON: "Voir mes cours",
+  PROFILE_MY_LIKED_LESSONS_TITLE: "Cours aimés",
+  PROFILE_MY_LIKED_LESSONS_DESC: "Les cours que tu as aimé",
+  PROFILE_MY_LIKED_LESSONS_BUTTON: "Voir mes cours",
 
   //error messages
   USER_DONT_EXIST_ERROR: "L'utilisateur n'existe pas",

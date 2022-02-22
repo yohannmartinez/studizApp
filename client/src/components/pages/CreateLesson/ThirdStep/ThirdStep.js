@@ -5,6 +5,7 @@ import { getCities } from "../../../../services/cities";
 import { useTranslate } from "../../../../utils/useTranslate";
 import "./ThirdStep.scss";
 import CheckBox from "../../../elements/CheckBox/CheckBox";
+import Button from "../../../elements/Button/Button";
 
 const ThirdStep = ({
   lesson,
@@ -94,27 +95,31 @@ const ThirdStep = ({
           </p>
         </div>
       </CheckBox>
-      <button
+      <Button
         className="createLesson__validateButton"
+        model={"basic"}
+        style={{ marginTop: "50px" }}
         disabled={
           lesson.institution === "" ||
           lesson.city === "" ||
           legalConsent === false
         }
-        onClick={() => {
+        action={() => {
           launchLessonCreation();
         }}
       >
         {t("CREATE_LESSON_VALIDATION")}
-      </button>
-      <button
+      </Button>
+      <Button
         className="createLesson__previousButton"
-        onClick={() => {
+        style={{ marginTop: "10px" }}
+        model={"white"}
+        action={() => {
           previousStep();
         }}
       >
         {t("PREVIOUS_STEP")}
-      </button>
+      </Button>
     </div>
   );
 };

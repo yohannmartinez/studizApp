@@ -1,0 +1,17 @@
+@import "../../../basics.scss";
+.formSteps {
+  &__container {
+    width: 100%;
+    height: 10px;
+    display: flex;
+    border-radius: 20px;
+    background: rgb(226, 226, 226);
+    border: 1px solid $border-grey;
+  }
+
+  &__stepBar {
+    transition: 0.5s;
+    border-radius: 20px;
+    background: $purple-gradient;
+  }
+}

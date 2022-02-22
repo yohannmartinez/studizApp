@@ -4,6 +4,7 @@ import { degreesToSelectFormat } from "../../../../utils/degrees";
 import { studyFieldsToSelectFormat } from "../../../../utils/studyFields";
 import { getYearsRange } from "../../../../utils/years";
 import "./SecondStep.scss";
+import Button from "../../../elements/Button/Button";
 
 const SecondStep = ({ lesson, updateLesson, nextStep, previousStep }) => {
   const { t } = useTranslate();
@@ -46,23 +47,27 @@ const SecondStep = ({ lesson, updateLesson, nextStep, previousStep }) => {
         isMulti={false}
       />
 
-      <button
+      <Button
         className="createLesson__validateButton"
+        model={"basic"}
+        style={{ marginTop: "20px" }}
         disabled={degree === "" || studyField === "" || year === ""}
-        onClick={() => {
+        action={() => {
           nextStep();
         }}
       >
         {t("NEXT_STEP")}
-      </button>
-      <button
-        className="createLesson__previousButton"
-        onClick={() => {
+      </Button>
+      <Button
+        className="createLesson__validateButton"
+        model={"white"}
+        style={{ marginTop: "10px" }}
+        action={() => {
           previousStep();
         }}
       >
         {t("PREVIOUS_STEP")}
-      </button>
+      </Button>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+@import "../../../basics.scss";
 .createLesson {
   &__globalContainer {
     position: relative;
@@ -5,22 +6,22 @@
     &::after {
       content: "";
       position: absolute;
-      background-color: #f4f0fc;
+      background-color: #fff;
       top: 0;
       left: 0;
       height: 300px;
-      width: 100vw;
+      width: 100%;
       z-index: -1;
     }
 
     &::before {
       content: "";
       position: absolute;
-      background-color: #482779;
+      background: $purple-gradient;
       bottom: 0;
       left: 0;
       height: calc(100% - 300px);
-      width: 100vw;
+      width: 100%;
       z-index: -1;
     }
   }
@@ -32,6 +33,7 @@
   }
 
   &__whiteContainer {
+    border: 1px solid $border-grey;
     background-color: white;
     padding: 50px 30px;
     width: 100%;
@@ -54,6 +56,7 @@
   &__subTitle {
     font-size: 14px;
     font-weight: 400;
+    font-family: $text-font;
   }
 
   &__title {
@@ -61,38 +64,13 @@
     text-align: center;
     font-family: "Basier";
     font-weight: 800;
-    margin: 0;
+    margin: 10px;
     font-size: 34px;
   }
 
-  &__validateButton,
-  &__previousButton {
-    width: 200px;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 500px;
-    transition: 0.5s;
-    font-family: "Basier";
-    font-weight: 700;
-    font-size: 15px;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.04);
-    }
-    &:disabled {
-      opacity: 0.5;
-    }
-  }
-
-  &__validateButton {
-    background-color: #70529d;
-    color: white;
-    margin-top: 40px;
-  }
-
-  &__previousButton {
-    background-color: #e7e5e5;
-    color: #555555;
-    margin-top: 10px;
+  &__stepsContainer {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px 0;
   }
 }

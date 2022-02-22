@@ -1,5 +1,5 @@
 import "./CheckBox.scss";
-import { BsCheckLg } from "react-icons/bs";
+import { IoMdCheckmark } from "react-icons/io";
 
 const CheckBox = ({ isChecked, children, action }) => {
   return (
@@ -7,14 +7,16 @@ const CheckBox = ({ isChecked, children, action }) => {
       <div
         className="checkbox__button"
         style={{
-          backgroundColor: isChecked ? "#9652b6" : "white",
+          background: isChecked
+            ? "linear-gradient(86.03deg,#785bab -8.57%,#a268cf -8.56%,#6b40b6 57.35%,#6525d5 105.45%)"
+            : "white",
           border: isChecked ? "none" : "1px solid rgb(206, 206, 206)",
         }}
         onClick={() => {
           action();
         }}
       >
-        <BsCheckLg style={{ color: "white" }} />
+        <IoMdCheckmark className="checkbox__button__indicator" />
       </div>
       <div className="checkbox__text">{children}</div>
     </div>

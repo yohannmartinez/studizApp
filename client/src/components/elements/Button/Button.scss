@@ -3,7 +3,8 @@
 .button {
   &__basic,
   &__white,
-  &__dark {
+  &__dark,
+  &__red {
     font-size: 14px;
     border: none;
     border-radius: 150px;
@@ -15,6 +16,10 @@
     width: fit-content;
     &:hover {
       transform: scale(1.05);
+    }
+
+    &:disabled {
+      opacity: 0.5;
     }
   }
 
@@ -30,5 +35,10 @@
   &__dark {
     color: white;
     background: $dark;
+  }
+
+  &__red {
+    color: white;
+    background: $red-gradient;
   }
 }

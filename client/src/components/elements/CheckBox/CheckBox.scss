@@ -1,3 +1,4 @@
+@import "../../../basics.scss";
 .checkbox {
   &__container {
     width: 100%;
@@ -16,13 +17,10 @@
     border-radius: 4px;
     box-sizing: border-box;
     position: relative;
+    text-align: center;
     &__indicator {
-      height: 12px;
-      width: 12px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      color: white;
+      padding-top: 2px;
     }
   }
 }

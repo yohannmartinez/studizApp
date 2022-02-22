@@ -17,6 +17,9 @@ export const en = {
   YOU: "you",
   PRIVATE: "Private",
   NOT_PRIVATE: "Not private",
+  LOGIN: "Log In",
+  LOGOUT: "Log out",
+  REGISTER: "Sign Up",
 
   //lesson
   SAVE: "Save changes",
@@ -32,8 +35,6 @@ export const en = {
   QUIZZS: "Quizzes",
   FEEDBACKS: "Feedbacks",
   PRIVATE_INSTRUCTOR: "Private instructors",
-  LOGIN: "Log In",
-  REGISTER: "Sign Up",
   PROFILE: "My profile",
 
   //inputs
@@ -94,6 +95,17 @@ export const en = {
   PAGE_NOT_FOUND_TITLE: "Oups, something went wrong",
   PAGE_NOT_FOUND_TEXT:
     "The page you are searching for does not exist or is in progress",
+
+  //profile
+  PROFILE_MY_INFO_TITLE: "My data",
+  PROFILE_MY_INFO_DESC: "Your personal data",
+  PROFILE_MY_INFO_BUTTON: "See my informations",
+  PROFILE_MY_LESSONS_TITLE: "My lessons",
+  PROFILE_MY_LESSONS_DESC: "The lessons you wrote",
+  PROFILE_MY_LESSONS_BUTTON: "See my lessons",
+  PROFILE_MY_LIKED_LESSONS_TITLE: "Courses liked",
+  PROFILE_MY_LIKED_LESSONS_DESC: "The lessons you liked",
+  PROFILE_MY_LIKED_LESSONS_BUTTON: "See the lessons",
 
   // error messages
   USER_DONT_EXIST_ERROR: "User does not exist",

@@ -1,7 +1,7 @@
+@import "../../../basics.scss";
 .profile {
   &__globalContainer {
-    background-color: #f4f0fc;
-    min-height: 100vh;
+    background-color: #fff;
   }
 
   &__loadingContainer {
@@ -10,7 +10,7 @@
   }
 
   &__loadingTitle {
-    font-family: "Basier";
-    font-weight: 800;
+    font-family: $title-font;
+    font-weight: 700;
   }
 }
