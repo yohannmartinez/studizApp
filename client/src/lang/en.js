@@ -46,6 +46,7 @@ export const en = {
   FIRSTNAME: "First name",
   LASTNAME: "Last name",
   PHONE_NUMBER: "Phone number",
+  PSEUDO: "Pseudo",
 
   //inputs lessons
   LESSON_NAME: "Lesson name",
@@ -113,6 +114,10 @@ export const en = {
   NOT_VALID_EMAIL_ERROR: "Please provide a valid email address",
   EMAIL_ADDRESS_DONT_EXIST_ERROR: "Email address does not exist",
   EMAIL_ALREADY_EXIST: "Email address is already used",
+  PSEUDO_ALREADY_EXIST: "This pseudo is already taken",
+  PSEUDO_TOO_SHORT_ERROR: "Pseudo is too short",
+  PSEUDO_SPACES_ERROR: "Pseudo can't contain spaces",
+  PSEUDO_CHARACTER_ERROR: "Pseudo can only contain letters and numbers",
   EMAIL_DONT_EXIST: "Email address doesn't exist",
   PASSWORD_LENGTH_ERROR: "Password is too short",
   PASSWORD_UPPERCASE_ERROR:
@@ -187,6 +192,9 @@ export const en = {
   CREATE_LESSON_CGU_TITLE: "Terms of Service",
   CREATE_LESSON_CGU_PART_ONE: "I certify that I have read and accept the ",
   CREATE_LESSON_CGU_PART_TWO: "general conditions of use",
+
+  //lesson page
+  EDITOR_PLACEHOLDER: "Write your lesson here...",
 
   //degrees
   SIXTH_GRADE: "First class",

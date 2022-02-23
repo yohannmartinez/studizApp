@@ -7,6 +7,7 @@ import EditorTooltip from "./EditorTooltip/EditorTooltip";
 import Highlight from "@tiptap/extension-highlight";
 import Image from "@tiptap/extension-image";
 import TextAlign from "@tiptap/extension-text-align";
+import Placeholder from "@tiptap/extension-placeholder";
 import TextStyle from "@tiptap/extension-text-style";
 import StarterKit from "@tiptap/starter-kit";
 
@@ -58,6 +59,9 @@ const Editor = ({ lesson, lessonData, canEdit, setSnack, resetSnack }) => {
       Highlight,
       Image,
       TextStyle,
+      Placeholder.configure({
+        placeholder: t("EDITOR_PLACEHOLDER"),
+      }),
       Color.configure({
         types: ["textStyle"],
       }),

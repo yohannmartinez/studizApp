@@ -2,10 +2,31 @@
 //check if all the conditions are valids and return success true/false with the error
 
 export const inputValueCheck = (type, value) => {
+  if (type === "pseudo") {
+    console.log(value.match(/^([a-zA-Z0-9 _-]+)$/));
+    if (value.length === 0) {
+      return {
+        success: false,
+        message: "PSEUDO_TOO_SHORT_ERROR",
+      };
+    } else if (value.indexOf(" ") >= 0) {
+      return {
+        success: false,
+        message: "PSEUDO_SPACES_ERROR",
+      };
+    } else if (value.match(/^([a-zA-Z0-9 _-]+)$/) === null) {
+      return {
+        success: false,
+        message: "PSEUDO_CHARACTER_ERROR",
+      };
+    } else {
+      return { success: true, message: "" };
+    }
+  }
   //
   //CONDITIONS POUR LES MOT DE PASSE
   //
-  if (type === "password") {
+  else if (type === "password") {
     if (value.length < 8) {
       return { success: false, message: "PASSWORD_LENGTH_ERROR" };
     } else if (

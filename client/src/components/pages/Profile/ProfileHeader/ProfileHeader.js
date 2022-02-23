@@ -23,7 +23,7 @@ const ProfileHeader = ({ user, logoutUser }) => {
           {user.firstname.charAt(0).toUpperCase() + user.firstname.slice(1)}{" "}
           {user.lastname.charAt(0).toUpperCase() + user.lastname.slice(1)}
         </h1>
-        <span className="profileHeader__userPseudo">@pseudonyme</span>
+        <span className="profileHeader__userPseudo">@{user.pseudo}</span>
         <Button
           className="profileHeader__logout"
           model={"red"}

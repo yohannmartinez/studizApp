@@ -13,12 +13,17 @@ const EmailCheckToken = require("../models/EmailCheckToken");
 // @desc Register user
 // @access Public
 router.post("/register", (req, res) => {
-  const { email, firstname, lastname, password, phoneNumber } = req.body.user;
-  User.findOne({ email: email }).then((user) => {
-    if (user) {
+  const { pseudo, email, firstname, lastname, password, phoneNumber } =
+    req.body.user;
+  User.findOne({ $or: [{ email: email }, { pseudo: pseudo }] }).then((user) => {
+    if (user && user.email === email) {
       return res
         .status(200)
         .json({ success: false, message: "EMAIL_ALREADY_EXIST" });
+    } else if (user && user.pseudo === pseudo) {
+      return res
+        .status(200)
+        .json({ success: false, message: "PSEUDO_ALREADY_EXIST" });
     } else {
       const generated_sponsorCode = new Array(7)
         .join()
@@ -28,6 +33,7 @@ router.post("/register", (req, res) => {
             [Math.random() < 0.5 ? "toString" : "toUpperCase"]();
         });
       const newUser = new User({
+        pseudo,
         firstname,
         lastname,
         email,

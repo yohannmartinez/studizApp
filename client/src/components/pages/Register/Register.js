@@ -16,6 +16,7 @@ const Register = (props) => {
   const { t } = useTranslate();
   const history = useHistory();
   const [user, setUser] = useState({
+    pseudo: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -43,6 +44,7 @@ const Register = (props) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     let inputsToCheck = [
+      { type: "pseudo", value: user.pseudo },
       { type: "email", value: user.email },
       { type: "password", value: user.password },
       { type: "confirmPassword", value: user.confirmPassword },
@@ -90,6 +92,15 @@ const Register = (props) => {
               autoComplete="new-password"
               onSubmit={handleFormSubmit}
             >
+              <Input
+                value={user.pseudo}
+                inputColor="#9652B6"
+                label="PSEUDO"
+                onChange={(e) => {
+                  handleChangeInput("pseudo", e.target.value);
+                }}
+                type="text"
+              />
               <Input
                 value={user.email}
                 inputColor="#9652B6"
@@ -152,6 +163,7 @@ const Register = (props) => {
                 model={"basic"}
                 type="submit"
                 style={{ marginTop: "20px" }}
+                action={() => {}}
               >
                 {t("REGISTER_SUBMIT")}
               </Button>
