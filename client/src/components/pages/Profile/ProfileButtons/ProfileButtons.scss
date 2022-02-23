@@ -19,6 +19,7 @@
   }
 
   &__title {
+    z-index: 2;
     font-family: $title-font;
     color: $dark;
     font-weight: 700;
@@ -27,6 +28,7 @@
   }
 
   &__description {
+    z-index: 2;
     font-family: $text-font;
     color: $dark;
     font-weight: 400;
@@ -35,10 +37,31 @@
   }
 
   &__icon {
+    z-index: 1;
     position: absolute;
     font-size: 120px;
     color: #f2ecf7;
     bottom: -20px;
     right: -10px;
+  }
+
+  &__actionButton {
+    z-index: 2;
+  }
+}
+
+@media (max-width: 945px) {
+  .profileButtons {
+    &__container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .profileButtons {
+    &__container {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
 }

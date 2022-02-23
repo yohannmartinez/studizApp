@@ -39,7 +39,11 @@ const ProfileButtons = () => {
           <span className="profileButtons__description">
             {t(button.description)}
           </span>
-          <Button model={"basic"} action={button.action}>
+          <Button
+            model={"basic"}
+            action={button.action}
+            className="profileButtons__actionButton"
+          >
             {t(button.buttonText)}
           </Button>
           {button.image}
