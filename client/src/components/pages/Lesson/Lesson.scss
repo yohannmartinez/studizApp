@@ -1,8 +1,19 @@
+@import "../../../basics.scss";
 .lesson {
   &__globalContainer {
-    background-color: #f3f0fc;
+    background-color: #fff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+  }
+
+  &__background {
+    background: linear-gradient(
+      90deg,
+      #785bab -8.57%,
+      #a268cf -8.56%,
+      #6b40b6 57.35%,
+      #6525d5 105.45%
+    );
   }
 }

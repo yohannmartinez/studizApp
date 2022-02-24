@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { useState } from "react";
 import Editor from "../../../elements/Editor/Editor";
 import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
 import "./LessonContent.scss";

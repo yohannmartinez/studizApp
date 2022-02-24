@@ -1,4 +1,8 @@
+@import "../../../../basics.scss";
 .lessonInformations {
+  &__wrapper {
+    background: white;
+  }
   &__header {
     display: flex;
     justify-content: center;
@@ -8,35 +12,39 @@
   }
 
   &__subTitle {
-    font-size: 13px;
-    font-family: "Basier";
-    font-weight: 800;
-    color: #70529d;
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: #d3c0ee;
+    font-size: 15px;
+    font-family: $title-font;
+    font-weight: 600;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 100px;
+    background: $purple-gradient;
     margin: 0;
+    opacity: 0.8;
   }
 
   &__title {
-    font-family: "Basier";
-    font-weight: 800;
-    font-size: 39px;
-    margin: 10px 0 0 0;
+    color: $dark;
+    font-family: $title-font;
+    font-weight: 700;
+    font-size: 42px;
+    margin: 20px 0 5px 0;
     text-align: center;
   }
 
   &__creatorText {
+    font-family: $text-font;
     padding-top: 10px;
     font-size: 14px;
-    font-weight: 600;
-    color: #838383;
+    font-weight: 500;
+    color: $dark;
     margin: 0;
   }
 
   &__creatorName {
     display: inline;
-    color: black;
+    color: $dark;
+    font-weight: 700;
     cursor: pointer;
     &:hover {
       text-decoration: underline;

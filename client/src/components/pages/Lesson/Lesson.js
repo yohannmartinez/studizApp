@@ -8,6 +8,7 @@ import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import Menu from "../../elements/Menu/Menu";
 import "./Lesson.scss";
 import LessonContent from "./LessonContent/LessonContent";
+import Footer from "../../elements/Footer/Footer";
 
 const Lesson = () => {
   const { lessonId } = useParams();
@@ -28,16 +29,17 @@ const Lesson = () => {
 
   return (
     <div className="lesson__globalContainer">
-      <Menu backgroundColor={"#F3F0FC"} />
+      <Menu backgroundColor={"#fff"} />
       <LanguageSelect />
       {isLoading && "loading"}
       {!isLoading && !lesson && "no lesson"}
       {!isLoading && lesson && (
-        <>
+        <div className="lesson__background">
           <LessonInformations lesson={lesson} setLesson={setLesson} />
           <LessonContent lesson={lesson} />
-        </>
+        </div>
       )}
+      <Footer />
     </div>
   );
 };

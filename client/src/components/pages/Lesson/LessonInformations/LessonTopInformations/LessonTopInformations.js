@@ -72,13 +72,13 @@ const LessonTopInformations = ({
                 >
                   <FontAwesomeIcon
                     icon={userLikeLesson ? LikedIcon : NotLikedIcon}
-                    style={{ color: userLikeLesson ? "#E94C89" : "black" }}
+                    style={{ color: userLikeLesson ? "#905BC7" : "black" }}
                   />
                 </div>
                 <div
                   className="lessonTopData__headingInfos__infoDescription"
                   style={{
-                    color: userLikeLesson ? "#E94C89" : "black",
+                    color: userLikeLesson ? "#905BC7" : "black",
                     fontWeight: userLikeLesson ? "bold" : "500",
                   }}
                 >

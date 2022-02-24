@@ -90,52 +90,6 @@ const LessonResult = ({ lesson, language, auth }) => {
           <b>{lesson.views + " " + t("VIEWS")}</b> {t("LESSON_RESULT_VIEWS")}
         </span>
       </div>
-      {/* <div className="lessonResult__header">
-        <h1 className="lessonResult__lessonTitle">
-          {name.charAt(0).toUpperCase() + name.slice(1)}
-        </h1>
-        <div className="lessonResult__lessonViews">
-          <FontAwesomeIcon
-            icon={faEye}
-            className="lessonResult__lessonViews__icon"
-          />
-          {views}
-        </div>
-      </div>
-      <div className="lessonResult__creatorContainer">
-        <div
-          className="lessonResult__creatorImage"
-          style={{ backgroundImage: `url('${creator.profileImage}')` }}
-        ></div>
-        <p className="lessonResult__creatorName">
-          {t("WRITTEN_BY") + " "}
-          <b>
-            {lesson.userId === auth.user._id
-              ? t("YOU")
-              : `${creator.firstname} ${creator.lastname}`}
-          </b>
-        </p>
-      </div>
-      <div className="lessonResult__description">
-        <b>Description: </b>
-        {`${
-          description.charAt(0).toUpperCase() +
-          description.slice(1, description.length)
-        }`}
-      </div>
-
-      <div className="lessonResult__tagsContainer">
-        <h1 className="lessonResult__tag lessonResult__purpleTag">
-          {t(studyField)}
-        </h1>
-        <div className="lessonResult__tag lessonResult__yellowTag">
-          {t(degree)}
-        </div>
-        <div className="lessonResult__tag lessonResult__greenTag">{year}</div>
-        <div className="lessonResult__tag lessonResult__blueTag">
-          {likes.length} {t("LIKES")}
-        </div>
-      </div> */}
     </div>
   );
 };

@@ -61,8 +61,10 @@ const SearchResults = ({ filters, auth }) => {
         <SearchFilters filters={filters} />
       </div>
       {isLoading && (
-        <div style={{ margin: "100px 0 150px 0" }}>
-          <Loading />
+        <div className={"searchResults__globalContainer"}>
+          <div className="searchResults__loadingCard"></div>
+          <div className="searchResults__loadingCard"></div>
+          <div className="searchResults__loadingCard"></div>
         </div>
       )}
 
