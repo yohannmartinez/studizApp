@@ -7,7 +7,13 @@
     flex-direction: column;
   }
 
+  &__loaderContainer {
+    padding: 150px 0;
+    min-height: calc(100vh - 500px);
+  }
+
   &__background {
+    min-height: calc(100vh - 500px);
     background: linear-gradient(
       90deg,
       #785bab -8.57%,

@@ -10,7 +10,6 @@ const LessonInformations = ({ lesson, setLesson }) => {
   const { t } = useTranslate();
   const history = useHistory();
   const { creator, name } = lesson;
-  console.log(creator);
 
   return (
     <div className="lessonInformations__container">

@@ -116,24 +116,22 @@ router.get("/search", (req, res) => {
   const returnFormatLessons = async (lessons) => {
     lessonWithCreators = await getLessonsCreators(lessons);
     lessonWithLikes = await getLessonsLikes(lessonWithCreators);
-    nonPrivateLessons = removePrivateLessons(lessonWithLikes, userId).sort(
-      (firstItem, secondItem) => {
-        if (isTextFilters) {
-          return (
-            secondItem.score - firstItem.score ||
-            secondItem.views - firstItem.views ||
-            secondItem.likes - firstItem.likes ||
-            secondItem.name.localeCompare(secondItem.name)
-          );
-        } else {
-          return (
-            secondItem.views - firstItem.views ||
-            secondItem.likes - firstItem.likes ||
-            secondItem.name.localeCompare(secondItem.name)
-          );
-        }
+    nonPrivateLessons = lessonWithLikes.sort((firstItem, secondItem) => {
+      if (isTextFilters) {
+        return (
+          secondItem.score - firstItem.score ||
+          secondItem.views - firstItem.views ||
+          secondItem.likes - firstItem.likes ||
+          secondItem.name.localeCompare(secondItem.name)
+        );
+      } else {
+        return (
+          secondItem.views - firstItem.views ||
+          secondItem.likes - firstItem.likes ||
+          secondItem.name.localeCompare(secondItem.name)
+        );
       }
-    );
+    });
 
     res.status(200).json({
       success: true,
@@ -171,7 +169,8 @@ router.get("/getUserLessons", async (req, res) => {
     });
   } else {
     const lessons = await Lesson.find({ userId: req.query.userId }).lean();
-    if (!lessons) {
+    const lessonWithCreators = await getLessonsCreators(lessons);
+    if (!lessonWithCreators) {
       res.status(200).json({
         success: false,
         lessons: null,
@@ -180,7 +179,46 @@ router.get("/getUserLessons", async (req, res) => {
     } else {
       res.status(200).json({
         success: true,
-        lessons: lessons,
+        lessons: lessonWithCreators,
+        message: "",
+      });
+    }
+  }
+});
+
+/**
+ * @route GET api/lessons/getUserLikedLessons
+ * @description retrieve lessons liked by user
+ * @param {ObjectId} userId id of the user
+ */
+router.get("/getUserLikedLessons", async (req, res) => {
+  const { userId } = req.query;
+  if (!isValidObjectId(userId)) {
+    res.status(200).json({
+      success: false,
+      lessons: null,
+      message: "L'id de la leçon est invalide",
+    });
+  } else {
+    const likes = await LessonLike.find({ userId }).lean();
+    const likedLessons = await Promise.all(
+      likes.map(async (like) => {
+        const { lessonId } = like;
+        return await Lesson.findOne({ _id: lessonId }).lean();
+      })
+    );
+    const lessonWithCreators = await getLessonsCreators(likedLessons);
+
+    if (!lessonWithCreators) {
+      res.status(200).json({
+        success: false,
+        lessons: [],
+        message: "LIKED_LESSONS_RETRIEVE_ERROR",
+      });
+    } else {
+      res.status(200).json({
+        success: true,
+        lessons: lessonWithCreators,
         message: "",
       });
     }
@@ -190,16 +228,12 @@ router.get("/getUserLessons", async (req, res) => {
 router.post("/addView", async (req, res) => {
   const { lessonId } = req.body;
 
-  Lesson.findOneAndUpdate(
-    { _id: lessonId },
-    { $inc: { views: 1 } },
-    (test, lesson) => {
-      res.status(200).json({
-        success: true,
-        message: null,
-      });
-    }
-  );
+  Lesson.findOneAndUpdate({ _id: lessonId }, { $inc: { views: 1 } }, () => {
+    res.status(200).json({
+      success: true,
+      message: null,
+    });
+  });
 });
 
 router.post("/saveLessonChanges", async (req, res) => {
@@ -207,7 +241,7 @@ router.post("/saveLessonChanges", async (req, res) => {
 
   Lesson.findOneAndUpdate(
     { _id: lessonId },
-    { "data.content": lessonContent },
+    { "data.content": lessonContent, lastModification: new Date() },
     (error, lesson) => {
       res.status(200).json({
         success: true,

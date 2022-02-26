@@ -6,7 +6,7 @@ import Button from "../../../elements/Button/Button";
 
 import "./ProfileButtons.scss";
 
-const ProfileButtons = () => {
+const ProfileButtons = ({ setShowUserLessons, setShowUserLikedLessons }) => {
   const { t } = useTranslate();
   const buttons = [
     {
@@ -21,14 +21,18 @@ const ProfileButtons = () => {
       description: "PROFILE_MY_LESSONS_DESC",
       buttonText: "PROFILE_MY_LESSONS_BUTTON",
       image: <GiWhiteBook className="profileButtons__icon" />,
-      action: () => {},
+      action: () => {
+        setShowUserLessons(true);
+      },
     },
     {
       title: "PROFILE_MY_LIKED_LESSONS_TITLE",
       description: "PROFILE_MY_LIKED_LESSONS_DESC",
       buttonText: "PROFILE_MY_LIKED_LESSONS_BUTTON",
       image: <RiHeartsFill className="profileButtons__icon" />,
-      action: () => {},
+      action: () => {
+        setShowUserLikedLessons(true);
+      },
     },
   ];
   return (

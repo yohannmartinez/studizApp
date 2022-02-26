@@ -44,6 +44,13 @@ export const getUserLessons = async (userId) => {
   return resp;
 };
 
+export const getUserLikedLessons = async (userId) => {
+  const resp = await axios.get("/api/lessons/getUserLikedLessons", {
+    params: { userId },
+  });
+  return resp;
+};
+
 export const addLessonView = async (lessonId) => {
   const resp = await axios.post("/api/lessons/addView", { lessonId });
   return resp;

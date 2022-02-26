@@ -1,0 +1,89 @@
+@import "../../../../basics.scss";
+.profileContents {
+  &__lessonsContainer {
+    text-align: left;
+  }
+
+  &__title {
+    margin: 50px 0 40px 0;
+    text-align: center;
+  }
+
+  &__lesson {
+    &__container {
+      text-align: left;
+      border: 1px solid $border-grey;
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      padding: 30px 20px;
+      color: $dark;
+      box-sizing: border-box;
+      transition: 0.5s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+
+    &__creatorContainer {
+      margin-top: 5px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__creatorImage {
+      width: 23px;
+      height: 23px;
+      overflow: hidden;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-right: 10px;
+      border: 3px solid white;
+    }
+
+    &__creatorName {
+      font-size: 11px;
+      font-weight: 500;
+      color: #646464;
+    }
+
+    &__name {
+      font-family: $title-font;
+      font-weight: 700;
+      font-size: 25px;
+      margin: 0;
+    }
+
+    &__description {
+      font-family: $text-font;
+      font-size: 13px;
+      font-weight: 500;
+      color: $dark;
+      line-height: 20px;
+      margin: 20px 0 30px 0;
+    }
+
+    &__detailContainer {
+      margin-top: 25px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__detailIcon {
+      font-size: 19px;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__detailText {
+      font-family: $text-font;
+      font-size: 13px;
+      margin: 0;
+    }
+  }
+}

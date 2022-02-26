@@ -3,7 +3,6 @@
 
 export const inputValueCheck = (type, value) => {
   if (type === "pseudo") {
-    console.log(value.match(/^([a-zA-Z0-9 _-]+)$/));
     if (value.length === 0) {
       return {
         success: false,

@@ -3,10 +3,11 @@ import { useTranslate } from "../../../../utils/useTranslate";
 import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
 import Button from "../../../elements/Button/Button";
 import DecorativeCircle from "../../../elements/DecorativeCircle/DecorativeCircle";
+import { useHistory } from "react-router-dom";
 
 const LandingIntro = () => {
   const { t } = useTranslate();
-
+  const history = useHistory();
   return (
     <div className="landingIntro__globalContainer">
       <PageWrapper>
@@ -38,7 +39,14 @@ const LandingIntro = () => {
               étudiants en proposant de nombreuses fonctionnalités comme
               l’écriture et le partage de cours et bien d’autres.
             </p>
-            <Button model={"basic"}>
+            <Button
+              model={"basic"}
+              action={() => {
+                document
+                  .getElementById("landingExplicationsFirstBlock")
+                  .scrollIntoView({ block: "center" });
+              }}
+            >
               <span className="landingIntro__button">En savoir plus</span>
             </Button>
           </div>

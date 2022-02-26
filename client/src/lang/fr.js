@@ -152,6 +152,10 @@ export const fr = {
   IMAGE_TOO_BIG: "La taille maximale du fichier doit être 1Mo",
   LESSON_NOT_SAVED:
     "Vous n'avez pas sauvegardé vos changements, voulez-vous quitter la page quand même ?",
+  LESSON_NOT_AUTHORIZED_ERROR:
+    "Ce cours est privé, demandez au créateur de vous autoriser à le voir",
+  LESSON_DONT_EXIST_ERROR:
+    "Le cours auquel vous chercher à accèder n'existe pas ou à été supprimé",
 
   //success messages
   LOGIN_SUCCESSFUL: "Heureux de te revoir {firstname} !",

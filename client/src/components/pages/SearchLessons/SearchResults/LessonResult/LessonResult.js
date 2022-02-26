@@ -8,17 +8,7 @@ import { useTranslate } from "../../../../../utils/useTranslate";
 import "./LessonResult.scss";
 
 const LessonResult = ({ lesson, language, auth }) => {
-  const {
-    _id,
-    name,
-    creator,
-    views,
-    studyField,
-    degree,
-    year,
-    description,
-    likes,
-  } = lesson;
+  const { _id, name, creator, views, studyField, degree, description } = lesson;
   const { t } = useTranslate();
   const history = useHistory();
 
@@ -70,7 +60,7 @@ const LessonResult = ({ lesson, language, auth }) => {
         </span>
         <span className="lessonResult__detailText">
           {t("LESSON_RESULT_LEVEL")}
-          <b>{lesson.degree}</b>
+          <b>{degree}</b>
         </span>
       </div>
       <div className="lessonResult__detailContainer">
@@ -79,7 +69,7 @@ const LessonResult = ({ lesson, language, auth }) => {
         </span>
         <span className="lessonResult__detailText">
           {t("LESSON_RESULT_FACULTY")}
-          <b>{t(lesson.studyField)}</b>
+          <b>{t(studyField)}</b>
         </span>
       </div>
       <div className="lessonResult__detailContainer">
@@ -87,7 +77,7 @@ const LessonResult = ({ lesson, language, auth }) => {
           <FaRegEye />
         </span>
         <span className="lessonResult__detailText">
-          <b>{lesson.views + " " + t("VIEWS")}</b> {t("LESSON_RESULT_VIEWS")}
+          <b>{views + " " + t("VIEWS")}</b> {t("LESSON_RESULT_VIEWS")}
         </span>
       </div>
     </div>

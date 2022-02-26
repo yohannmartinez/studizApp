@@ -145,6 +145,10 @@ export const en = {
   IMAGE_TOO_BIG: "Maximum size of file is 1Mo",
   LESSON_NOT_SAVED:
     "You haven't saved your changes, do you want to leave the page anyway ?",
+  LESSON_NOT_AUTHORIZED_ERROR:
+    "This lesson is private, ask to the creator to get the access",
+  LESSON_DONT_EXIST_ERROR:
+    "The course you are trying to access does not exist or has been deleted",
 
   //success messages
   LOGIN_SUCCESSFUL: "Happy to see you back {firstname} !",
@@ -174,9 +178,8 @@ export const en = {
   RESULTS_FILTERS_TEXT:
     "Add filters to make your search as precise as possible",
   LESSON_RESULT_PRIVATE: "This lesson is ",
-  LESSON_RESULT_NOT_PRIVATE: "This lesson",
   LESSON_RESULT_LEVEL: "Degree is ",
-  LESSON_RESULT_FACULTY: "Faculty is",
+  LESSON_RESULT_FACULTY: "Faculty is ",
   LESSON_RESULT_VIEWS: "on this lesson",
 
   //create lesson page
