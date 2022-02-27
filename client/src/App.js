@@ -21,12 +21,15 @@ import { store } from "./store";
 import CreateLesson from "./components/pages/CreateLesson/CreateLesson";
 import ForgotPassword from "./components/pages/ForgotPassword/ForgotPassword";
 import Landing from "./components/pages/Landing/Landing";
+import LegalMentions from "./components/pages/Legals/LegalMentions/LegalMentions";
 import Lesson from "./components/pages/Lesson/Lesson";
 import Login from "./components/pages/Login/Login";
+import PrivacyPolicy from "./components/pages/Legals/PrivacyPolicy/PrivacyPolicy";
 import Profile from "./components/pages/Profile/Profile";
 import NotFound from "./components/pages/NotFound/NotFound";
 import SearchLessons from "./components/pages/SearchLessons/SearchLessons";
 import Register from "./components/pages/Register/Register";
+import TermsOfUse from "./components/pages/Legals/TermsOfUse/TermOfUse";
 
 //elements
 import Snack from "./components/elements/Snack/Snack";
@@ -78,6 +81,12 @@ const App = () => {
 
           <Route exact path="/searchLessons" component={SearchLessons} />
           <Route exact path="/lesson/:lessonId" component={Lesson} />
+
+          {/* legal */}
+          <Route exact path="/privacyPolicy" component={PrivacyPolicy} />
+          <Route exact path="/termsOfUse" component={TermsOfUse} />
+          <Route exact path="/legalMentions" component={LegalMentions} />
+
           <Route exact path="*" component={NotFound} />
         </Switch>
       </div>

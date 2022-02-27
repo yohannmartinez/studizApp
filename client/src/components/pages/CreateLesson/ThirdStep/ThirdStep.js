@@ -6,6 +6,7 @@ import { useTranslate } from "../../../../utils/useTranslate";
 import "./ThirdStep.scss";
 import CheckBox from "../../../elements/CheckBox/CheckBox";
 import Button from "../../../elements/Button/Button";
+import { Link } from "react-router-dom";
 
 const ThirdStep = ({
   lesson,
@@ -89,9 +90,9 @@ const ThirdStep = ({
           </h1>
           <p className="createLesson__thirdStep__checkboxText">
             {t("CREATE_LESSON_CGU_PART_ONE")}
-            <a target="blank" href={"/CGU"}>
+            <Link to="/termsOfUse" target="_blank" rel="noopener noreferrer">
               {t("CREATE_LESSON_CGU_PART_TWO")}
-            </a>
+            </Link>
           </p>
         </div>
       </CheckBox>

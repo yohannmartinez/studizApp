@@ -28,7 +28,7 @@
     transform: translate(100%, 0);
     transition: 0.3s;
     box-sizing: border-box;
-    padding: 40px;
+    padding: 40px 40px 100px 40px;
     overflow-y: scroll;
   }
 
@@ -40,5 +40,13 @@
     background-color: transparent;
     cursor: pointer;
     font-size: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .sideContainer {
+    &__container {
+      width: 100%;
+    }
   }
 }

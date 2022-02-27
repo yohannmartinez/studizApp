@@ -6,6 +6,9 @@ const SideContainer = ({ children, closeAction }) => {
   useEffect(() => {
     document.body.style.overflow = "hidden";
     document.getElementById("sideContainer").style.transform = "translate(0,0)";
+    window.addEventListener("resize", () => {
+      document.body.style.overflow = "hidden";
+    });
     return () => {
       document.body.style.overflow = "visible";
     };

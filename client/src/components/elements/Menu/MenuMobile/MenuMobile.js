@@ -9,9 +9,11 @@ import { setMenu } from "../../../../actions/menuActions";
 import MenuMobileCategory from "./MenuMobileCategory/MenuMobileCategory";
 import Logo from "../../Logo/Logo";
 import "./MenuMobile.scss";
+import { useTranslate } from "../../../../utils/useTranslate";
 
 const MenuMobile = ({ menu, setMenu }) => {
   const history = useHistory();
+  const { t } = useTranslate();
 
   useEffect(() => {
     if (menu.isOpen) {
@@ -69,6 +71,15 @@ const MenuMobile = ({ menu, setMenu }) => {
           {categoriesList.map((category) => (
             <MenuMobileCategory category={category} />
           ))}
+          <div
+            className="menuMobileCategory__container"
+            onClick={() => {
+              history.push("/profile");
+              setMenu(!menu);
+            }}
+          >
+            {t("PROFILE")}
+          </div>
         </div>
       </div>
     </div>

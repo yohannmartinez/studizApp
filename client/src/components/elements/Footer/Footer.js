@@ -4,7 +4,7 @@ import Logo from "../../elements/Logo/Logo";
 import { pages } from "./config";
 import PageWrapper from "../PageWrapper/PageWrapper";
 import "./Footer.scss";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Footer = () => {
   const history = useHistory();
@@ -39,14 +39,29 @@ const Footer = () => {
               qui les attendent durant leur scolarité
             </p>
             <div className="footer__legalContainer">
-              <span className="footer__legal">Politique de confidentialié</span>
-              <span className="footer__legal">Conditions d’utilisation</span>
+              <span
+                className="footer__legal"
+                onClick={() => {
+                  history.push("/privacyPolicy");
+                }}
+              >
+                Politique de confidentialié
+              </span>
+              <span
+                className="footer__legal"
+                onClick={() => {
+                  history.push("/termsOfUse");
+                }}
+              >
+                Conditions d’utilisation
+              </span>
             </div>
           </div>
           <div className="footer__separator"></div>
           <div className="footer__flexContainer">
             <span className="footer__studizCopyright">
-              ©Copyright 2022 Studiz. Tout droit réservé.
+              ©Copyright 2022 Studiz. Tout droit réservé.{" "}
+              <Link to="/legalMentions">Mentions légales</Link>
             </span>
             <span className="footer__socialContainer">
               <FaFacebookSquare className="footer__social" />
