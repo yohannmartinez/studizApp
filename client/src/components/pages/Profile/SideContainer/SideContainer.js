@@ -7,7 +7,9 @@ const SideContainer = ({ children, closeAction }) => {
     document.body.style.overflow = "hidden";
     document.getElementById("sideContainer").style.transform = "translate(0,0)";
     window.addEventListener("resize", () => {
-      document.body.style.overflow = "hidden";
+      if (document.getElementById("profileSideContainer")) {
+        document.body.style.overflow = "hidden";
+      }
     });
     return () => {
       document.body.style.overflow = "visible";
@@ -23,7 +25,7 @@ const SideContainer = ({ children, closeAction }) => {
   };
 
   return (
-    <div className="sideContainer__globalContainer">
+    <div className="sideContainer__globalContainer" id="profileSideContainer">
       <div
         className="sideContainer__background"
         onClick={() => {
