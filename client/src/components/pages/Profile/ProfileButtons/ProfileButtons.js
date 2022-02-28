@@ -14,7 +14,11 @@ const ProfileButtons = ({ setShowUserLessons, setShowUserLikedLessons }) => {
       description: "PROFILE_MY_INFO_DESC",
       buttonText: "PROFILE_MY_INFO_BUTTON",
       image: <FaUserGraduate className="profileButtons__icon" />,
-      action: () => {},
+      action: () => {
+        alert(
+          "Studiz fait tout pour intégrer cette fonctionnalité au plus vite"
+        );
+      },
     },
     {
       title: "PROFILE_MY_LESSONS_TITLE",

@@ -35,8 +35,8 @@ const Footer = () => {
           <div className="footer__separator"></div>
           <div className="footer__flexContainer">
             <p className="footer__studizDescription">
-              Studiz aide les étudiants à mieux vivre les différents épreuves
-              qui les attendent durant leur scolarité
+              Studiz à la volonté de contribuer à la réussite scolaire en
+              proposant un outil pour les étudiants adapté à leurs besoins
             </p>
             <div className="footer__legalContainer">
               <span
@@ -64,8 +64,20 @@ const Footer = () => {
               <Link to="/legalMentions">Mentions légales</Link>
             </span>
             <span className="footer__socialContainer">
-              <FaFacebookSquare className="footer__social" />
-              <GrInstagram className="footer__social" />
+              <a
+                href="https://www.facebook.com/Studiz.officiel/"
+                style={{ color: "white" }}
+                target="blank"
+              >
+                <FaFacebookSquare className="footer__social" />
+              </a>
+              <a
+                href="https://www.instagram.com/studiz.officiel/?hl=fr"
+                style={{ color: "white" }}
+                target="blank"
+              >
+                <GrInstagram className="footer__social" />
+              </a>
             </span>
           </div>
         </div>

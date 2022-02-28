@@ -43,9 +43,10 @@ const LandingExplications = () => {
                   bottom={"-70px"}
                   left={"17%"}
                 />
-                Studiz aide les étudiants à centraliser les différents besoins
-                des étudiants en proposant de nombreuses fonctionnalités comme
-                l’écriture et le partage de cours et bien d’autres.
+                Sur Studiz, tu as la possibilité de taper directement tes prises
+                de notes pendant tes cours et de les partager en quelques clics.
+                Tu peux aussi trouver du contenu d’autres étudiants de façon
+                précise grâce à des filtres.
               </p>
             </div>
           </div>
@@ -70,7 +71,7 @@ const LandingExplications = () => {
                 LES QUIZZ
               </span>
               <h1 className="landingExplications__title">
-                Trouves des quizz pour confirmer tes compétences
+                Des quiz pour t’exercer et valider tes compétences
               </h1>
               <p className="landingExplications__text">
                 <DecorativeCircle
@@ -85,9 +86,9 @@ const LandingExplications = () => {
                   bottom={"-60px"}
                   left={"50%"}
                 />
-                Tu peux créer des quizz ou pratiquer sur ceux existants. Les
-                quizz permettent de valider les acquis sur un cours écrit sur
-                studiz !
+                Tu peux créer des quiz ou t'entraîner avec ceux existants. Les
+                quiz permettent de valider les acquis sur un cours écrit sur
+                Studiz !
               </p>
             </div>
             <div>

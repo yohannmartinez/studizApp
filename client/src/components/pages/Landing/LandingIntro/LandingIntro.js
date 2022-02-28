@@ -32,12 +32,13 @@ const LandingIntro = () => {
               right={"-10px"}
             />
             <h1 className="landingIntro__title">
-              La plateforme qui regroupe tous les besoins des étudiants
+              Partage et récupère tes cours avec tes amis, ta classe ou avec la
+              communauté d’étudiant !
             </h1>
             <p className="landingIntro__text">
-              Studiz aide les étudiants à centraliser les différents besoins des
-              étudiants en proposant de nombreuses fonctionnalités comme
-              l’écriture et le partage de cours et bien d’autres.
+              Studiz c’est le site fait pour les étudiants, par des étudiants.
+              Un outil simple et optimisé pour travailler en groupe à distance
+              comme en présentiel et réussir tes études haut la main !
             </p>
             <Button
               model={"basic"}

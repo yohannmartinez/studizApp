@@ -1,14 +1,15 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import { useTranslate } from "../../../../utils/useTranslate";
-import ContentTable from "../../ContentTable/ContentTable";
+
 import { getDetails } from "./data";
+import { useTranslate } from "../../../../utils/useTranslate";
+
+import Creator from "./Creator/Creator";
+import Header from "./Header/Header";
+
 import "./LessonDetails.scss";
+import SideButtons from "./SideButtons/SideButtons";
 
 const LessonDetails = ({ editor, lesson, setShowDetails }) => {
-  const { t } = useTranslate();
-  const [isContentTableOpened, setIsContentTableOpened] = useState(false);
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
     document.getElementById("lessonDetailsContainer").style.transform =
@@ -17,10 +18,6 @@ const LessonDetails = ({ editor, lesson, setShowDetails }) => {
       document.body.style.overflow = "visible";
     };
   }, []);
-
-  const closeLessonDetails = () => {
-    setShowDetails(false);
-  };
 
   return (
     <div className="lessonDetails__globalContainer">
@@ -32,7 +29,21 @@ const LessonDetails = ({ editor, lesson, setShowDetails }) => {
       ></div>
 
       <div className="lessonDetails__container" id="lessonDetailsContainer">
+        <SideButtons lesson={lesson} />
         <div className="lessonDetails__wrapper">
+          <Header
+            lesson={lesson}
+            editor={editor}
+            closeDetails={() => {
+              setShowDetails(false);
+            }}
+          />
+          <p className="lessonDetails__description">
+            <b>Description</b>: {lesson.description}
+          </p>
+          <Creator creator={lesson.creator} />
+        </div>
+        {/* <div className="lessonDetails__wrapper">
           <p className="lessonDetails__lesson__subTitle">
             {t("LESSON_DETAILS")}
           </p>
@@ -73,7 +84,7 @@ const LessonDetails = ({ editor, lesson, setShowDetails }) => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

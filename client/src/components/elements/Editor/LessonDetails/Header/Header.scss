@@ -1,0 +1,56 @@
+@import "../../../../../basics.scss";
+
+.lessonDetails {
+  &__header {
+    &__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__flexContainer {
+      display: flex;
+    }
+
+    &__imageContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    &__image {
+      height: 47px;
+      width: 47px;
+      border-radius: 50%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &__textContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0 10px 7px 0;
+    }
+
+    &__lessonName {
+      margin: 0 0 5px 0;
+      font-family: $title-font;
+      font-size: 23px;
+      font-weight: 800;
+      color: $dark;
+    }
+
+    &__lessonCreator {
+      margin: 0;
+      font-family: $text-font;
+      font-weight: 700;
+      color: #646464;
+      font-size: 11px;
+    }
+  }
+}

@@ -32,7 +32,7 @@ export const en = {
   //menu
   HOME: "Home",
   LESSONS: "Lessons",
-  QUIZZS: "Quizzes",
+  QUIZZS: "Quiz",
   FEEDBACKS: "Feedbacks",
   PRIVATE_INSTRUCTOR: "Private instructors",
   PROFILE: "My profile",
@@ -198,6 +198,7 @@ export const en = {
 
   //lesson page
   EDITOR_PLACEHOLDER: "Write your lesson here...",
+  PROFILE_SEE_USER: "View profile",
 
   //degrees
   SIXTH_GRADE: "First class",

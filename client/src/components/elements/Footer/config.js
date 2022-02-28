@@ -2,7 +2,7 @@ export const pages = [
   {
     name: "Global",
     links: [
-      { name: "Acceuil", link: "/" },
+      { name: "Accueil", link: "/" },
       { name: "Feedbacks", link: "/feedbacks" },
       { name: "Connexion/profil", link: "/login" },
     ],

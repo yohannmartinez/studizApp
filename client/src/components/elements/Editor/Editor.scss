@@ -68,6 +68,17 @@
 
   &__bottomButtons {
     &__container {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $purple-gradient;
+        border-radius: 500px;
+        z-index: -1;
+      }
       position: fixed;
       bottom: 50px;
       left: 50%;
@@ -78,31 +89,27 @@
 
   &__saveButton,
   &__infoButton {
-    font-size: 17px;
+    font-size: 15px;
     text-align: center;
     cursor: pointer;
     border: none;
     transition: 0.5s;
-    background-color: #70529d;
+    background-color: transparent;
     color: white;
-    font-family: "Basier";
-    font-weight: 700;
+    font-family: $text-font;
+    font-weight: 800;
     &:hover {
       color: #d5cde0;
     }
   }
 
   &__saveButton {
-    border-top-left-radius: 500px;
-    border-bottom-left-radius: 500px;
     padding: 15px 20px 15px 25px;
   }
 
   &__infoButton {
     margin-left: -1px;
     padding: 15px 25px 15px 20px;
-    border-top-right-radius: 500px;
-    border-bottom-right-radius: 500px;
     position: relative;
     &::after {
       content: "";

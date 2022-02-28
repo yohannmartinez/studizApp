@@ -11,7 +11,7 @@ const LandingCallToAction = () => {
         <div className="landingCallToAction__flexContainer">
           <div className="landingCallToAction__container">
             <h1 className="landingCallToAction__title">
-              J’accède aux 7000+ cours postés par la communauté
+              J’accède aux cours postés par la communauté
             </h1>
             <Button
               model={"white"}

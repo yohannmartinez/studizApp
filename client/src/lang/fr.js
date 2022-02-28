@@ -8,7 +8,7 @@ export const fr = {
   LOAD_MORE: "Charger plus",
   VIEWS: "vues",
   LOADING: "Chargement...",
-  WRITTEN_BY: "Ecrit par",
+  WRITTEN_BY: "Rédigé par",
   LIKES: "J'aime",
   CONFIRM: "Confirmer",
   GO_BACK_HOME: "Retourner à l'accueil",
@@ -32,7 +32,7 @@ export const fr = {
   //menu categories
   HOME: "Accueil",
   LESSONS: "Cours",
-  QUIZZS: "Quizzs",
+  QUIZZS: "Quiz",
   FEEDBACKS: "Feedbacks",
   PRIVATE_INSTRUCTOR: "Professeurs particuliers",
   PROFILE: "Mon profil",
@@ -60,15 +60,14 @@ export const fr = {
 
   //menu sub categories
   CREATE_LESSON: "Créer un cours",
-  CREATE_LESSON_DESCRIPTION:
-    "Ajoutez un cours et partagez-le avec la communauté",
+  CREATE_LESSON_DESCRIPTION: "Ajoute un cours et partage-le avec la communauté",
   SEARCH_LESSON: "Chercher un cours",
   SEARCH_LESSON_DESCRIPTION:
-    "Retrouvez vos cours et ceux partagés par la communauté",
-  QUIZZS_DESCRIPTION: "Créés et réponds à des quizz",
+    "Retrouve tes cours et ceux partagés par la communauté",
+  QUIZZS_DESCRIPTION: "Crée et répond à des quiz",
   BECOME_INSTRUCTOR: "Devenir professeur",
   BECOME_INSTRUCTOR_DESCRIPTION:
-    "Inscrivez vous et donnez des cours sur des sujets que vous maîtrisez",
+    "Inscris-toi et donne des cours sur des sujets que tu maîtrises",
   FIND_INSTRUCTOR: "Trouver un professeur",
   FIND_INSTRUCTOR_DESCRIPTION:
     "Obtenez un professeur qualifié près de chez vous",
@@ -76,14 +75,14 @@ export const fr = {
   //login
   LOGIN_TITLE: "Heureux de te revoir",
   LOGIN_DESCRIPTION:
-    "Connectes-toi en entrant identifiant et ton mot de passe studiz !",
+    "Connecte-toi en entrant ton identifiant et ton mot de passe Studiz !",
   LOGIN_SUBMIT: "Connexion",
   FORGOT_PASSWORD: "J'ai oublié mon mot de passe",
 
   //register
   REGISTER_TITLE: "Se créer un compte",
   REGISTER_DESCRIPTION:
-    "Crée-toi un compte et accèdes à l'essemble des fonctionnalités Studiz !",
+    "Crée-toi un compte et accède à l'ensemble des fonctionnalités Studiz",
   REGISTER_SUBMIT: "Créer le compte",
   ALREADY_HAVE_ACCOUNT: "J'ai déjà un compte",
   DONT_HAVE_ACCOUNT: "Pas de compte",
@@ -207,6 +206,7 @@ export const fr = {
 
   //lesson page
   EDITOR_PLACEHOLDER: "Ecrivez votre cours ici...",
+  PROFILE_SEE_USER: "Voir le profil",
 
   //grades
   SIXTH_GRADE: "Sixième",

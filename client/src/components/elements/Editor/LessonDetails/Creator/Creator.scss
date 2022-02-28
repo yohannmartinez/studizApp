@@ -1,0 +1,37 @@
+@import "../../../../../basics.scss";
+
+.lessonDetails {
+  &__creator {
+    &__container {
+      text-align: center;
+    }
+
+    &__imageContainer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    &__separator {
+      background-color: $border-grey;
+      height: 1px;
+      flex: 1;
+    }
+
+    &__image {
+      margin: 0 20px;
+      height: 72px;
+      width: 72px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &__name {
+      font-family: $title-font;
+      font-weight: 700;
+      font-size: 28px;
+      color: $dark;
+    }
+  }
+}
