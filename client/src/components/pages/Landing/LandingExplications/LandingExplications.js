@@ -68,7 +68,7 @@ const LandingExplications = () => {
                   top={"-70px"}
                   right={"30%"}
                 />
-                LES QUIZZ
+                LES QUIZ
               </span>
               <h1 className="landingExplications__title">
                 Des quiz pour t’exercer et valider tes compétences

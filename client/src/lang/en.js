@@ -32,7 +32,7 @@ export const en = {
   //menu
   HOME: "Home",
   LESSONS: "Lessons",
-  QUIZZS: "Quiz",
+  QUIZ: "Quiz",
   FEEDBACKS: "Feedbacks",
   PRIVATE_INSTRUCTOR: "Private instructors",
   PROFILE: "My profile",
@@ -64,7 +64,7 @@ export const en = {
   SEARCH_LESSON: "Find a lesson",
   SEARCH_LESSON_DESCRIPTION:
     "Find your lessons and those shared by the community",
-  QUIZZS_DESCRIPTION: "Create and answer quizzes",
+  QUIZ_DESCRIPTION: "Create and answer quiz",
   BECOME_INSTRUCTOR: "Become a teacher",
   BECOME_INSTRUCTOR_DESCRIPTION:
     "Register and teach courses on subjects you master",
@@ -89,7 +89,7 @@ export const en = {
   //landing
   LANDING_INTRO_TITLE: "Everything you need for a successful school year",
   LANDING_INTRO_TEXT:
-    "Tons of courses, on various subjects, for all levels, quizzes, and much more await you on Studiz",
+    "Tons of courses, on various subjects, for all levels, quiz, and much more await you on Studiz",
   LANDING_INTRO_BUTTON: "Tell me more !",
 
   //not found

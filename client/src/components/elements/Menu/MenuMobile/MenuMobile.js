@@ -27,6 +27,8 @@ const MenuMobile = ({ menu, setMenu }) => {
         document.body.style.overflow = "visible";
       } else if (menu.isOpen && window.innerWidth < 860) {
         document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "visible";
       }
     });
   }, [menu.isOpen]);

@@ -15,10 +15,10 @@ export const pages = [
     ],
   },
   {
-    name: "Quizz",
+    name: "Quiz",
     links: [
-      { name: "Créer un quizz", link: "/createQuizz" },
-      { name: "Parcourir les quizz", link: "/quizz" },
+      { name: "Créer un quiz", link: "/createQuiz" },
+      { name: "Parcourir les quiz", link: "/quiz" },
     ],
   },
 ];

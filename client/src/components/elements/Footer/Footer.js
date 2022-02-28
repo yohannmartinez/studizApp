@@ -35,7 +35,7 @@ const Footer = () => {
           <div className="footer__separator"></div>
           <div className="footer__flexContainer">
             <p className="footer__studizDescription">
-              Studiz à la volonté de contribuer à la réussite scolaire en
+              Studiz a la volonté de contribuer à la réussite scolaire en
               proposant un outil pour les étudiants adapté à leurs besoins
             </p>
             <div className="footer__legalContainer">

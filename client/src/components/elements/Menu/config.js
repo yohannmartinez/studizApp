@@ -1,5 +1,5 @@
 import BookIcon from "../../../assets/pictures/menu/book.svg";
-import QuizzIcon from "../../../assets/pictures/menu/quizz.svg";
+import QuizIcon from "../../../assets/pictures/menu/quizz.svg";
 import FindTeacherIcon from "../../../assets/pictures/menu/find.svg";
 
 const categoriesList = [
@@ -22,13 +22,13 @@ const categoriesList = [
     ],
   },
   {
-    name: "QUIZZS",
+    name: "QUIZ",
     subMenus: [
       {
-        name: "QUIZZS",
-        description: "QUIZZS_DESCRIPTION",
-        icon: QuizzIcon,
-        link: "/quizz",
+        name: "QUIZ",
+        description: "QUIZ_DESCRIPTION",
+        icon: QuizIcon,
+        link: "/quiz",
       },
     ],
   },

@@ -32,7 +32,7 @@ export const fr = {
   //menu categories
   HOME: "Accueil",
   LESSONS: "Cours",
-  QUIZZS: "Quiz",
+  QUIZ: "Quiz",
   FEEDBACKS: "Feedbacks",
   PRIVATE_INSTRUCTOR: "Professeurs particuliers",
   PROFILE: "Mon profil",
@@ -64,7 +64,7 @@ export const fr = {
   SEARCH_LESSON: "Chercher un cours",
   SEARCH_LESSON_DESCRIPTION:
     "Retrouve tes cours et ceux partagés par la communauté",
-  QUIZZS_DESCRIPTION: "Crée et répond à des quiz",
+  QUIZ_DESCRIPTION: "Crée et répond à des quiz",
   BECOME_INSTRUCTOR: "Devenir professeur",
   BECOME_INSTRUCTOR_DESCRIPTION:
     "Inscris-toi et donne des cours sur des sujets que tu maîtrises",
@@ -92,7 +92,7 @@ export const fr = {
   LANDING_INTRO_TITLE:
     "Tout ce dont vous avez besoin pour réussir votre année scolaire",
   LANDING_INTRO_TEXT:
-    "Des tonnes de cours, sur des sujets divers et variés, pour tous les niveaux, des quizzs, et bien plus encore vous attendent sur Studiz",
+    "Des tonnes de cours, sur des sujets divers et variés, pour tous les niveaux, des quiz, et bien plus encore vous attendent sur Studiz",
   LANDING_INTRO_BUTTON: "Je veux en savoir plus !",
 
   //not found
