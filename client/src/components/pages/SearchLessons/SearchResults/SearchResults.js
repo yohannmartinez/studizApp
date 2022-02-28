@@ -60,7 +60,7 @@ const SearchResults = ({ filters, auth }) => {
         <h1 className="searchResults__title">{t(getTitleValue())}</h1>
         <SearchFilters filters={filters} />
       </div>
-      {isLoading && (
+      {isLoading && lessons.length === 0 && (
         <div className={"searchResults__globalContainer"}>
           <div className="searchResults__loadingCard"></div>
           <div className="searchResults__loadingCard"></div>
