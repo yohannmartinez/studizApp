@@ -116,7 +116,7 @@ router.get("/search", (req, res) => {
   const returnFormatLessons = async (lessons) => {
     lessonWithCreators = await getLessonsCreators(lessons);
     lessonWithLikes = await getLessonsLikes(lessonWithCreators);
-    nonPrivateLessons = lessonWithLikes.sort((firstItem, secondItem) => {
+    sortedLessons = lessonWithLikes.sort((firstItem, secondItem) => {
       if (isTextFilters) {
         return (
           secondItem.score - firstItem.score ||
@@ -135,7 +135,7 @@ router.get("/search", (req, res) => {
 
     res.status(200).json({
       success: true,
-      lessons: nonPrivateLessons.splice(numberOfLessons, 5),
+      lessons: sortedLessons.splice(numberOfLessons, 20),
       message: "",
     });
   };

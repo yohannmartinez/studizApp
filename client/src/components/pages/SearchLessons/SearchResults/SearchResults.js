@@ -26,7 +26,7 @@ const SearchResults = ({ filters, auth }) => {
         auth.isAuthenticated ? auth.user._id : "null"
       );
       setLessons(results.data.lessons || []);
-      setIsMoreLessons(results.data.lessons.length === 5);
+      setIsMoreLessons(results.data.lessons.length === 20);
       setIsLoading(false);
     };
     const nameFilter = filters?.find((filter) => filter.attribute === "name");
@@ -44,7 +44,7 @@ const SearchResults = ({ filters, auth }) => {
       auth.isAuthenticated ? auth.user._id : "null"
     );
     setLessons([...lessons, ...results.data.lessons]);
-    setIsMoreLessons(results.data.lessons.length === 5);
+    setIsMoreLessons(results.data.lessons.length === 20);
     setIsLoading(false);
   };
 
