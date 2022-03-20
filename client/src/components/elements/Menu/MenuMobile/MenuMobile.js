@@ -15,24 +15,6 @@ const MenuMobile = ({ menu, setMenu }) => {
   const history = useHistory();
   const { t } = useTranslate();
 
-  useEffect(() => {
-    if (menu.isOpen) {
-      document.body.style.overflow = "hidden";
-    }
-    if (!menu.isOpen) {
-      document.body.style.overflow = "visible";
-    }
-    window.addEventListener("resize", () => {
-      if (menu.isOpen && window.innerWidth > 860) {
-        document.body.style.overflow = "visible";
-      } else if (menu.isOpen && window.innerWidth < 860) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "visible";
-      }
-    });
-  }, [menu.isOpen]);
-
   return (
     <div className="menuMobile__container" id="menuMobile">
       <Logo
@@ -47,41 +29,43 @@ const MenuMobile = ({ menu, setMenu }) => {
         }}
       />
 
-      <div
-        className="menuMobile__menu"
-        id="menu"
-        style={{
-          transform: menu.isOpen ? "translateX(0%)" : "translateX(100%)",
-        }}
-      >
-        <div className="menuMobile__menu__topBar">
-          <Logo
-            action={() => {
-              history.push("/");
-            }}
-          />
-          <IoMdClose
-            className="menuMobile__menu__closeButton"
-            onClick={() => {
-              setMenu(false);
-            }}
-          />
-        </div>
-        <div className="menuMobile__menu__categoriesContainer">
-          {categoriesList.map((category) => (
-            <MenuMobileCategory category={category} />
-          ))}
-          <div
-            className="menuMobileCategory__container"
-            onClick={() => {
-              history.push("/profile");
-              setMenu(!menu);
-            }}
-          >
-            {t("PROFILE")}
+      {menu.isOpen && (
+        <div
+          className="menuMobile__menu"
+          id="menuMobileContainer"
+          style={{
+            transform: menu.isOpen ? "translateX(0%)" : "translateX(100%)",
+          }}
+        >
+          <div className="menuMobile__menu__topBar">
+            <Logo
+              action={() => {
+                history.push("/");
+              }}
+            />
+            <IoMdClose
+              className="menuMobile__menu__closeButton"
+              onClick={() => {
+                setMenu(false);
+              }}
+            />
+          </div>
+          <div className="menuMobile__menu__categoriesContainer">
+            {categoriesList.map((category) => (
+              <MenuMobileCategory category={category} />
+            ))}
+            <div
+              className="menuMobileCategory__container"
+              onClick={() => {
+                history.push("/profile");
+                setMenu(!menu);
+              }}
+            >
+              {t("PROFILE")}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

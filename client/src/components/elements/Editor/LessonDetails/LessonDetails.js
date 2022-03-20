@@ -8,8 +8,16 @@ import Header from "./Header/Header";
 
 import "./LessonDetails.scss";
 import SideButtons from "./SideButtons/SideButtons";
+import Modal from "../../Modal/Modal";
+import ContentTable from "../../ContentTable/ContentTable";
+import LessonInformations from "./LessonInformations/LessonInformations";
 
 const LessonDetails = ({ editor, lesson, setShowDetails }) => {
+  const { t } = useTranslate();
+  const [showContentTable, setShowContentTable] = useState(false);
+  const [showLessonInformations, setShowLessonInformations] = useState(false);
+  const lessonToJSON = editor.getJSON();
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     document.getElementById("lessonDetailsContainer").style.transform =
@@ -20,73 +28,60 @@ const LessonDetails = ({ editor, lesson, setShowDetails }) => {
   }, []);
 
   return (
-    <div className="lessonDetails__globalContainer">
-      <div
-        className="lessonDetails__background"
-        onClick={() => {
-          setShowDetails(false);
-        }}
-      ></div>
-
-      <div className="lessonDetails__container" id="lessonDetailsContainer">
-        <SideButtons lesson={lesson} />
-        <div className="lessonDetails__wrapper">
-          <Header
-            lesson={lesson}
-            editor={editor}
-            closeDetails={() => {
+    <>
+      {showContentTable && (
+        <Modal
+          width="90vw"
+          maxWidth="500px"
+          maxHeight="80vh"
+          onBackgroundClick={() => {
+            setShowContentTable(false);
+          }}
+        >
+          <h1 className="lessonDetails__contentTableTitle">
+            {t("CONTENT_TABLE")}
+          </h1>
+          <ContentTable
+            lessonContentToJson={lessonToJSON}
+            onElementClick={() => {
               setShowDetails(false);
             }}
           />
-          <p className="lessonDetails__description">
-            <b>Description</b>: {lesson.description}
-          </p>
-          <Creator creator={lesson.creator} />
-        </div>
-        {/* <div className="lessonDetails__wrapper">
-          <p className="lessonDetails__lesson__subTitle">
-            {t("LESSON_DETAILS")}
-          </p>
-          <h1 className="lessonDetails__lesson__name">{lesson.name}</h1>
-          <p className="lessonDetails__lesson__description">
-            <b>Description:</b> {lesson.description}
-          </p>
-          <button
-            className="lessonDetails__lesson__contentTable"
-            onClick={() => {
-              setIsContentTableOpened(!isContentTableOpened);
-            }}
-          >
-            {t("CONTENT_TABLE")}{" "}
-            <FontAwesomeIcon
-              icon={isContentTableOpened ? "chevron-up" : "chevron-down"}
-              style={{ fontSize: "13px", marginLeft: "5px" }}
-            />
-          </button>
-          {isContentTableOpened && (
-            <ContentTable
-              lessonContentToJson={editor.getJSON()}
-              onElementClick={closeLessonDetails}
-            />
-          )}
+        </Modal>
+      )}
 
-          <div className="lessonDetails__detailsContainer">
-            {getDetails(t, lesson).map((detail) => (
-              <div className="lessonDetails__detailContainer">
-                <div className="lessonDetails__iconContainer">
-                  <FontAwesomeIcon
-                    icon={detail.icon}
-                    className="lessonDetails__detailIcon"
-                  />
-                </div>
-                <h1 className="lessonDetails__detailTitle">{detail.title}</h1>
-                <p className="lessonDetails__detailContent">{detail.content}</p>
-              </div>
-            ))}
+      {showLessonInformations && (
+        <LessonInformations
+          closeAction={() => {
+            setShowLessonInformations(false);
+          }}
+          lesson={lesson}
+        />
+      )}
+
+      <div className="lessonDetails__globalContainer">
+        <div
+          className="lessonDetails__background"
+          onClick={() => {
+            setShowDetails(false);
+          }}
+        ></div>
+
+        <div className="lessonDetails__container" id="lessonDetailsContainer">
+          <SideButtons
+            lesson={lesson}
+            setShowLessonInformations={setShowLessonInformations}
+          />
+          <div className="lessonDetails__wrapper">
+            <Header lesson={lesson} setShowContentTable={setShowContentTable} />
+            <p className="lessonDetails__description">
+              <b>Description</b>: {lesson.description}
+            </p>
+            <Creator creator={lesson.creator} />
           </div>
-        </div> */}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

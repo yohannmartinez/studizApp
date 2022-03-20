@@ -251,4 +251,17 @@ router.post("/saveLessonChanges", async (req, res) => {
   );
 });
 
+router.delete("/deleteLesson", async (req, res) => {
+  const { lessonId } = req.query;
+
+  Lesson.findOneAndDelete({ _id: lessonId }, {}, (error, lesson) => {
+    LessonLike.deleteMany({ lessonId }, {}, () => {
+      res.status(200).json({
+        success: true,
+        message: null,
+      });
+    });
+  });
+});
+
 module.exports = router;

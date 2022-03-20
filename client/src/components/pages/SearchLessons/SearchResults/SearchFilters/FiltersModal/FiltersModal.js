@@ -35,6 +35,7 @@ const FiltersModal = ({ filtersList, setShowFilters, changeFiltersValue }) => {
     <Modal
       onBackgroundClick={() => {
         setShowFilters(false);
+        document.body.style.overflow = "visible";
       }}
       height="80vh"
       width="90vw"

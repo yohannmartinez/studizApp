@@ -9,26 +9,11 @@ import Modal from "../../../Modal/Modal";
 
 import "./Header.scss";
 
-const Header = ({ lesson, auth, editor, closeDetails }) => {
+const Header = ({ lesson, auth, setShowContentTable }) => {
   const { t } = useTranslate();
-  const [showContentTable, setShowContentTable] = useState(false);
-
-  const handleContentTable = () => {
-    alert("Cette fonctionnalité est en cours d'implémentation");
-    // setShowContentTable(!showContentTable);
-  };
-
-  const lessonToJSON = editor.getJSON();
-  console.log(lessonToJSON);
 
   return (
     <>
-      {/* {lessonToJSON && (
-        <ContentTable
-          lessonContent={lessonToJSON}
-          onElementClick={closeDetails}
-        />
-      )} */}
       <div className="lessonDetails__header__container">
         <div className="lessonDetails__header__leftContainer">
           <div className="lessonDetails__header__flexContainer">
@@ -51,7 +36,12 @@ const Header = ({ lesson, auth, editor, closeDetails }) => {
           </div>
         </div>
         <div className="lessonDetails__header__rightContainer">
-          <Button model={"basic"} action={handleContentTable}>
+          <Button
+            model={"basic"}
+            action={() => {
+              setShowContentTable(true);
+            }}
+          >
             {t("CONTENT_TABLE")}
           </Button>
         </div>

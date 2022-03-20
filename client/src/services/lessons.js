@@ -63,3 +63,11 @@ export const saveLessonChanges = async (lessonId, lessonContent) => {
   });
   return resp;
 };
+
+export const deleteLesson = async (lessonId) => {
+  const resp = await axios.delete("/api/lessons/deleteLesson", {
+    params: { lessonId },
+  });
+
+  return resp;
+};

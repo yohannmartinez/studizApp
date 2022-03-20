@@ -1,0 +1,52 @@
+@import "../../../../../basics.scss";
+
+.lessonInformations {
+  &__container {
+    text-align: center;
+  }
+  &__numbersContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__numberContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+  }
+
+  &__number {
+    font-family: $title-font;
+    font-weight: 700;
+    font-size: 30px;
+    &Text {
+      font-family: $text-font;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+
+  &__lessonDetail {
+    padding: 30px 0;
+    &Container {
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &Icon {
+      font-size: 19px;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &Text {
+      font-family: $text-font;
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+}

@@ -55,4 +55,21 @@
     color: $dark;
     margin: 40px 0;
   }
+
+  &__contentTableTitle {
+    text-align: center;
+  }
+}
+
+@media (max-width: 630px) {
+  .lessonDetails {
+    &__wrapper {
+      padding: 50px 10px;
+      box-sizing: border-box;
+    }
+
+    &__container {
+      padding: 0 70px;
+    }
+  }
 }

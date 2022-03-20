@@ -43,6 +43,7 @@
       font-size: 23px;
       font-weight: 800;
       color: $dark;
+      text-align: center;
     }
 
     &__lessonCreator {
@@ -50,7 +51,35 @@
       font-family: $text-font;
       font-weight: 700;
       color: #646464;
+      text-align: center;
       font-size: 11px;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .lessonDetails {
+    &__header {
+      &__container {
+        flex-direction: column;
+      }
+
+      &__imageContainer {
+        display: none;
+      }
+
+      &__textContainer {
+        margin: 0 0 20px 0;
+        align-items: center;
+      }
+
+      &__lessonName {
+        font-size: 25px;
+      }
+
+      &__lessonCreator {
+        font-size: 13px;
+      }
     }
   }
 }

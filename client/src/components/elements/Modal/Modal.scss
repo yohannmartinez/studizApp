@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
+    z-index: 1010;
   }
 
   &__whiteContainer {
@@ -16,12 +16,22 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1001;
+    z-index: 1011;
     border-radius: 20px;
     box-sizing: border-box;
     overflow-y: scroll;
     &::-webkit-scrollbar {
       width: 0;
     }
+  }
+
+  &__closeButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 24px;
   }
 }

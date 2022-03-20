@@ -3,16 +3,57 @@ import { useHistory } from "react-router";
 import { FaShare, FaInfoCircle } from "react-icons/fa";
 import { RiDeleteBin7Fill } from "react-icons/ri";
 
-import "./SideButtons.scss";
+import { setSnack, resetSnack } from "../../../../../actions/snackActions";
+import { deleteLesson } from "../../../../../services/lessons";
 
-const SideButtons = ({ lesson, auth }) => {
+import "./SideButtons.scss";
+import { useTranslate } from "../../../../../utils/useTranslate";
+
+const SideButtons = ({
+  lesson,
+  auth,
+  setShowLessonInformations,
+  setSnack,
+  resetSnack,
+}) => {
+  const { t } = useTranslate();
   const history = useHistory();
   const isLessonOwner =
     auth && auth.isAuthenticated && auth.user._id === lesson.userId;
 
-  const handleAlert = () => {
-    alert("Cette fonctionnalité est en cours d'implémentation");
+  const handleSnack = (message, type) => {
+    setSnack({
+      show: true,
+      duration: 4000,
+      text: t(message),
+      type: type,
+      action: () => {
+        resetSnack();
+      },
+    });
   };
+
+  const copyLessonUrl = () => {
+    navigator.clipboard
+      .writeText(`https://studiz.eu/lesson/${lesson._id}`)
+      .then(() => {
+        handleSnack("LESSON_URL_COPIED", "success");
+      })
+      .catch(() => {
+        handleSnack("LESSON_URL_COPY_FAILED", "error");
+      });
+  };
+
+  const handleDeleteLesson = async () => {
+    const deletedLesson = await deleteLesson(lesson._id);
+    if (deletedLesson.data.success) {
+      handleSnack("DELETE_LESSON_SUCCESS", "success");
+      history.push("/searchLessons");
+    } else {
+      handleSnack("DELETE_LESSON_ERROR", "error");
+    }
+  };
+
   return (
     <div className="lessonDetails__sideButtons__container">
       <div
@@ -25,26 +66,26 @@ const SideButtons = ({ lesson, auth }) => {
         }}
       ></div>
       <div
-        className="lessonDetails__sideButtons__button"
+        className="lessonDetails__sideButtons__button lessonDetails__sideButtons__button__copyLink"
         onClick={() => {
-          handleAlert();
+          copyLessonUrl();
         }}
       >
         <FaShare />
       </div>
       <div
-        className="lessonDetails__sideButtons__button"
+        className="lessonDetails__sideButtons__button lessonDetails__sideButtons__button__showInfos"
         onClick={() => {
-          handleAlert();
+          setShowLessonInformations(true);
         }}
       >
         <FaInfoCircle />
       </div>
       {isLessonOwner && (
         <div
-          className="lessonDetails__sideButtons__button"
+          className="lessonDetails__sideButtons__button lessonDetails__sideButtons__button__deleteLesson"
           onClick={() => {
-            handleAlert();
+            handleDeleteLesson();
           }}
         >
           <RiDeleteBin7Fill />
@@ -57,4 +98,4 @@ const SideButtons = ({ lesson, auth }) => {
 const mapStateToProps = (state) => ({
   auth: state.auth,
 });
-export default connect(mapStateToProps, {})(SideButtons);
+export default connect(mapStateToProps, { setSnack, resetSnack })(SideButtons);

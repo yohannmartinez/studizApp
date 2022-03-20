@@ -38,9 +38,67 @@
       line-height: 45px;
       cursor: pointer;
       transition: 0.2s;
+      position: relative;
       &:hover {
         transform: scale(1.05);
       }
+
+      &__copyLink,
+      &__showInfos,
+      &__deleteLesson {
+        &::before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 0 5px 6px;
+          border-color: transparent transparent transparent #662bcf;
+          position: absolute;
+          left: -5px;
+          top: 50%;
+          transform: translate(-100%, -50%);
+          display: none;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        transform: translate(-100%, -50%);
+        border-radius: 5px;
+        padding: 10px;
+        line-height: normal;
+        background: $purple-gradient;
+        color: white;
+        font-size: 14px;
+        display: none;
+      }
+
+      &__copyLink {
+        &::after {
+          content: "partager";
+        }
+      }
+
+      &__showInfos {
+        &::after {
+          content: "Informations";
+        }
+      }
+
+      &__deleteLesson {
+        &::after {
+          content: "Supprimer";
+        }
+      }
+    }
+
+    &__button:hover::after {
+      display: block;
+    }
+    &__button:hover::before {
+      display: block;
     }
   }
 }

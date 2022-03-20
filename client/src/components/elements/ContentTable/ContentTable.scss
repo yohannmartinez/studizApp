@@ -1,20 +1,31 @@
+@import "../../../basics.scss";
+
 .contentTable {
   &__container {
-    padding: 50px 30px 40px 30px;
-    width: 400px;
-    margin-top: -20px;
-    border-radius: 20px;
-    background-color: #f3f0fc;
-    // border: 2px solid #70529d;
+    background-color: #fff;
+    padding: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   &__element {
-    color: #452f66;
+    color: $dark;
     cursor: pointer;
     padding: 5px 0;
+    text-align: center;
     transition: 0.5s;
+    line-height: 26px;
     &:hover {
       transform: scale(1.05);
     }
+  }
+
+  &__noTitle {
+    color: $dark;
+    font-family: $text-font;
+    font-size: 14px;
+    font-weight: 500;
   }
 }
