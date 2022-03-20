@@ -1,11 +1,7 @@
-import { useState } from "react";
 import { connect } from "react-redux";
-import { $CombinedState } from "redux";
 import { useTranslate } from "../../../../../utils/useTranslate";
 
 import Button from "../../../Button/Button";
-import ContentTable from "../../../ContentTable/ContentTable";
-import Modal from "../../../Modal/Modal";
 
 import "./Header.scss";
 

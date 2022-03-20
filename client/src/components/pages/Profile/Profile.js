@@ -12,6 +12,7 @@ import "./Profile.scss";
 import ProfileButtons from "./ProfileButtons/ProfileButtons";
 import SideContainer from "./SideContainer/SideContainer";
 import UserLessons from "./ProfileContents/UserLessons/UserLessons";
+import UserInfos from "./ProfileContents/UserInfos/UserInfos";
 
 const Profile = ({ auth }) => {
   const { t } = useTranslate();
@@ -20,6 +21,7 @@ const Profile = ({ auth }) => {
   const [userLikedLessons, setUserLikedLessons] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [showUserInfos, setShowUserInfos] = useState(false);
   const [showUserLessons, setShowUserLessons] = useState(false);
   const [showUserLikedLessons, setShowUserLikedLessons] = useState(false);
 
@@ -41,6 +43,17 @@ const Profile = ({ auth }) => {
   return (
     <div className="profile__globalContainer">
       <Menu backgroundColor={"#fff"} />
+
+      {!loading && showUserInfos && (
+        <SideContainer
+          closeAction={() => {
+            setShowUserInfos(false);
+          }}
+        >
+          <UserInfos />
+        </SideContainer>
+      )}
+
       {!loading && showUserLessons && (
         <SideContainer
           closeAction={() => {
@@ -66,6 +79,7 @@ const Profile = ({ auth }) => {
           />
         </SideContainer>
       )}
+
       <PageWrapper>
         {loading && (
           <div className="profile__loadingContainer">
@@ -78,6 +92,7 @@ const Profile = ({ auth }) => {
           <>
             <ProfileHeader user={user} />
             <ProfileButtons
+              setShowUserInfos={setShowUserInfos}
               setShowUserLessons={setShowUserLessons}
               setShowUserLikedLessons={setShowUserLikedLessons}
             />

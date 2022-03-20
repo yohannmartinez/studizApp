@@ -6,7 +6,11 @@ import Button from "../../../elements/Button/Button";
 
 import "./ProfileButtons.scss";
 
-const ProfileButtons = ({ setShowUserLessons, setShowUserLikedLessons }) => {
+const ProfileButtons = ({
+  setShowUserInfos,
+  setShowUserLessons,
+  setShowUserLikedLessons,
+}) => {
   const { t } = useTranslate();
   const buttons = [
     {
@@ -15,9 +19,7 @@ const ProfileButtons = ({ setShowUserLessons, setShowUserLikedLessons }) => {
       buttonText: "PROFILE_MY_INFO_BUTTON",
       image: <FaUserGraduate className="profileButtons__icon" />,
       action: () => {
-        alert(
-          "Studiz fait tout pour intégrer cette fonctionnalité au plus vite"
-        );
+        setShowUserInfos(true);
       },
     },
     {

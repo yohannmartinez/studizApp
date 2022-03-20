@@ -49,6 +49,7 @@ export const en = {
   LASTNAME: "Last name",
   PHONE_NUMBER: "Phone number",
   PSEUDO: "Pseudo",
+  SPONSOR_CODE: "Sponsor Code",
 
   //inputs lessons
   LESSON_NAME: "Lesson name",

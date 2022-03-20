@@ -49,6 +49,7 @@ export const fr = {
   LASTNAME: "Nom",
   PHONE_NUMBER: "Numéro de téléphone",
   PSEUDO: "Pseudo",
+  SPONSOR_CODE: "Code de parrainage",
 
   //inputs lesson
   LESSON_NAME: "Nom du cours",
