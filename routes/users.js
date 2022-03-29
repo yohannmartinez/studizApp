@@ -39,7 +39,7 @@ router.post("/register", (req, res) => {
         email,
         password,
         phoneNumber,
-        sponsorCode: password,
+        sponsorCode: generated_sponsorCode,
       });
 
       // Hash password before saving in database
