@@ -1,13 +1,10 @@
-import { useHistory } from "react-router-dom";
-import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
-import { useTranslate } from "../../../../utils/useTranslate";
-
-import LessonTopInformations from "./LessonTopInformations/LessonTopInformations";
-
 import "./LessonInformations.scss";
 
+import LessonTopInformations from "./LessonTopInformations/LessonTopInformations";
+import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
+import { useHistory } from "react-router-dom";
+
 const LessonInformations = ({ lesson, setLesson }) => {
-  const { t } = useTranslate();
   const history = useHistory();
   const { creator, name } = lesson;
 

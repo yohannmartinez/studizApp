@@ -1,18 +1,17 @@
+import "./FiltersModal.scss";
+
+import Button from "../../../../../elements/Button/Button";
 import Input from "../../../../../elements/Input/Input";
+import Modal from "../../../../../elements/Modal/Modal";
+import SelectInput from "../../../../../elements/SelectInput/SelectInput";
 import { degreesToSelectFormat } from "../../../../../../utils/degrees";
+import { getCities } from "../../../../../../services/cities";
+import { getYearsRange } from "../../../../../../utils/years";
+import { launchSearch } from "../../../../../../utils/searchLessons";
 import {
-  studyFields,
   studyFieldsToSelectFormat,
 } from "../../../../../../utils/studyFields";
 import { useTranslate } from "../../../../../../utils/useTranslate";
-import { getYearsRange } from "../../../../../../utils/years";
-import Modal from "../../../../../elements/Modal/Modal";
-import SelectInput from "../../../../../elements/SelectInput/SelectInput";
-
-import "./FiltersModal.scss";
-import { getCities } from "../../../../../../services/cities";
-import { launchSearch } from "../../../../../../utils/searchLessons";
-import Button from "../../../../../elements/Button/Button";
 
 const FiltersModal = ({ filtersList, setShowFilters, changeFiltersValue }) => {
   const { t } = useTranslate();

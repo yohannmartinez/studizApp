@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { connect } from "react-redux";
-
-import Loading from "../../../elements/Loading/Loading";
-import LessonResult from "./LessonResult/LessonResult";
-import { getLessons } from "../../../../services/lessons";
-import SearchFilters from "./SearchFilters/SearchFilters";
 import "./SearchResults.scss";
-import { useTranslate } from "../../../../utils/useTranslate";
+
+import { useEffect, useState } from "react";
+
 import Button from "../../../elements/Button/Button";
+import LessonResult from "./LessonResult/LessonResult";
+import Loading from "../../../elements/Loading/Loading";
+import SearchFilters from "./SearchFilters/SearchFilters";
+import { connect } from "react-redux";
+import { getLessons } from "../../../../services/lessons";
+import { useHistory } from "react-router-dom";
+import { useTranslate } from "../../../../utils/useTranslate";
 
 const SearchResults = ({ filters, auth }) => {
   const { t } = useTranslate();
   const history = useHistory();
   const [lessons, setLessons] = useState([]);
-  const [searchValue, setSearchValue] = useState(null);
+  // search value is unsused...? Maybe remove?
+  // const [searchValue, setSearchValue] = useState(null);
   const [isMoreLessons, setIsMoreLessons] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -29,12 +31,12 @@ const SearchResults = ({ filters, auth }) => {
       setIsMoreLessons(results.data.lessons.length === 20);
       setIsLoading(false);
     };
-    const nameFilter = filters?.find((filter) => filter.attribute === "name");
-    if (nameFilter) {
-      setSearchValue(nameFilter.value);
-    }
+    // const nameFilter = filters?.find((filter) => filter.attribute === "name");
+    // if (nameFilter) {
+    //  setSearchValue(nameFilter.value);
+    // }
     retrieveLessons();
-  }, []);
+  }, [filters, auth, lessons]);
 
   const loadMoreResults = async () => {
     setIsLoading(true);

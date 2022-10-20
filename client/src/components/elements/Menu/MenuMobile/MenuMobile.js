@@ -1,14 +1,13 @@
-import { useEffect } from "react";
-import { connect } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { RiMenu4Fill } from "react-icons/ri";
-import { IoMdClose } from "react-icons/io";
-
-import categoriesList from "../config";
-import { setMenu } from "../../../../actions/menuActions";
-import MenuMobileCategory from "./MenuMobileCategory/MenuMobileCategory";
-import Logo from "../../Logo/Logo";
 import "./MenuMobile.scss";
+
+import { IoMdClose } from "react-icons/io";
+import Logo from "../../Logo/Logo";
+import MenuMobileCategory from "./MenuMobileCategory/MenuMobileCategory";
+import { RiMenu4Fill } from "react-icons/ri";
+import categoriesList from "../config";
+import { connect } from "react-redux";
+import { setMenu } from "../../../../actions/menuActions";
+import { useHistory } from "react-router-dom";
 import { useTranslate } from "../../../../utils/useTranslate";
 
 const MenuMobile = ({ menu, setMenu }) => {

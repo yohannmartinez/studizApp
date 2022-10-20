@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
 import "./ContentTable.scss";
+
+import { useEffect, useState } from "react";
 
 const ContentTable = ({ lessonContentToJson, onElementClick }) => {
   const [titles, setTitles] = useState([]);
@@ -14,7 +15,7 @@ const ContentTable = ({ lessonContentToJson, onElementClick }) => {
         items.push({ title: fullTitle, level: titleLevel, node: block });
       });
     setTitles(items);
-  }, []);
+  }, [lessonContentToJson]);
 
   return (
     <div className="contentTable__container">

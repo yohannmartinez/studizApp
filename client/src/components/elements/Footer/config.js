@@ -1,4 +1,4 @@
-export const pages = [
+const pages_fr = [
   {
     name: "Global",
     links: [
@@ -22,3 +22,39 @@ export const pages = [
     ],
   },
 ];
+
+const pages_en = [
+  {
+    name: "Global",
+    links: [
+      { name: "Home", link: "/" },
+      { name: "Feedbacks", link: "/feedbacks" },
+      { name: "Log In / Profile", link: "/login" },
+    ],
+  },
+  {
+    name: "Lessons",
+    links: [
+      { name: "Create Lesson", link: "/createLesson" },
+      { name: "Search Lessons", link: "/searchLessons" },
+    ],
+  },
+  {
+    name: "Quiz",
+    links: [
+      { name: "Create Quiz", link: "/createQuiz" },
+      { name: "Browse Quizzes", link: "/quiz" },
+    ],
+  }
+]
+
+export const getPages = (language) => {
+  switch (language) {
+    case "en":
+      return pages_en;
+    case "fr":
+      return pages_fr;
+    default:
+      return pages_fr;
+  }
+};

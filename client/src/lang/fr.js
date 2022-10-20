@@ -58,7 +58,6 @@ export const fr = {
   LESSON_STUDY_FIELD: "Filière du cours",
   LESSON_YEAR: "Année du cours",
   LESSON_INSTITUTION: "Établissement scolaire",
-  LESSON_CITY: "Ville de l'établissement",
   LESSON_PRIVATE: "Accèssibilité du cours",
 
   //menu sub categories
@@ -93,10 +92,19 @@ export const fr = {
 
   //landing
   LANDING_INTRO_TITLE:
-    "Tout ce dont vous avez besoin pour réussir votre année scolaire",
+    "Partage et récupère tes cours avec tes amis, ta classe ou avec la communauté d’étudiant !",
   LANDING_INTRO_TEXT:
-    "Des tonnes de cours, sur des sujets divers et variés, pour tous les niveaux, des quiz, et bien plus encore vous attendent sur Studiz",
-  LANDING_INTRO_BUTTON: "Je veux en savoir plus !",
+    "Studiz c’est le site fait pour les étudiants, par des étudiants. Un outil simple et optimisé pour travailler en groupe à distance comme en présentiel et réussir tes études haut la main !",
+  LANDING_INTRO_BUTTON: "En savoir plus",
+  LANDING_SECTION_EXPLICATION_SUBTITLE: "LES COURS",
+  LANDING_SECTION_EXPLICATION_TITLE: "Ajoutes tes cours pour tous niveaux, toutes matières",
+  LANDING_SECTION_EXPLICATION_TEXT: 
+  "Sur Studiz, tu as la possibilité de taper directement tes prises de notes pendant tes cours et de les partager en quelques clics. Tu peux aussi trouver du contenu d’autres étudiants de façon précise grâce à des filtres.",
+  LANDING_SECTION_QUIZ_SUBTITLE: "LES QUIZ",
+  LANDING_SECTION_QUIZ_TITLE: "Des quiz pour t’exercer et valider tes compétences",
+  LANDING_SECTION_QUIZ_TEXT: "Tu peux créer des quiz ou t'entraîner avec ceux existants. Les quiz permettent de valider les acquis sur un cours écrit sur Studiz !",
+  LANDING_CALL_TO_ACTION_TITLE: "J’accède aux cours postés par la communauté",
+  LANDING_CALL_TO_ACTION_BUTTON: "Montrez-moi",
 
   //not found
   PAGE_NOT_FOUND_TITLE: "Oups, un problème est survenu",
@@ -196,7 +204,6 @@ export const fr = {
   LESSON_RESULT_FACULTY: "La filière est ",
   LESSON_RESULT_VIEWS: "sur ce cours",
   LESSON_LAST_UPDATE: "La dernière modification date du ",
-  LESSON_INSTITUTION: "L'établissement est ",
   LESSON_CITY: "La ville de l'établissement est ",
 
   //create lesson page
@@ -368,4 +375,11 @@ export const fr = {
   BREEDING: "Élevage",
   ENERGIES: "Énergies",
   TECHNICAL_EQUIPMENT: "Équipement technique",
+
+  // footer
+  FOOTER_DESCRIPTION: "Studiz a la volonté de contribuer à la réussite scolaire en proposant un outil pour les étudiants adapté à leurs besoins",
+  FOOTER_POLICY: "Politique de Confidentialité",
+  FOOTER_TERMS: "Conditions d'utilisation",
+  FOOTER_COPYRIGHT: "©Copyright 2022 Studiz. Tout droit réservé.",
+  FOOTER_LEGAL_MENTION: "Mentions légales",
 };

@@ -1,15 +1,13 @@
-import { useState } from "react";
+import "./ForgotPassword.scss";
 
-import { useTranslate } from "../../../utils/useTranslate";
 import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import Menu from "../../elements/Menu/Menu";
 import PageWrapper from "../../elements/PageWrapper/PageWrapper";
 import StepOne from "./Steps/StepOne";
 import StepTwo from "./Steps/StepTwo";
-import "./ForgotPassword.scss";
+import { useState } from "react";
 
 const ForgotPassword = () => {
-  const { t } = useTranslate();
   const [step, setStep] = useState(0);
   const [userId, setUserId] = useState("");
 

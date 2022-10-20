@@ -1,16 +1,14 @@
+import "./LessonDetails.scss";
+
 import { useEffect, useState } from "react";
 
-import { getDetails } from "./data";
-import { useTranslate } from "../../../../utils/useTranslate";
-
+import ContentTable from "../../ContentTable/ContentTable";
 import Creator from "./Creator/Creator";
 import Header from "./Header/Header";
-
-import "./LessonDetails.scss";
-import SideButtons from "./SideButtons/SideButtons";
-import Modal from "../../Modal/Modal";
-import ContentTable from "../../ContentTable/ContentTable";
 import LessonInformations from "./LessonInformations/LessonInformations";
+import Modal from "../../Modal/Modal";
+import SideButtons from "./SideButtons/SideButtons";
+import { useTranslate } from "../../../../utils/useTranslate";
 
 const LessonDetails = ({ editor, lesson, setShowDetails }) => {
   const { t } = useTranslate();

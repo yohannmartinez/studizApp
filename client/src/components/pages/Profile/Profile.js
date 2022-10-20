@@ -1,18 +1,20 @@
-import { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import "./Profile.scss";
+
 import { getUserLessons, getUserLikedLessons } from "../../../services/lessons";
-import { getUserById } from "../../../services/user";
-import { useTranslate } from "../../../utils/useTranslate";
+import { useEffect, useState } from "react";
+
+import Footer from "../../elements/Footer/Footer";
 import Loading from "../../elements/Loading/Loading";
 import Menu from "../../elements/Menu/Menu";
 import PageWrapper from "../../elements/PageWrapper/PageWrapper";
-import ProfileHeader from "./ProfileHeader/ProfileHeader";
-import Footer from "../../elements/Footer/Footer";
-import "./Profile.scss";
 import ProfileButtons from "./ProfileButtons/ProfileButtons";
+import ProfileHeader from "./ProfileHeader/ProfileHeader";
 import SideContainer from "./SideContainer/SideContainer";
-import UserLessons from "./ProfileContents/UserLessons/UserLessons";
 import UserInfos from "./ProfileContents/UserInfos/UserInfos";
+import UserLessons from "./ProfileContents/UserLessons/UserLessons";
+import { connect } from "react-redux";
+import { getUserById } from "../../../services/user";
+import { useTranslate } from "../../../utils/useTranslate";
 
 const Profile = ({ auth }) => {
   const { t } = useTranslate();
@@ -38,7 +40,7 @@ const Profile = ({ auth }) => {
       setLoading(false);
     };
     getCurrentUser();
-  }, []);
+  }, [auth]);
 
   return (
     <div className="profile__globalContainer">
