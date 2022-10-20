@@ -95,6 +95,15 @@ export const en = {
   LANDING_INTRO_TEXT:
     "Studiz is the website made for students, by students. A simple and optimized tool to work in a group, both in class and remotely, and to succeed in your studies !",
   LANDING_INTRO_BUTTON: "Read more",
+  LANDING_SECTION_EXPLICATION_SUBTITLE: "THE COURSE",
+  LANDING_SECTION_EXPLICATION_TITLE: "Add your courses for all levels, for all subjects",
+  LANDING_SECTION_EXPLICATION_TEXT: 
+  "On Studiz, you can type your notes directly during class and share them with a few clicks. You can also find content from other students with filters.",
+  LANDING_SECTION_QUIZ_SUBTITLE: "THE QUIZZES",
+  LANDING_SECTION_QUIZ_TITLE: "Quizzes to practice and validate your skills",
+  LANDING_SECTION_QUIZ_TEXT: "You can create quizzes or practice with existing ones. Quizzes allow you to validate your knowledge of a course written on Studiz !",
+  LANDING_CALL_TO_ACTION_TITLE: "I access the courses posted by the community",
+  LANDING_CALL_TO_ACTION_BUTTON: "Show me",
 
   //not found
   PAGE_NOT_FOUND_TITLE: "Oups, something went wrong",

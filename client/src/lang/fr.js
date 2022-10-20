@@ -97,6 +97,15 @@ export const fr = {
   LANDING_INTRO_TEXT:
     "Studiz c’est le site fait pour les étudiants, par des étudiants. Un outil simple et optimisé pour travailler en groupe à distance comme en présentiel et réussir tes études haut la main !",
   LANDING_INTRO_BUTTON: "En savoir plus",
+  LANDING_SECTION_EXPLICATION_SUBTITLE: "LES COURS",
+  LANDING_SECTION_EXPLICATION_TITLE: "Ajoutes tes cours pour tous niveaux, toutes matières",
+  LANDING_SECTION_EXPLICATION_TEXT: 
+  "Sur Studiz, tu as la possibilité de taper directement tes prises de notes pendant tes cours et de les partager en quelques clics. Tu peux aussi trouver du contenu d’autres étudiants de façon précise grâce à des filtres.",
+  LANDING_SECTION_QUIZ_SUBTITLE: "LES QUIZ",
+  LANDING_SECTION_QUIZ_TITLE: "Des quiz pour t’exercer et valider tes compétences",
+  LANDING_SECTION_QUIZ_TEXT: "Tu peux créer des quiz ou t'entraîner avec ceux existants. Les quiz permettent de valider les acquis sur un cours écrit sur Studiz !",
+  LANDING_CALL_TO_ACTION_TITLE: "J’accède aux cours postés par la communauté",
+  LANDING_CALL_TO_ACTION_BUTTON: "Montrez-moi",
 
   //not found
   PAGE_NOT_FOUND_TITLE: "Oups, un problème est survenu",

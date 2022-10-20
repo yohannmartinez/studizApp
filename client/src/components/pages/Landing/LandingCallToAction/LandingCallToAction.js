@@ -1,17 +1,21 @@
-import { useHistory } from "react-router-dom";
-import Button from "../../../elements/Button/Button";
-import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
 import "./LandingCallToAction.scss";
 
+import Button from "../../../elements/Button/Button";
+import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
+import { useHistory } from "react-router-dom";
+import { useTranslate } from "../../../../utils/useTranslate";
+
 const LandingCallToAction = () => {
+  const { t } = useTranslate();
   const history = useHistory();
+  
   return (
     <div className="landingCallToAction__globalContainer">
       <PageWrapper>
         <div className="landingCallToAction__flexContainer">
           <div className="landingCallToAction__container">
             <h1 className="landingCallToAction__title">
-              J’accède aux cours postés par la communauté
+              {t("LANDING_CALL_TO_ACTION_TITLE")}
             </h1>
             <Button
               model={"white"}
@@ -19,7 +23,7 @@ const LandingCallToAction = () => {
                 history.push("/searchLessons");
               }}
             >
-              Montrez-moi
+              {t("LANDING_CALL_TO_ACTION_BUTTON")}
             </Button>
           </div>
         </div>
