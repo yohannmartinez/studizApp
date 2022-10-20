@@ -1,9 +1,10 @@
 import "./LandingIntro.scss";
-import { useTranslate } from "../../../../utils/useTranslate";
-import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
+
 import Button from "../../../elements/Button/Button";
 import DecorativeCircle from "../../../elements/DecorativeCircle/DecorativeCircle";
+import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
 import { useHistory } from "react-router-dom";
+import { useTranslate } from "../../../../utils/useTranslate";
 
 const LandingIntro = () => {
   const { t } = useTranslate();
@@ -32,13 +33,10 @@ const LandingIntro = () => {
               right={"-10px"}
             />
             <h1 className="landingIntro__title">
-              Partage et récupère tes cours avec tes amis, ta classe ou avec la
-              communauté d’étudiant !
+              {t("LANDING_INTRO_TITLE")} 
             </h1>
             <p className="landingIntro__text">
-              Studiz c’est le site fait pour les étudiants, par des étudiants.
-              Un outil simple et optimisé pour travailler en groupe à distance
-              comme en présentiel et réussir tes études haut la main !
+              {t("LANDING_INTRO_TEXT")}
             </p>
             <Button
               model={"basic"}
@@ -48,7 +46,9 @@ const LandingIntro = () => {
                   .scrollIntoView({ block: "center" });
               }}
             >
-              <span className="landingIntro__button">En savoir plus</span>
+              <span className="landingIntro__button">
+                {t("LANDING_INTRO_BUTTON")}
+              </span>
             </Button>
           </div>
         </div>

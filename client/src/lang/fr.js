@@ -93,10 +93,10 @@ export const fr = {
 
   //landing
   LANDING_INTRO_TITLE:
-    "Tout ce dont vous avez besoin pour réussir votre année scolaire",
+    "Partage et récupère tes cours avec tes amis, ta classe ou avec la communauté d’étudiant !",
   LANDING_INTRO_TEXT:
-    "Des tonnes de cours, sur des sujets divers et variés, pour tous les niveaux, des quiz, et bien plus encore vous attendent sur Studiz",
-  LANDING_INTRO_BUTTON: "Je veux en savoir plus !",
+    "Studiz c’est le site fait pour les étudiants, par des étudiants. Un outil simple et optimisé pour travailler en groupe à distance comme en présentiel et réussir tes études haut la main !",
+  LANDING_INTRO_BUTTON: "En savoir plus",
 
   //not found
   PAGE_NOT_FOUND_TITLE: "Oups, un problème est survenu",

@@ -90,10 +90,11 @@ export const en = {
   USER_CREATED: "Account created successfully",
 
   //landing
-  LANDING_INTRO_TITLE: "Everything you need for a successful school year",
+  LANDING_INTRO_TITLE: 
+    "Share and retrieve your courses with your friends, your class or with the student community !",
   LANDING_INTRO_TEXT:
-    "Tons of courses, on various subjects, for all levels, quiz, and much more await you on Studiz",
-  LANDING_INTRO_BUTTON: "Tell me more !",
+    "Studiz is the website made for students, by students. A simple and optimized tool to work in a group, both in class and remotely, and to succeed in your studies !",
+  LANDING_INTRO_BUTTON: "Read more",
 
   //not found
   PAGE_NOT_FOUND_TITLE: "Oups, something went wrong",
