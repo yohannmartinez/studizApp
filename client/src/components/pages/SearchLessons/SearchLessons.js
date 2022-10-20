@@ -1,3 +1,9 @@
+import "./SearchLessons.scss";
+
+import {
+  filtersToSelectFormat,
+  launchSearch,
+} from "../../../utils/searchLessons";
 import { useEffect, useState } from "react";
 
 import Button from "../../elements/Button/Button";
@@ -6,14 +12,8 @@ import Footer from "../../elements/Footer/Footer";
 import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import Menu from "../../elements/Menu/Menu";
 import PageWrapper from "../../elements/PageWrapper/PageWrapper";
-import {
-  filtersToSelectFormat,
-  launchSearch,
-} from "../../../utils/searchLessons";
 import SearchResults from "./SearchResults/SearchResults";
-
 import { useTranslate } from "../../../utils/useTranslate";
-import "./SearchLessons.scss";
 
 const SearchLessons = (props) => {
   const { t } = useTranslate();
@@ -31,7 +31,7 @@ const SearchLessons = (props) => {
 
   useEffect(() => {
     setSearch(filtersToSelectFormat(filters || [], t));
-  }, []);
+  }, [filters, t]);
 
   const handleChangeInput = (e) => {
     setSearch({ ...search, [e.target.name]: e.target.value });

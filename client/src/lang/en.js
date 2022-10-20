@@ -197,8 +197,6 @@ export const en = {
   LESSON_RESULT_FACULTY: "Faculty is ",
   LESSON_RESULT_VIEWS: "on this lesson",
   LESSON_LAST_UPDATE: "Last lesson update is ",
-  LESSON_INSTITUTION: "Institution is ",
-  LESSON_CITY: "Institution city is ",
 
   //create lesson page
   CREATE_LESSON_SUBTITLE: "Let's start",

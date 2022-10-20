@@ -1,10 +1,10 @@
-import { useHistory } from "react-router-dom";
-import { connect } from "react-redux";
+import "../profileContents.scss";
+
 import { FaBriefcase, FaLock, FaRegEye, FaUserGraduate } from "react-icons/fa";
 
+import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { useTranslate } from "../../../../../utils/useTranslate";
-import "../profileContents.scss";
-import { IoMdClose } from "react-icons/io";
 
 const UserLessons = ({ lessons, title, auth }) => {
   const { t } = useTranslate();

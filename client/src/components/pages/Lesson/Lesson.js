@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import { connect } from "react-redux";
+import "./Lesson.scss";
 
 import { addLessonView, getLessonById } from "../../../services/lessons";
-import { setSnack, resetSnack } from "../../../actions/snackActions";
+import { resetSnack, setSnack } from "../../../actions/snackActions";
+import { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 
 import Footer from "../../elements/Footer/Footer";
+import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import LessonContent from "./LessonContent/LessonContent";
 import LessonInformations from "./LessonInformations/LessonInformations";
-import LanguageSelect from "../../elements/LanguageSelect/LanguageSelect";
 import Loading from "../../elements/Loading/Loading";
 import Menu from "../../elements/Menu/Menu";
-import "./Lesson.scss";
+import { connect } from "react-redux";
 import { useTranslate } from "../../../utils/useTranslate";
 
 const Lesson = ({ auth, setSnack, resetSnack }) => {
@@ -55,7 +55,7 @@ const Lesson = ({ auth, setSnack, resetSnack }) => {
     };
 
     retrieveLesson();
-  }, [lessonId]);
+  }, [auth, lessonId, history, setSnack, resetSnack, t]);
 
   return (
     <div className="lesson__globalContainer">

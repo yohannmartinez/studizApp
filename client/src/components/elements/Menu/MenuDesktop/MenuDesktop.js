@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { useHistory } from "react-router-dom";
-
-import categoriesList from "../config";
-import MenuDesktopCategory from "./MenuDesktopCategory/MenuDesktopCategory";
-import Logo from "../../../elements/Logo/Logo";
-import { windowScrollListener } from "./utils";
-import { useTranslate } from "../../../../utils/useTranslate";
-import { getUserById } from "../../../../services/user";
 import "./MenuDesktop.scss";
+
+import React, { useEffect, useState } from "react";
 
 //images
 import Button from "../../Button/Button";
+import Logo from "../../../elements/Logo/Logo";
+import MenuDesktopCategory from "./MenuDesktopCategory/MenuDesktopCategory";
+import categoriesList from "../config";
+import { connect } from "react-redux";
+import { getUserById } from "../../../../services/user";
+import { useHistory } from "react-router-dom";
+import { useTranslate } from "../../../../utils/useTranslate";
+import { windowScrollListener } from "./utils";
 
 const MenuDesktop = ({ backgroundColor, auth }) => {
   const history = useHistory();
@@ -27,7 +27,7 @@ const MenuDesktop = ({ backgroundColor, auth }) => {
       }
     }
     getUser();
-  }, []);
+  }, [auth, backgroundColor]);
 
   return (
     <div

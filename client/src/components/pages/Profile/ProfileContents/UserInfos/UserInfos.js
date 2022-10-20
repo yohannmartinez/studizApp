@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import "./UserInfos.scss";
 
+import { useEffect, useState } from "react";
+
+import Loading from "../../../../elements/Loading/Loading";
+import { connect } from "react-redux";
 import { getUserById } from "../../../../../services/user";
 import { useTranslate } from "../../../../../utils/useTranslate";
-import Loading from "../../../../elements/Loading/Loading";
-
-import "./UserInfos.scss";
 
 const UserInfos = ({ auth }) => {
   const { t } = useTranslate();
@@ -29,7 +29,7 @@ const UserInfos = ({ auth }) => {
     };
     getUser();
     setIsLoading(false);
-  }, []);
+  }, [auth]);
 
   return (
     <div>

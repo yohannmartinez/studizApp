@@ -1,8 +1,7 @@
-import { useCallback, useState } from "react";
-
 import { en } from "../lang/en";
 import { fr } from "../lang/fr";
 import { store } from "../store";
+import { useCallback } from "react";
 
 /**
  * @param {String} id id of the translate ex "EMAIL_ADDRESS"

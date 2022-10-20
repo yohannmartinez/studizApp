@@ -1,7 +1,7 @@
-import { useState } from "react";
+import "./Logo.scss";
+
 import StudizLogo from "../../../assets/pictures/logo_base.svg";
 import StudizLogoWhite from "../../../assets/pictures/logo_white.svg";
-import "./Logo.scss";
 
 const Logo = ({ action, fontClassName, logoClassName, type = "default" }) => {
   return (

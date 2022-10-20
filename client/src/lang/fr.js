@@ -58,7 +58,6 @@ export const fr = {
   LESSON_STUDY_FIELD: "Filière du cours",
   LESSON_YEAR: "Année du cours",
   LESSON_INSTITUTION: "Établissement scolaire",
-  LESSON_CITY: "Ville de l'établissement",
   LESSON_PRIVATE: "Accèssibilité du cours",
 
   //menu sub categories
@@ -205,7 +204,6 @@ export const fr = {
   LESSON_RESULT_FACULTY: "La filière est ",
   LESSON_RESULT_VIEWS: "sur ce cours",
   LESSON_LAST_UPDATE: "La dernière modification date du ",
-  LESSON_INSTITUTION: "L'établissement est ",
   LESSON_CITY: "La ville de l'établissement est ",
 
   //create lesson page

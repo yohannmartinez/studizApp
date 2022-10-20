@@ -1,11 +1,11 @@
-import { FaBriefcase, FaLock, FaUserGraduate, FaRegEye } from "react-icons/fa";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./LessonResult.scss";
+
+import { FaBriefcase, FaLock, FaRegEye, FaUserGraduate } from "react-icons/fa";
+
 import { FaRegHeart } from "react-icons/fa";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useTranslate } from "../../../../../utils/useTranslate";
-
-import "./LessonResult.scss";
 
 const LessonResult = ({ lesson, language, auth }) => {
   const { _id, name, creator, views, studyField, degree, description } = lesson;
