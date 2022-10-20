@@ -1,21 +1,7 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ReactGA from "react-ga";
-import jwt_decode from "jwt-decode";
 import "./basics.scss";
 
-//functions
-import { setLanguage } from "./actions/languageActions";
-import { setCurrentUser, logoutUser } from "./actions/authActions";
-import setAuthToken from "./services/setAuthToken";
-import PrivateRoute from "./components/private-route/PrivateRoute";
-import UnauthenticatedRoute from "./components/UnauthenticatedRoute/UnauthenticatedRoute";
-import ScrollToTop from "./utils/scrollToTop";
-import RouterListener from "./RouterListener";
-
-//redux
-import { store } from "./store";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { logoutUser, setCurrentUser } from "./actions/authActions";
 
 //pages
 import CreateLesson from "./components/pages/CreateLesson/CreateLesson";
@@ -24,15 +10,27 @@ import Landing from "./components/pages/Landing/Landing";
 import LegalMentions from "./components/pages/Legals/LegalMentions/LegalMentions";
 import Lesson from "./components/pages/Lesson/Lesson";
 import Login from "./components/pages/Login/Login";
-import PrivacyPolicy from "./components/pages/Legals/PrivacyPolicy/PrivacyPolicy";
-import Profile from "./components/pages/Profile/Profile";
 import NotFound from "./components/pages/NotFound/NotFound";
-import SearchLessons from "./components/pages/SearchLessons/SearchLessons";
+import PrivacyPolicy from "./components/pages/Legals/PrivacyPolicy/PrivacyPolicy";
+import PrivateRoute from "./components/private-route/PrivateRoute";
+import Profile from "./components/pages/Profile/Profile";
+import React from "react";
+import ReactGA from "react-ga";
 import Register from "./components/pages/Register/Register";
-import TermsOfUse from "./components/pages/Legals/TermsOfUse/TermOfUse";
-
+import RouterListener from "./RouterListener";
+import ScrollToTop from "./utils/scrollToTop";
+import SearchLessons from "./components/pages/SearchLessons/SearchLessons";
 //elements
 import Snack from "./components/elements/Snack/Snack";
+import TermsOfUse from "./components/pages/Legals/TermsOfUse/TermOfUse";
+import UnauthenticatedRoute from "./components/UnauthenticatedRoute/UnauthenticatedRoute";
+import { connect } from "react-redux";
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./services/setAuthToken";
+//functions
+import { setLanguage } from "./actions/languageActions";
+//redux
+import { store } from "./store";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
