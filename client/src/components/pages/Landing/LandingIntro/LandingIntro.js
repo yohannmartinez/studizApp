@@ -3,12 +3,11 @@ import "./LandingIntro.scss";
 import Button from "../../../elements/Button/Button";
 import DecorativeCircle from "../../../elements/DecorativeCircle/DecorativeCircle";
 import PageWrapper from "../../../elements/PageWrapper/PageWrapper";
-import { useHistory } from "react-router-dom";
 import { useTranslate } from "../../../../utils/useTranslate";
 
 const LandingIntro = () => {
   const { t } = useTranslate();
-  const history = useHistory();
+  
   return (
     <div className="landingIntro__globalContainer">
       <PageWrapper>
