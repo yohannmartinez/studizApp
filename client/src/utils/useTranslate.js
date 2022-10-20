@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react";
 
-import { store } from "../store";
-import { fr } from "../lang/fr";
 import { en } from "../lang/en";
+import { fr } from "../lang/fr";
+import { store } from "../store";
 
 /**
  * @param {String} id id of the translate ex "EMAIL_ADDRESS"
@@ -24,5 +24,8 @@ export const useTranslate = () => {
     }
     return translate;
   }, []);
-  return { t };
+  
+  const currentLanguage = store.getState().language.current_language;
+  
+  return { t, currentLanguage };
 };
