@@ -377,4 +377,11 @@ export const fr = {
   BREEDING: "Élevage",
   ENERGIES: "Énergies",
   TECHNICAL_EQUIPMENT: "Équipement technique",
+
+  // footer
+  FOOTER_DESCRIPTION: "Studiz a la volonté de contribuer à la réussite scolaire en proposant un outil pour les étudiants adapté à leurs besoins",
+  FOOTER_POLICY: "Politique de Confidentialité",
+  FOOTER_TERMS: "Conditions d'utilisation",
+  FOOTER_COPYRIGHT: "©Copyright 2022 Studiz. Tout droit réservé.",
+  FOOTER_LEGAL_MENTION: "Mentions légales",
 };

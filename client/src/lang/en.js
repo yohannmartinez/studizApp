@@ -369,4 +369,11 @@ export const en = {
   BREEDING: "Élevage",
   ENERGIES: "Énergies",
   TECHNICAL_EQUIPMENT: "Équipement technique",
+
+  // footer
+  FOOTER_DESCRIPTION: "Studiz wants to contribute to academic success by offering a tool for students adapted to their needs",
+  FOOTER_POLICY: "Privacy policy",
+  FOOTER_TERMS: "Terms of use",
+  FOOTER_COPYRIGHT: "Copyright 2022 Studiz. All rights reserved.",
+  FOOTER_LEGAL_MENTION: "Legal mentions",
 };

@@ -1,13 +1,18 @@
-import { GrInstagram } from "react-icons/gr";
-import { FaFacebookSquare } from "react-icons/fa";
-import Logo from "../../elements/Logo/Logo";
-import { pages } from "./config";
-import PageWrapper from "../PageWrapper/PageWrapper";
 import "./Footer.scss";
+
 import { Link, useHistory } from "react-router-dom";
 
+import { FaFacebookSquare } from "react-icons/fa";
+import { GrInstagram } from "react-icons/gr";
+import Logo from "../../elements/Logo/Logo";
+import PageWrapper from "../PageWrapper/PageWrapper";
+import { getPages } from "./config";
+import { useTranslate } from "../../../utils/useTranslate";
+
 const Footer = () => {
+  const { t, currentLanguage } = useTranslate();
   const history = useHistory();
+  
   return (
     <div className="footer__globalContainer">
       <PageWrapper>
@@ -16,7 +21,7 @@ const Footer = () => {
             <div className="footer__pageContainer">
               <Logo type={"white"} />
             </div>
-            {pages.map((category) => (
+            {getPages(currentLanguage).map((category) => (
               <div className="footer__pageContainer">
                 <span className="footer__category">{category.name}</span>
                 {category.links.map((page) => (
@@ -35,8 +40,7 @@ const Footer = () => {
           <div className="footer__separator"></div>
           <div className="footer__flexContainer">
             <p className="footer__studizDescription">
-              Studiz a la volonté de contribuer à la réussite scolaire en
-              proposant un outil pour les étudiants adapté à leurs besoins
+              {t("FOOTER_DESCRIPTION")}
             </p>
             <div className="footer__legalContainer">
               <span
@@ -45,7 +49,7 @@ const Footer = () => {
                   history.push("/privacyPolicy");
                 }}
               >
-                Politique de confidentialié
+                {t("FOOTER_POLICY")}
               </span>
               <span
                 className="footer__legal"
@@ -53,15 +57,15 @@ const Footer = () => {
                   history.push("/termsOfUse");
                 }}
               >
-                Conditions d’utilisation
+                {t("FOOTER_TERMS")}
               </span>
             </div>
           </div>
           <div className="footer__separator"></div>
           <div className="footer__flexContainer">
             <span className="footer__studizCopyright">
-              ©Copyright 2022 Studiz. Tout droit réservé.{" "}
-              <Link to="/legalMentions">Mentions légales</Link>
+              {t("FOOTER_COPYRIGHT")}{" "}
+              <Link to="/legalMentions">{t("FOOTER_LEGAL_MENTION")}</Link>
             </span>
             <span className="footer__socialContainer">
               <a
